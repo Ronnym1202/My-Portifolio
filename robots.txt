@@ -1,0 +1,13 @@
+# robots.txt — ronnymwenda.netlify.app
+# Ronny Mwenda | Frontend Developer & Math Teacher — Embu, Kenya
+
+User-agent: *
+Allow: /
+Disallow: /cdn-cgi/
+
+# Block access to any private or temp files if added later
+Disallow: /*.json$
+Disallow: /node_modules/
+
+# Sitemap location — tells Google & Bing where to find it
+Sitemap: https://ronnymwenda.netlify.app/sitemap.xml

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Ronny Mwenda | Frontend Developer & Math Teacher – Embu, Kenya</title>
+  <meta name="description" content="Learn more about Ronny Mwenda (Ronny Best) — Frontend Web Developer, Mathematics Teacher, and B.Ed Science student at the University of Embu, Kenya." />
+  <meta name="author" content="Ronny Mwenda" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ronnymwenda.netlify.app/about.html" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --bg2: #0d1117; --bg3: #131920;
+      --surface: #1a2230; --surface2: #1e2a3a;
+      --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+      --accent: #22d3a5; --accent-dim: rgba(34,211,165,0.12);
+      --accent2: #4f8ef7; --accent2-dim: rgba(79,142,247,0.1);
+      --text: #e8edf2; --muted: #7a8899; --faint: #2e3d4f;
+      --font-display: 'Fraunces', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    ::selection { background: var(--accent); color: #000; }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(34,211,165,0.025) 1px,transparent 1px), linear-gradient(90deg,rgba(34,211,165,0.025) 1px,transparent 1px);
+      background-size: 64px 64px; pointer-events: none; z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 48px; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(8,12,16,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: var(--font-mono); font-size: 14px; color: var(--accent); text-decoration: none; letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px; }
+    .nav-logo::before { content: ''; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 6px 14px; border-radius: 6px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); background: rgba(255,255,255,0.05); }
+    .nav-hire { background: var(--accent) !important; color: #000 !important; font-weight: 700 !important; }
+    .nav-hire:hover { background: #1bbf93 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg2); padding: 88px 32px 40px; flex-direction: column; gap: 8px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 600; padding: 14px 16px; border-radius: 8px; transition: background 0.2s, color 0.2s; }
+    .mobile-nav a:hover { background: var(--surface); color: var(--accent); }
+
+    section { position: relative; z-index: 1; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+
+    /* PAGE HERO */
+    .page-hero {
+      padding: 130px 0 70px;
+      border-bottom: 1px solid var(--border);
+    }
+    .breadcrumb { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb span { color: var(--faint); }
+    .page-title { font-family: var(--font-display); font-size: clamp(42px, 6vw, 72px); font-weight: 900; line-height: 1.0; letter-spacing: -2px; margin-bottom: 20px; }
+    .page-title em { color: var(--accent); font-style: italic; font-weight: 300; }
+    .page-sub { font-size: 16px; color: var(--muted); max-width: 580px; line-height: 1.8; }
+
+    /* PROFILE SECTION */
+    #profile { padding: 90px 0; }
+    .profile-grid { display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start; }
+    .profile-sidebar {
+      position: sticky; top: 90px;
+    }
+    .profile-card {
+      background: var(--surface); border: 1px solid var(--border2);
+      border-radius: 18px; overflow: hidden; margin-bottom: 20px;
+    }
+    .profile-card-top {
+      background: linear-gradient(135deg, rgba(34,211,165,0.15), rgba(79,142,247,0.1));
+      padding: 32px 24px 28px; text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .profile-img-wrap { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 16px; background: linear-gradient(135deg, var(--accent), var(--accent2)); padding: 3px; position: relative; }
+    .profile-img-wrap img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+    .profile-initials { width: 100%; height: 100%; border-radius: 50%; background: var(--bg3); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 34px; font-weight: 900; color: var(--accent); }
+    .available-badge { position: absolute; bottom: 2px; right: 2px; width: 18px; height: 18px; background: #22c55e; border: 2px solid var(--surface); border-radius: 50%; }
+    .pc-name { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+    .pc-role { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+    .pc-loc { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); background: rgba(255,255,255,0.06); padding: 3px 10px; border-radius: 20px; }
+    .profile-card-body { padding: 20px; }
+    .pc-detail { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+    .pc-detail:last-child { border-bottom: none; }
+    .pc-detail strong { color: var(--text); font-size: 13px; margin-left: auto; text-align: right; }
+
+    .sidebar-socials { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .ss-title { font-family: var(--font-mono); font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 14px; }
+    .ss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .ss-link {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 10px; border-radius: 8px;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      text-decoration: none; font-size: 12px; color: var(--muted);
+      transition: all 0.2s;
+    }
+    .ss-link:hover { background: var(--surface2); color: var(--text); border-color: var(--border2); }
+    .ss-link iconify-icon { font-size: 16px; flex-shrink: 0; }
+    .ig-c { color: #e1306c; }
+    .wa-c { color: #25d366; }
+    .gh-c { color: #f0f0f0; }
+    .tw-c { color: #1d9bf0; }
+    .fb-c { color: #1877f2; }
+    .yt-c { color: #ff0000; }
+
+    /* MAIN CONTENT */
+    .profile-content h2 { font-family: var(--font-display); font-size: 30px; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+    .profile-content p { color: var(--muted); font-size: 15px; line-height: 1.9; margin-bottom: 18px; }
+    .profile-content p strong { color: var(--text); }
+    .profile-content p a { color: var(--accent); text-decoration: none; }
+    .profile-content p a:hover { text-decoration: underline; }
+    .divider { height: 1px; background: var(--border); margin: 40px 0; }
+
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before { content: ''; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent); border-radius: 2px; }
+    .tl-item { position: relative; margin-bottom: 32px; }
+    .tl-item::before { content: ''; position: absolute; left: -24px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+    .tl-date { font-family: var(--font-mono); font-size: 10px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+    .tl-title { font-weight: 700; font-size: 16px; color: var(--text); margin-bottom: 4px; }
+    .tl-org { font-size: 13px; color: var(--accent2); margin-bottom: 8px; }
+    .tl-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+    /* VALUES */
+    .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+    .value-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; transition: border-color 0.2s; }
+    .value-card:hover { border-color: rgba(34,211,165,0.3); }
+    .value-icon { font-size: 28px; margin-bottom: 10px; }
+    .value-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+    .value-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    /* SKILLS FULL */
+    .skills-detail { margin-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .skill-row { display: flex; flex-direction: column; gap: 6px; }
+    .skill-row-top { display: flex; justify-content: space-between; align-items: center; }
+    .skill-name { font-size: 14px; font-weight: 600; }
+    .skill-pct { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+    .skill-bar { height: 5px; background: var(--faint); border-radius: 3px; overflow: hidden; }
+    .skill-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 3px; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); width: 0; }
+
+    /* CTA */
+    .cta-box {
+      background: linear-gradient(135deg, rgba(34,211,165,0.12), rgba(79,142,247,0.08));
+      border: 1px solid rgba(34,211,165,0.25);
+      border-radius: 16px; padding: 40px; text-align: center; margin-top: 48px;
+    }
+    .cta-box h3 { font-family: var(--font-display); font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+    .cta-box p { color: var(--muted); font-size: 15px; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.2s; }
+    .btn-primary { background: var(--accent); color: #000; }
+    .btn-primary:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,0.35); }
+    .btn-outline { border: 1px solid var(--border2); color: var(--text); background: transparent; margin-left: 12px; }
+    .btn-outline:hover { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); }
+
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; position: relative; z-index: 1; }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-copy a { color: var(--accent); text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media(max-width:900px) { .profile-grid { grid-template-columns: 1fr; } .profile-sidebar { position: static; } }
+    @media(max-width:700px) { nav { padding: 0 24px; } .nav-links { display: none; } .hamburger { display: flex; } .container { padding: 0 24px; } .values-grid { grid-template-columns: 1fr; } footer { padding: 32px 24px; flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">ronny.dev</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="about.html" class="active">Full Profile</a></li>
+    <li><a href="contact.html" class="nav-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="index.html#projects" onclick="toggleMenu()">Projects</a>
+  <a href="index.html#services" onclick="toggleMenu()">Services</a>
+  <a href="contact.html" onclick="toggleMenu()" style="color:var(--accent)">Hire Me →</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>About</span>
+    </div>
+    <h1 class="page-title">About <em>Ronny</em><br>Mwenda</h1>
+    <p class="page-sub">Developer, educator, and builder from Embu County, Kenya. Here's the full story — who I am, what I do, and why I do it.</p>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section id="profile">
+  <div class="container">
+    <div class="profile-grid">
+
+      <!-- SIDEBAR -->
+      <div class="profile-sidebar reveal">
+        <div class="profile-card">
+          <div class="profile-card-top">
+            <div class="profile-img-wrap">
+              <img src="profile.jpeg" alt="Ronny Mwenda" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="profile-initials" style="display:none">RM</div>
+              <div class="available-badge" title="Available for work"></div>
+            </div>
+            <div class="pc-name">Ronny Mwenda</div>
+            <div class="pc-role">Frontend Developer · Math Teacher</div>
+            <div class="pc-loc">
+              <iconify-icon icon="solar:map-point-bold" width="11"></iconify-icon>
+              Embu County, Kenya
+            </div>
+          </div>
+          <div class="profile-card-body">
+            <div class="pc-detail">
+              <iconify-icon icon="solar:user-id-bold" width="15" style="color:var(--accent)"></iconify-icon>
+              Also known as
+              <strong>Ronny Best</strong>
+            </div>
+            <div class="pc-detail">
+              <iconify-icon icon="solar:diploma-bold" width="15" style="color:var(--accent)"></iconify-icon>
+              University of Embu
+              <strong>B.Ed Science</strong>
+            </div>
+            <div class="pc-detail">
+              <iconify-icon icon="solar:code-bold" width="15" style="color:var(--accent)"></iconify-icon>
+              Specialisation
+              <strong>CS &amp; Maths</strong>
+            </div>
+            <div class="pc-detail">
+              <iconify-icon icon="solar:monitor-bold" width="15" style="color:var(--accent)"></iconify-icon>
+              Sites Built
+              <strong>3 Live</strong>
+            </div>
+            <div class="pc-detail">
+              <iconify-icon icon="solar:global-bold" width="15" style="color:var(--accent)"></iconify-icon>
+              Availability
+              <strong style="color:#22c55e">Open to hire</strong>
+            </div>
+            <div class="pc-detail">
+              <iconify-icon icon="solar:letter-bold" width="15" style="color:var(--accent)"></iconify-icon>
+              Email
+              <strong style="font-size:11px">ronnymwenda89@gmail.com</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-socials">
+          <div class="ss-title">Connect with me</div>
+          <div class="ss-grid">
+            <a href="https://github.com/Ronnym1202" target="_blank" rel="noopener" class="ss-link">
+              <iconify-icon icon="mdi:github" class="gh-c"></iconify-icon> GitHub
+            </a>
+            <a href="https://www.instagram.com/ronny25495/" target="_blank" rel="noopener" class="ss-link">
+              <iconify-icon icon="mdi:instagram" class="ig-c"></iconify-icon> Instagram
+            </a>
+            <a href="https://wa.me/254799188900" target="_blank" rel="noopener" class="ss-link">
+              <iconify-icon icon="mdi:whatsapp" class="wa-c"></iconify-icon> WhatsApp
+            </a>
+            <a href="https://x.com/ronnymwenda89" target="_blank" rel="noopener" class="ss-link">
+              <iconify-icon icon="ri:twitter-x-fill" class="tw-c"></iconify-icon> X / Twitter
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61563410375799" target="_blank" rel="noopener" class="ss-link">
+              <iconify-icon icon="mdi:facebook" class="fb-c"></iconify-icon> Facebook
+            </a>
+            <a href="https://www.youtube.com/@RonnyBestMath" target="_blank" rel="noopener" class="ss-link">
+              <iconify-icon icon="mdi:youtube" class="yt-c"></iconify-icon> YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN -->
+      <div class="profile-content">
+        <div class="reveal">
+          <h2>Hi, I'm Ronny Mwenda 👋</h2>
+          <p>
+            I'm a <strong>frontend web developer</strong>, <strong>mathematics teacher</strong>, and aspiring software engineer from <strong>Embu County, Kenya</strong>. Most people online know me as <strong>"Ronny Best"</strong> — a name I've built my digital presence around, especially through my mathematics tutoring work.
+          </p>
+          <p>
+            I'm currently pursuing a <strong>Bachelor of Education (Science)</strong> at the <strong>University of Embu</strong>, majoring in <strong>Computer Science and Mathematics</strong>. My academic path reflects who I am: someone who sits at the intersection of technology and education, passionate about both.
+          </p>
+          <p>
+            I believe that clean, well-built websites and quality mathematics education can both change lives — especially in a region like Embu County where access to digital resources and skilled STEM educators is still growing. Everything I build and teach is guided by that belief.
+          </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- JOURNEY -->
+        <div class="reveal">
+          <h2>My Journey</h2>
+          <p>Here's a snapshot of my path from student to developer and educator.</p>
+          <br>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-date">2023 – Present</div>
+              <div class="tl-title">B.Ed Science Student</div>
+              <div class="tl-org">University of Embu</div>
+              <div class="tl-desc">Pursuing a Bachelor of Education in Science, specialising in Computer Science and Mathematics. Developing both subject mastery and pedagogy skills to become an effective STEM educator.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2023 – Present</div>
+              <div class="tl-title">Frontend Web Developer</div>
+              <div class="tl-org">Freelance / Independent</div>
+              <div class="tl-desc">Designing and building custom responsive websites using HTML5, CSS3, and JavaScript. Deployed 3 live production sites on Netlify with full SEO optimisation and Google Search Console integration.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">2023 – Present</div>
+              <div class="tl-title">Founder — Ronny Best Math</div>
+              <div class="tl-org">bestronny.netlify.app</div>
+              <div class="tl-desc">Created a free online mathematics resource platform covering secondary and university-level topics. Helping students across Kenya access quality maths explanations and worked examples at no cost.</div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-date">Ongoing</div>
+              <div class="tl-title">Mathematics Tutor &amp; Mentor</div>
+              <div class="tl-org">Online &amp; In-person, Embu</div>
+              <div class="tl-desc">Providing one-on-one and group mathematics tutoring for secondary and university students. Specialising in KCSE preparation, algebra, calculus, and applied mathematics.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- SKILLS -->
+        <div class="reveal">
+          <h2>Technical Skills</h2>
+          <p>My core skills, built through real projects and continuous self-study.</p>
+          <div class="skills-detail" id="skillBars">
+            <div class="skill-row">
+              <div class="skill-row-top"><span class="skill-name">HTML5</span><span class="skill-pct">95%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-w="95"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-row-top"><span class="skill-name">CSS3 &amp; Responsive Design</span><span class="skill-pct">90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-row-top"><span class="skill-name">JavaScript (Vanilla)</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-row-top"><span class="skill-name">SEO &amp; Web Performance</span><span class="skill-pct">80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-row-top"><span class="skill-name">Git &amp; GitHub</span><span class="skill-pct">70%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-w="70"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-row-top"><span class="skill-name">Mathematics (Teaching)</span><span class="skill-pct">92%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-w="92"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- VALUES -->
+        <div class="reveal">
+          <h2>What Drives Me</h2>
+          <p>These are the core values behind everything I build and teach.</p>
+          <div class="values-grid">
+            <div class="value-card">
+              <div class="value-icon">🎯</div>
+              <div class="value-title">Quality Over Quantity</div>
+              <div class="value-desc">Every website I build is thoughtfully crafted — clean code, fast load times, and purposeful design. No shortcuts.</div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">🌍</div>
+              <div class="value-title">Tech for Kenya</div>
+              <div class="value-desc">I'm building a career that contributes to Kenya's growing tech ecosystem. Local context, global standards.</div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">📚</div>
+              <div class="value-title">Education First</div>
+              <div class="value-desc">I believe accessible, quality education — whether maths or coding — is the most powerful tool for opportunity.</div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">🔄</div>
+              <div class="value-title">Always Learning</div>
+              <div class="value-desc">Currently learning React.js, Node.js, and Python. I invest daily in growing my skillset and staying current.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box reveal">
+          <h3>Ready to work together?</h3>
+          <p>I'm available for website projects, mathematics tutoring, and programming mentorship. Let's build something meaningful.</p>
+          <a href="contact.html" class="btn btn-primary">
+            <iconify-icon icon="solar:letter-bold" width="15"></iconify-icon>
+            Get In Touch
+          </a>
+          <a href="index.html#projects" class="btn btn-outline">View My Work</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-copy">© 2025 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="index.html">Home</a></div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting) {
+        e.target.classList.add('visible');
+        // Animate skill bars
+        e.target.querySelectorAll('.skill-fill').forEach(bar => {
+          bar.style.width = bar.dataset.w + '%';
+        });
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

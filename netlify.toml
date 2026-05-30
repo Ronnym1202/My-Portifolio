@@ -1,0 +1,131 @@
+# netlify.toml — ronnymwenda.netlify.app
+# Ronny Mwenda | Frontend Developer & Math Teacher — Embu, Kenya
+# Full Netlify deployment configuration
+
+# ─── BUILD SETTINGS ───────────────────────────────────────────────────────────
+[build]
+  # No build command needed — pure HTML/CSS/JS site
+  publish = "."
+  command = ""
+
+# ─── ENVIRONMENT ──────────────────────────────────────────────────────────────
+[build.environment]
+  NODE_VERSION = "18"
+
+# ─── DEV SERVER (local testing with `netlify dev`) ────────────────────────────
+[dev]
+  port = 8888
+  targetPort = 8080
+  autoLaunch = true
+
+# ─── REDIRECTS ────────────────────────────────────────────────────────────────
+# (Also in _redirects file — toml takes precedence)
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/about-me"
+  to = "/about.html"
+  status = 301
+
+[[redirects]]
+  from = "/get-in-touch"
+  to = "/contact.html"
+  status = 301
+
+[[redirects]]
+  from = "/hire"
+  to = "/contact.html"
+  status = 301
+
+[[redirects]]
+  from = "/cv"
+  to = "/about.html"
+  status = 301
+
+[[redirects]]
+  from = "/resume"
+  to = "/about.html"
+  status = 301
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy.html"
+  status = 301
+
+[[redirects]]
+  from = "/terms-and-conditions"
+  to = "/terms.html"
+  status = 301
+
+[[redirects]]
+  from = "/math"
+  to = "https://bestronny.netlify.app"
+  status = 301
+
+[[redirects]]
+  from = "/games"
+  to = "https://ronnym.netlify.app"
+  status = 301
+
+[[redirects]]
+  from = "/sanguine"
+  to = "https://themwends.netlify.app"
+  status = 301
+
+# Custom 404
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# ─── HEADERS ──────────────────────────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=600, s-maxage=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=UTF-8"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

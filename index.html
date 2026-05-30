@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ronny Mwenda | Software Developer, Math Teacher & Web Developer – Embu, Kenya</title>
+  <meta name="description" content="Ronny Mwenda (Ronny Best) – Frontend Web Developer, Software Developer & Mathematics Teacher from Embu County, Kenya. B.Ed Science student at University of Embu. Available for hire." />
+  <meta name="keywords" content="Ronny Mwenda, Ronny Best, Ronny Best Math, web developer Embu Kenya, frontend developer Kenya, mathematics teacher Kenya, software developer Embu" />
+  <meta name="author" content="Ronny Mwenda" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ronnymwenda.netlify.app/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ronny Mwenda | Developer & Math Teacher – Embu, Kenya" />
+  <meta property="og:description" content="Frontend Web Developer, Math Teacher & Programming enthusiast from Embu, Kenya." />
+  <meta property="og:url" content="https://ronnymwenda.netlify.app/" />
+  <meta property="og:image" content="https://ronnymwenda.netlify.app/profile.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_KE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ronny Mwenda | Developer & Math Teacher" />
+  <meta name="twitter:description" content="Frontend Web Developer & Mathematics Teacher from Embu, Kenya." />
+  <meta name="twitter:image" content="https://ronnymwenda.netlify.app/profile.jpeg" />
+  <meta name="twitter:site" content="@ronnymwenda89" />
+  <meta name="twitter:creator" content="@ronnymwenda89" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ronny Mwenda",
+    "alternateName": "Ronny Best",
+    "jobTitle": ["Frontend Web Developer", "Software Developer", "Mathematics Teacher"],
+    "description": "Frontend Web Developer and Mathematics Teacher from Embu County, Kenya.",
+    "url": "https://ronnymwenda.netlify.app",
+    "image": "https://ronnymwenda.netlify.app/profile.jpeg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Embu",
+      "addressRegion": "Embu County",
+      "addressCountry": "KE"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Embu",
+      "url": "https://embuni.ac.ke"
+    },
+    "sameAs": [
+      "https://bestronny.netlify.app",
+      "https://ronnym.netlify.app",
+      "https://themwends.netlify.app",
+      "https://www.instagram.com/ronny25495/",
+      "https://x.com/ronnymwenda89",
+      "https://www.facebook.com/profile.php?id=61563410375799",
+      "https://github.com/Ronnym1202"
+    ]
+  }
+  </script>
+
+  <!-- SVG Icons via Iconify CDN -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10;
+      --bg2: #0d1117;
+      --bg3: #131920;
+      --surface: #1a2230;
+      --surface2: #1e2a3a;
+      --border: rgba(255,255,255,0.07);
+      --border2: rgba(255,255,255,0.12);
+      --accent: #22d3a5;
+      --accent-dim: rgba(34,211,165,0.12);
+      --accent2: #4f8ef7;
+      --accent2-dim: rgba(79,142,247,0.1);
+      --gold: #f5c842;
+      --text: #e8edf2;
+      --muted: #7a8899;
+      --faint: #2e3d4f;
+      --font-display: 'Fraunces', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.4);
+
+      /* Brand colors */
+      --github-color: #f0f0f0;
+      --twitter-color: #1d9bf0;
+      --instagram-color: #e1306c;
+      --whatsapp-color: #25d366;
+      --facebook-color: #1877f2;
+      --youtube-color: #ff0000;
+      --email-color: #ea580c;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--accent); color: #000; }
+
+    /* Grid bg */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(34,211,165,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34,211,165,0.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* Glow orbs */
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .orb-1 { width: 500px; height: 500px; background: rgba(34,211,165,0.06); top: -100px; right: -100px; }
+    .orb-2 { width: 400px; height: 400px; background: rgba(79,142,247,0.05); bottom: 20%; left: -100px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 48px;
+      height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(8,12,16,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-size: 14px; color: var(--accent);
+      text-decoration: none; letter-spacing: 0.06em;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nav-logo::before {
+      content: '';
+      width: 8px; height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .nav-hire {
+      background: var(--accent) !important;
+      color: #000 !important;
+      font-weight: 700 !important;
+    }
+    .nav-hire:hover { background: #1bbf93 !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
+    .mobile-nav {
+      display: none; position: fixed; inset: 0; z-index: 199;
+      background: var(--bg2);
+      padding: 88px 32px 40px;
+      flex-direction: column; gap: 8px;
+      border-right: 1px solid var(--border);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: var(--text); text-decoration: none;
+      font-size: 20px; font-weight: 600;
+      padding: 14px 16px; border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .mobile-nav a:hover { background: var(--surface); color: var(--accent); }
+
+    /* BASE */
+    section { position: relative; z-index: 1; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 120px 0 80px;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 440px;
+      gap: 64px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(34,211,165,0.25);
+      color: var(--accent);
+      font-family: var(--font-mono); font-size: 11px;
+      padding: 5px 14px; border-radius: 40px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.5s ease both;
+    }
+    .hero-badge .dot { width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite; }
+    h1.hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 7vw, 88px);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      margin-bottom: 6px;
+      animation: fadeUp 0.5s ease 0.08s both;
+    }
+    h1.hero-name em { color: var(--accent); font-style: italic; font-weight: 300; }
+    .hero-aka {
+      font-family: var(--font-mono); font-size: 12px;
+      color: var(--muted); margin-bottom: 22px;
+      animation: fadeUp 0.5s ease 0.14s both;
+    }
+    .hero-aka span { color: var(--accent2); }
+    .hero-roles {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.5s ease 0.18s both;
+    }
+    .role-pill {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      color: var(--text); font-size: 13px; font-weight: 600;
+      padding: 6px 16px; border-radius: 40px;
+    }
+    .role-pill.active { background: var(--accent-dim); border-color: rgba(34,211,165,0.3); color: var(--accent); }
+    .hero-desc {
+      font-size: 15px; color: var(--muted); line-height: 1.85;
+      max-width: 500px; margin-bottom: 40px;
+      animation: fadeUp 0.5s ease 0.22s both;
+    }
+    .hero-btns {
+      display: flex; gap: 14px; flex-wrap: wrap;
+      animation: fadeUp 0.5s ease 0.28s both;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 8px;
+      text-decoration: none; font-weight: 700; font-size: 14px;
+      letter-spacing: 0.02em; transition: all 0.2s;
+    }
+    .btn-primary { background: var(--accent); color: #000; }
+    .btn-primary:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,0.35); }
+    .btn-outline { border: 1px solid var(--border2); color: var(--text); background: transparent; }
+    .btn-outline:hover { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); }
+
+    /* Profile card */
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease 0.32s both;
+      position: relative;
+    }
+    .hero-card-top {
+      background: linear-gradient(135deg, rgba(34,211,165,0.15), rgba(79,142,247,0.1));
+      padding: 40px 32px 32px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .profile-img-wrap {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      padding: 3px;
+      position: relative;
+    }
+    .profile-img-wrap img {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile-initials {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      background: var(--bg3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 38px; font-weight: 900; color: var(--accent);
+    }
+    .status-badge {
+      position: absolute; bottom: 4px; right: 4px;
+      width: 20px; height: 20px;
+      background: #22c55e; border: 2px solid var(--surface);
+      border-radius: 50%;
+    }
+    .hc-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .hc-role { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+    .hc-location {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--muted);
+      background: rgba(255,255,255,0.06); padding: 4px 12px; border-radius: 20px;
+    }
+    .hero-card-stats {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      padding: 20px 16px;
+    }
+    .hero-card-stats .stat {
+      text-align: center; padding: 8px 0;
+    }
+    .hero-card-stats .stat + .stat {
+      border-left: 1px solid var(--border);
+    }
+    .stat-n { font-family: var(--font-mono); font-size: 22px; color: var(--accent); font-weight: 500; }
+    .stat-l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+    .hero-card-socials {
+      display: flex; justify-content: center; gap: 10px;
+      padding: 16px; border-top: 1px solid var(--border);
+    }
+
+    /* === SOCIAL ICONS — real brand colors === */
+    .social-ico {
+      width: 36px; height: 36px;
+      border-radius: 8px; border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; transition: all 0.2s;
+      font-size: 18px; color: var(--muted);
+      position: relative;
+    }
+    /* default idle: subtle muted */
+    .social-ico iconify-icon { transition: color 0.2s; }
+
+    /* GitHub */
+    .social-ico.soc-github { color: var(--muted); }
+    .social-ico.soc-github:hover {
+      color: var(--github-color);
+      border-color: rgba(240,240,240,0.4);
+      background: rgba(240,240,240,0.08);
+      transform: translateY(-2px);
+    }
+    /* X / Twitter */
+    .social-ico.soc-twitter { color: var(--muted); }
+    .social-ico.soc-twitter:hover {
+      color: var(--twitter-color);
+      border-color: rgba(29,155,240,0.4);
+      background: rgba(29,155,240,0.1);
+      transform: translateY(-2px);
+    }
+    /* Instagram */
+    .social-ico.soc-instagram { color: var(--muted); }
+    .social-ico.soc-instagram:hover {
+      color: var(--instagram-color);
+      border-color: rgba(225,48,108,0.4);
+      background: rgba(225,48,108,0.1);
+      transform: translateY(-2px);
+    }
+    /* WhatsApp */
+    .social-ico.soc-whatsapp { color: var(--muted); }
+    .social-ico.soc-whatsapp:hover {
+      color: var(--whatsapp-color);
+      border-color: rgba(37,211,102,0.4);
+      background: rgba(37,211,102,0.1);
+      transform: translateY(-2px);
+    }
+    /* Facebook */
+    .social-ico.soc-facebook { color: var(--muted); }
+    .social-ico.soc-facebook:hover {
+      color: var(--facebook-color);
+      border-color: rgba(24,119,242,0.4);
+      background: rgba(24,119,242,0.1);
+      transform: translateY(-2px);
+    }
+    /* YouTube */
+    .social-ico.soc-youtube { color: var(--muted); }
+    .social-ico.soc-youtube:hover {
+      color: var(--youtube-color);
+      border-color: rgba(255,0,0,0.4);
+      background: rgba(255,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    /* SECTION HEADINGS */
+    .sec-label { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; }
+    .sec-title { font-family: var(--font-display); font-size: clamp(34px,5vw,54px); font-weight: 700; line-height: 1.05; margin-bottom: 14px; }
+    .sec-sub { color: var(--muted); font-size: 16px; max-width: 560px; line-height: 1.75; margin-bottom: 56px; }
+    .sec-divider { width: 48px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; margin: 16px 0 52px; }
+
+    /* ABOUT */
+    #about { padding: 110px 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 18px; font-size: 15px; }
+    .about-text p strong { color: var(--text); }
+    .about-highlights { display: flex; flex-direction: column; gap: 14px; }
+    .hl-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 22px;
+      display: flex; align-items: flex-start; gap: 14px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .hl-card:hover { border-color: rgba(34,211,165,0.3); background: var(--surface2); }
+    .hl-icon-wrap {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: var(--accent-dim); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .hl-title { font-weight: 700; font-size: 14px; margin-bottom: 3px; }
+    .hl-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* SKILLS */
+    #skills { padding: 110px 0; background: var(--bg2); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .skill-cat {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+    }
+    .skill-cat-title {
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--accent); text-transform: uppercase;
+      letter-spacing: 0.12em; margin-bottom: 18px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .skill-cat-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      color: var(--text); font-size: 12px; font-weight: 600;
+      padding: 5px 12px; border-radius: 4px;
+    }
+    .tag.hi { background: var(--accent-dim); border-color: rgba(34,211,165,0.25); color: var(--accent); }
+    .tag.hi2 { background: var(--accent2-dim); border-color: rgba(79,142,247,0.25); color: var(--accent2); }
+
+    /* PROJECTS */
+    #projects { padding: 110px 0; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; }
+    .project-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      transition: transform 0.22s, border-color 0.22s, box-shadow 0.22s;
+    }
+    .project-card:hover { transform: translateY(-5px); border-color: rgba(34,211,165,0.3); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+    .project-top { padding: 28px; border-bottom: 1px solid var(--border); }
+    .project-num { font-family: var(--font-mono); font-size: 10px; color: var(--faint); margin-bottom: 12px; letter-spacing: 0.1em; }
+    .project-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+    .project-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+    .project-bottom { padding: 20px 28px 24px; }
+    .stack { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+    .s-tag {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--accent2); background: var(--accent2-dim);
+      border: 1px solid rgba(79,142,247,0.2);
+      padding: 3px 9px; border-radius: 3px;
+    }
+    .proj-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--accent); text-decoration: none; font-size: 13px; font-weight: 700;
+      transition: gap 0.2s;
+    }
+    .proj-link:hover { gap: 10px; }
+
+    /* SERVICES */
+    #services { padding: 110px 0; background: var(--bg2); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .service-card {
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 32px 26px; background: var(--bg3);
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .service-card:hover { border-color: rgba(34,211,165,0.3); background: var(--surface); transform: translateY(-3px); }
+    .svc-icon-wrap {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: var(--accent-dim); border: 1px solid rgba(34,211,165,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin-bottom: 18px;
+    }
+    .svc-name { font-weight: 700; font-size: 16px; margin-bottom: 10px; }
+    .svc-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+    /* BLOG */
+    #blog { padding: 110px 0; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+    .blog-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      transition: border-color 0.2s;
+    }
+    .blog-card:hover { border-color: rgba(34,211,165,0.3); }
+    .blog-tag {
+      display: inline-block; font-family: var(--font-mono); font-size: 10px;
+      color: var(--accent2); background: var(--accent2-dim);
+      border: 1px solid rgba(79,142,247,0.2);
+      padding: 3px 10px; border-radius: 3px; margin-bottom: 14px;
+    }
+    .blog-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 10px; line-height: 1.25; }
+    .blog-excerpt { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 18px; }
+    .blog-meta { font-family: var(--font-mono); font-size: 10px; color: var(--faint); }
+
+    /* CONTACT */
+    #contact { padding: 110px 0; background: var(--bg2); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+    .contact-info h3 { font-family: var(--font-display); font-size: 30px; font-weight: 700; margin-bottom: 16px; }
+    .contact-info p { color: var(--muted); font-size: 15px; line-height: 1.85; margin-bottom: 32px; }
+    .contact-links { display: flex; flex-direction: column; gap: 10px; }
+
+    /* === CONTACT LINKS — real brand colors on hover === */
+    .c-link {
+      display: flex; align-items: center; gap: 12px;
+      color: var(--muted); text-decoration: none; font-size: 14px;
+      padding: 12px 14px; border-radius: 10px;
+      border: 1px solid transparent;
+      transition: all 0.22s;
+    }
+    .c-link:hover { color: var(--text); background: var(--surface); border-color: var(--border); }
+    .c-link-icon {
+      width: 38px; height: 38px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+      transition: background 0.22s, color 0.22s;
+    }
+
+    /* Idle state — subtle */
+    .c-icon-email  { background: rgba(234,88,12,0.12);  color: #ea580c; }
+    .c-icon-wa     { background: rgba(37,211,102,0.12); color: #25d366; }
+    .c-icon-github { background: rgba(255,255,255,0.07); color: #c0cad6; }
+    .c-icon-ig     { background: rgba(225,48,108,0.12); color: #e1306c; }
+    .c-icon-twitter{ background: rgba(29,155,240,0.12); color: #1d9bf0; }
+    .c-icon-fb     { background: rgba(24,119,242,0.12); color: #1877f2; }
+    .c-icon-yt     { background: rgba(255,0,0,0.10);    color: #ff0000; }
+
+    /* Hover — saturated brand color */
+    .c-link:hover .c-icon-email  { background: rgba(234,88,12,0.22);  color: #fb923c; }
+    .c-link:hover .c-icon-wa     { background: rgba(37,211,102,0.22); color: #4ade80; }
+    .c-link:hover .c-icon-github { background: rgba(255,255,255,0.12); color: #f0f6fc; }
+    .c-link:hover .c-icon-ig     { background: rgba(225,48,108,0.22); color: #f472b6; }
+    .c-link:hover .c-icon-twitter{ background: rgba(29,155,240,0.22); color: #60a5fa; }
+    .c-link:hover .c-icon-fb     { background: rgba(24,119,242,0.22); color: #60a5fa; }
+    .c-link:hover .c-icon-yt     { background: rgba(255,0,0,0.18);    color: #f87171; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .form-input, .form-textarea {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 9px; color: var(--text);
+      font-family: var(--font-body); font-size: 14px;
+      padding: 12px 16px; outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--faint); }
+    .form-textarea { resize: vertical; min-height: 130px; }
+    .form-submit {
+      background: var(--accent); color: #000; border: none;
+      border-radius: 8px; padding: 14px; font-family: var(--font-body);
+      font-size: 14px; font-weight: 700; cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .form-submit:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,0.35); }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg); border-top: 1px solid var(--border);
+      padding: 40px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px;
+      position: relative; z-index: 1;
+    }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-copy a { color: var(--accent); text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+
+    @media(max-width:900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media(max-width:700px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .container { padding: 0 24px; }
+      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">ronny.dev</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="about.html">More</a></li>
+    <li><a href="#contact" class="nav-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#skills" onclick="toggleMenu()">Skills</a>
+  <a href="#projects" onclick="toggleMenu()">Projects</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#blog" onclick="toggleMenu()">Blog</a>
+  <a href="about.html" onclick="toggleMenu()">Full Profile</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="#contact" onclick="toggleMenu()" style="color:var(--accent);margin-top:8px">Hire Me →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Available for hire &nbsp;·&nbsp; Embu, Kenya
+        </div>
+        <h1 class="hero-name">Ronny<br><em>Mwenda</em></h1>
+        <p class="hero-aka">also known as <span>"Ronny Best"</span></p>
+        <div class="hero-roles">
+          <span class="role-pill active">Frontend Developer</span>
+          <span class="role-pill">Math Teacher</span>
+          <span class="role-pill">Programmer</span>
+        </div>
+        <p class="hero-desc">
+          I build beautiful, fast websites and teach Mathematics &amp; Computer Science.
+          B.Ed Science student at the University of Embu — passionate about making
+          technology and education accessible across Kenya.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">
+            <iconify-icon icon="solar:play-bold" width="14"></iconify-icon>
+            View My Work
+          </a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
+
+      <!-- Profile card -->
+      <div class="hero-card">
+        <div class="hero-card-top">
+          <div class="profile-img-wrap">
+            <img src="profile.jpeg" alt="Ronny Mwenda — Frontend Developer & Math Teacher, Embu Kenya"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="profile-initials" style="display:none">RM</div>
+            <div class="status-badge" title="Available for work"></div>
+          </div>
+          <div class="hc-name">Ronny Mwenda</div>
+          <div class="hc-role">Developer · Teacher · Creator</div>
+          <div class="hc-location">
+            <iconify-icon icon="solar:map-point-bold" width="12"></iconify-icon>
+            Embu County, Kenya
+          </div>
+        </div>
+        <div class="hero-card-stats">
+          <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Sites Built</div></div>
+          <div class="stat"><div class="stat-n">2+</div><div class="stat-l">Yrs Dev</div></div>
+          <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Math Love</div></div>
+        </div>
+        <!-- Hero card social icons with brand colors on hover -->
+        <div class="hero-card-socials">
+          <a href="https://github.com/Ronnym1202" target="_blank" rel="noopener"
+             class="social-ico soc-github" title="GitHub — Ronnym1202">
+            <iconify-icon icon="mdi:github" width="18"></iconify-icon>
+          </a>
+          <a href="https://x.com/ronnymwenda89" target="_blank" rel="noopener"
+             class="social-ico soc-twitter" title="X / Twitter — @ronnymwenda89">
+            <iconify-icon icon="ri:twitter-x-fill" width="16"></iconify-icon>
+          </a>
+          <a href="https://www.instagram.com/ronny25495/" target="_blank" rel="noopener"
+             class="social-ico soc-instagram" title="Instagram — @ronny25495">
+            <iconify-icon icon="mdi:instagram" width="18"></iconify-icon>
+          </a>
+          <a href="https://wa.me/254799188900" target="_blank" rel="noopener"
+             class="social-ico soc-whatsapp" title="WhatsApp — +254 799 188 900">
+            <iconify-icon icon="mdi:whatsapp" width="18"></iconify-icon>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61563410375799" target="_blank" rel="noopener"
+             class="social-ico soc-facebook" title="Facebook — Ronny Mwenda">
+            <iconify-icon icon="mdi:facebook" width="18"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">// 01 · About</p>
+      <h2 class="sec-title">Developer.<br>Teacher. Builder.</h2>
+      <div class="sec-divider"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I'm <strong>Ronny Mwenda</strong> — widely known online as <strong>"Ronny Best"</strong> —
+          a frontend web developer and educator from <strong>Embu County, Kenya</strong>.
+          I combine a love of clean code with a passion for teaching.
+        </p>
+        <p>
+          Currently pursuing a <strong>Bachelor of Education (Science)</strong> at the
+          <strong>University of Embu</strong>, majoring in Computer Science and Mathematics.
+          My goal is to bridge the gap between technology and education in Kenya.
+        </p>
+        <p>
+          I've successfully built and deployed <strong>3 live websites</strong> including a dedicated
+          mathematics resource site, and I'm constantly expanding my frontend skills —
+          from responsive layouts to performance-optimised, SEO-ready web experiences.
+        </p>
+        <p>
+          When I'm not coding, I'm teaching mathematics, mentoring students, or exploring
+          how technology can solve real-world problems across East Africa.
+        </p>
+        <br>
+        <a href="about.html" class="btn btn-outline" style="display:inline-flex">Read Full Profile →</a>
+      </div>
+      <div class="about-highlights reveal">
+        <div class="hl-card">
+          <div class="hl-icon-wrap">🎓</div>
+          <div>
+            <div class="hl-title">University of Embu</div>
+            <div class="hl-desc">B.Ed Science — Computer Science &amp; Mathematics (In Progress)</div>
+          </div>
+        </div>
+        <div class="hl-card">
+          <div class="hl-icon-wrap">💻</div>
+          <div>
+            <div class="hl-title">Frontend Developer</div>
+            <div class="hl-desc">3 live sites deployed. Clean UI, performance &amp; SEO-optimised builds.</div>
+          </div>
+        </div>
+        <div class="hl-card">
+          <div class="hl-icon-wrap">📐</div>
+          <div>
+            <div class="hl-title">Math Specialist</div>
+            <div class="hl-desc">Teaching Mathematics. Creator of bestronny.netlify.app — free math resources.</div>
+          </div>
+        </div>
+        <div class="hl-card">
+          <div class="hl-icon-wrap">📍</div>
+          <div>
+            <div class="hl-title">Based in Embu, Kenya</div>
+            <div class="hl-desc">Available for remote work &amp; local collaborations across Kenya.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">// 02 · Skills</p>
+      <h2 class="sec-title">What I Work With</h2>
+      <p class="sec-sub">My technical toolkit, built through real projects and constant learning.</p>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-cat">
+        <div class="skill-cat-title">Frontend</div>
+        <div class="tags">
+          <span class="tag hi">HTML5</span>
+          <span class="tag hi">CSS3</span>
+          <span class="tag hi">JavaScript</span>
+          <span class="tag">Responsive Design</span>
+          <span class="tag">SEO Optimisation</span>
+          <span class="tag">Netlify Deploy</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Education</div>
+        <div class="tags">
+          <span class="tag hi">Mathematics</span>
+          <span class="tag hi">Computer Science</span>
+          <span class="tag">Curriculum Design</span>
+          <span class="tag">Student Mentoring</span>
+          <span class="tag">E-learning</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Tools &amp; Platforms</div>
+        <div class="tags">
+          <span class="tag hi2">Git &amp; GitHub</span>
+          <span class="tag hi2">VS Code</span>
+          <span class="tag">Netlify</span>
+          <span class="tag">Google Search Console</span>
+          <span class="tag">Google Analytics</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Currently Learning</div>
+        <div class="tags">
+          <span class="tag">React.js</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Python</span>
+          <span class="tag">Databases</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">// 03 · Projects</p>
+      <h2 class="sec-title">Live Projects</h2>
+      <p class="sec-sub">Three production websites built, deployed, and running — real work, real impact.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-num">PROJECT 01 — FLAGSHIP</div>
+          <h3 class="project-title">Ronny Best Math</h3>
+          <p class="project-desc">My main mathematics resource website. Covers topics from secondary to university level with clear explanations, worked examples, and problem solving guides.</p>
+        </div>
+        <div class="project-bottom">
+          <div class="stack">
+            <span class="s-tag">HTML5</span>
+            <span class="s-tag">CSS3</span>
+            <span class="s-tag">JavaScript</span>
+            <span class="s-tag">Netlify</span>
+          </div>
+          <a href="https://bestronny.netlify.app" target="_blank" rel="noopener" class="proj-link">Visit Site →</a>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-num">PROJECT 02</div>
+          <h3 class="project-title">Ronny Portfolio</h3>
+          <p class="project-desc">My professional portfolio site — showcasing my skills, projects, and services as a frontend developer and mathematics educator based in Kenya.</p>
+        </div>
+        <div class="project-bottom">
+          <div class="stack">
+            <span class="s-tag">HTML5</span>
+            <span class="s-tag">CSS3</span>
+            <span class="s-tag">JavaScript</span>
+            <span class="s-tag">Netlify</span>
+            <span class="s-tag">SEO</span>
+          </div>
+          <a href="https://ronnymwenda.netlify.app" target="_blank" rel="noopener" class="proj-link">Visit Site →</a>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-num">PROJECT 03</div>
+          <h3 class="project-title">Ronny Games Hub</h3>
+          <p class="project-desc">A fun, interactive games platform built for Kenyan audiences — clean design, smooth UX, and engaging browser-based gaming experiences.</p>
+        </div>
+        <div class="project-bottom">
+          <div class="stack">
+            <span class="s-tag">HTML5</span>
+            <span class="s-tag">CSS3</span>
+            <span class="s-tag">JavaScript</span>
+            <span class="s-tag">Netlify</span>
+          </div>
+          <a href="https://ronnygame.netlify.app" target="_blank" rel="noopener" class="proj-link">Visit Site →</a>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-top">
+          <div class="project-num">PROJECT 04</div>
+          <h3 class="project-title">Sanguine.co</h3>
+          <p class="project-desc">A creative digital project exploring community, storytelling, and culture through a modern, visually engaging web experience built for East African audiences.</p>
+        </div>
+        <div class="project-bottom">
+          <div class="stack">
+            <span class="s-tag">HTML5</span>
+            <span class="s-tag">CSS3</span>
+            <span class="s-tag">JavaScript</span>
+            <span class="s-tag">Netlify</span>
+          </div>
+          <a href="https://themwends.netlify.app" target="_blank" rel="noopener" class="proj-link">Visit Site →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">// 04 · Services</p>
+      <h2 class="sec-title">What I Offer</h2>
+      <p class="sec-sub">Professional services available for hire. Let's build something great together.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="svc-icon-wrap">
+          <iconify-icon icon="solar:monitor-smartphone-bold" width="26" style="color:var(--accent)"></iconify-icon>
+        </div>
+        <div class="svc-name">Website Development</div>
+        <div class="svc-desc">Custom, responsive websites built from scratch. Fast-loading, mobile-first, and SEO-ready for Kenyan and global audiences.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="svc-icon-wrap">
+          <iconify-icon icon="solar:calculator-bold" width="26" style="color:var(--accent)"></iconify-icon>
+        </div>
+        <div class="svc-name">Math Tutoring</div>
+        <div class="svc-desc">Secondary and university-level mathematics tutoring. Online and in-person sessions. KCSE and university exam preparation.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="svc-icon-wrap">
+          <iconify-icon icon="solar:code-bold" width="26" style="color:var(--accent)"></iconify-icon>
+        </div>
+        <div class="svc-name">Programming Mentorship</div>
+        <div class="svc-desc">Guiding beginners through HTML, CSS, JavaScript and web fundamentals. Structured learning paths for aspiring Kenyan developers.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="svc-icon-wrap">
+          <iconify-icon icon="solar:chart-2-bold" width="26" style="color:var(--accent)"></iconify-icon>
+        </div>
+        <div class="svc-name">SEO &amp; Google Setup</div>
+        <div class="svc-desc">Search Console setup, meta tags, sitemap generation, structured data and analytics configuration for your website.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">// 05 · Blog</p>
+      <h2 class="sec-title">Latest Articles</h2>
+      <p class="sec-sub">Writing about mathematics, web development, and technology in Kenya.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <span class="blog-tag">Mathematics</span>
+        <h3 class="blog-title">Understanding Quadratic Equations: A Visual Approach</h3>
+        <p class="blog-excerpt">Breaking down the quadratic formula step by step — why it works, how to use it, and the mistakes students most commonly make.</p>
+        <div class="blog-meta">Ronny Mwenda &nbsp;·&nbsp; Coming Soon</div>
+      </div>
+      <div class="blog-card reveal">
+        <span class="blog-tag">Web Development</span>
+        <h3 class="blog-title">How I Built My First Website with HTML &amp; CSS</h3>
+        <p class="blog-excerpt">My journey from zero to a live website on Netlify — the lessons, mistakes, and breakthroughs along the way.</p>
+        <div class="blog-meta">Ronny Mwenda &nbsp;·&nbsp; Coming Soon</div>
+      </div>
+      <div class="blog-card reveal">
+        <span class="blog-tag">Tech in Kenya</span>
+        <h3 class="blog-title">Why Every Student in Embu Should Learn to Code</h3>
+        <p class="blog-excerpt">The opportunity that web development represents for young people in Embu County and across Kenya in 2025 and beyond.</p>
+        <div class="blog-meta">Ronny Mwenda &nbsp;·&nbsp; Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">// 06 · Contact</p>
+      <h2 class="sec-title">Let's Work Together</h2>
+      <p class="sec-sub">Available for website projects, math tutoring, and programming mentorship. Get in touch below.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Reach Out Directly</h3>
+        <p>Whether you need a website built, a math tutor, or just want to connect — I'd love to hear from you. Based in Embu, Kenya. Available remotely across East Africa.</p>
+        <div class="contact-links">
+          <a href="mailto:ronnymwenda89@gmail.com" class="c-link">
+            <div class="c-link-icon c-icon-email">
+              <iconify-icon icon="mdi:email" width="18"></iconify-icon>
+            </div>
+            ronnymwenda89@gmail.com
+          </a>
+          <a href="https://wa.me/254799188900" target="_blank" rel="noopener" class="c-link">
+            <div class="c-link-icon c-icon-wa">
+              <iconify-icon icon="mdi:whatsapp" width="20"></iconify-icon>
+            </div>
+            WhatsApp: +254 799 188 900
+          </a>
+          <a href="https://github.com/Ronnym1202" target="_blank" rel="noopener" class="c-link">
+            <div class="c-link-icon c-icon-github">
+              <iconify-icon icon="mdi:github" width="20"></iconify-icon>
+            </div>
+            github.com/Ronnym1202
+          </a>
+          <a href="https://www.instagram.com/ronny25495/" target="_blank" rel="noopener" class="c-link">
+            <div class="c-link-icon c-icon-ig">
+              <iconify-icon icon="mdi:instagram" width="20"></iconify-icon>
+            </div>
+            @ronny25495 on Instagram
+          </a>
+          <a href="https://x.com/ronnymwenda89" target="_blank" rel="noopener" class="c-link">
+            <div class="c-link-icon c-icon-twitter">
+              <iconify-icon icon="ri:twitter-x-fill" width="17"></iconify-icon>
+            </div>
+            @ronnymwenda89 on X
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61563410375799" target="_blank" rel="noopener" class="c-link">
+            <div class="c-link-icon c-icon-fb">
+              <iconify-icon icon="mdi:facebook" width="20"></iconify-icon>
+            </div>
+            Ronny Mwenda on Facebook
+          </a>
+          <a href="https://www.youtube.com/@RonnyBestMath" target="_blank" rel="noopener" class="c-link">
+            <div class="c-link-icon c-icon-yt">
+              <iconify-icon icon="mdi:youtube" width="20"></iconify-icon>
+            </div>
+            YouTube — Ronny Best Math
+          </a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="contact-form">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" placeholder="John Kamau" id="cName"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="john@example.com" id="cEmail"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-input" placeholder="Website project / Tutoring / Mentorship" id="cSubject"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Tell me about your project or what you need help with..." id="cMessage"></textarea>
+          </div>
+          <button class="form-submit" onclick="handleContact()">
+            Send Message &nbsp;→
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">
+    © 2025 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya ·
+    Built with ❤️ · <a href="https://bestronny.netlify.app" target="_blank" rel="noopener">bestronny.netlify.app</a>
+  </div>
+  <div class="footer-links">
+    <a href="about.html">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#blog">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function handleContact() {
+    const n = document.getElementById('cName').value.trim();
+    const e = document.getElementById('cEmail').value.trim();
+    const s = document.getElementById('cSubject').value.trim();
+    const m = document.getElementById('cMessage').value.trim();
+    if(!n || !e || !m) { alert('Please fill in your name, email and message.'); return; }
+    const mailto = `mailto:ronnymwenda89@gmail.com?subject=${encodeURIComponent(s||'Website Enquiry')}&body=${encodeURIComponent('Name: '+n+'\nEmail: '+e+'\n\n'+m)}`;
+    window.location.href = mailto;
+  }
+
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if(window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.style.color = a.getAttribute('href') === '#'+cur ? 'var(--accent)' : '';
+    });
+  });
+</script>
+</body>
+</html>
