@@ -5,31 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Ronny Mwenda | Software Developer, Math Teacher & Web Developer – Embu, Kenya</title>
-  <link rel="icon" type="image/jpeg" href="profile.jpeg">
   <meta name="description" content="Ronny Mwenda (Ronny Best) – Frontend Web Developer, Software Developer & Mathematics Teacher from Embu County, Kenya. B.Ed Science student at University of Embu. Available for hire." />
   <meta name="keywords" content="Ronny Mwenda, Ronny Best, Ronny Best Math, web developer Embu Kenya, frontend developer Kenya, mathematics teacher Kenya, software developer Embu" />
   <meta name="author" content="Ronny Mwenda" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ronnymwenda.netlify.app/" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ronny Mwenda | Developer & Math Teacher – Embu, Kenya" />
-  <meta property="og:description" content="Frontend Web Developer, Math Teacher & Programming enthusiast from Embu, Kenya." />
-  <meta property="og:url" content="https://ronnymwenda.netlify.app/" />
-  <meta property="og:image" content="https://ronnymwenda.netlify.app/profile.jpeg" />
+  <!-- ✅ FAVICON — uses your profile.jpeg -->
+  <link rel="icon" type="image/jpeg" href="profile.jpeg" />
+  <link rel="apple-touch-icon" href="profile.jpeg" />
+  <link rel="shortcut icon" href="profile.jpeg" />
+
+  <!-- ✅ OPEN GRAPH — your profile shows when shared on WhatsApp/Facebook/Twitter -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Ronny Mwenda | Developer & Math Teacher – Embu, Kenya" />
+  <meta property="og:description" content="Frontend Web Developer, Math Teacher & Programming enthusiast from Embu, Kenya. Available for hire." />
+  <meta property="og:url"         content="https://ronnymwenda.netlify.app/" />
+  <meta property="og:image"       content="https://ronnymwenda.netlify.app/profile.jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="en_KE" />
+  <meta property="og:image:alt"   content="Ronny Mwenda — Frontend Developer & Math Teacher, Embu Kenya" />
+  <meta property="og:locale"      content="en_KE" />
+  <meta property="og:site_name"   content="Ronny Mwenda Portfolio" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ronny Mwenda | Developer & Math Teacher" />
+  <!-- ✅ TWITTER CARD — your profile shows on X/Twitter -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Ronny Mwenda | Developer & Math Teacher" />
   <meta name="twitter:description" content="Frontend Web Developer & Mathematics Teacher from Embu, Kenya." />
-  <meta name="twitter:image" content="https://ronnymwenda.netlify.app/profile.jpeg" />
-  <meta name="twitter:site" content="@ronnymwenda89" />
-  <meta name="twitter:creator" content="@ronnymwenda89" />
+  <meta name="twitter:image"       content="https://ronnymwenda.netlify.app/profile.jpeg" />
+  <meta name="twitter:image:alt"   content="Ronny Mwenda — Frontend Developer & Math Teacher" />
+  <meta name="twitter:site"        content="@ronnymwenda89" />
+  <meta name="twitter:creator"     content="@ronnymwenda89" />
 
+  <!-- ✅ STRUCTURED DATA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,6 +48,8 @@
     "description": "Frontend Web Developer and Mathematics Teacher from Embu County, Kenya.",
     "url": "https://ronnymwenda.netlify.app",
     "image": "https://ronnymwenda.netlify.app/profile.jpeg",
+    "email": "ronnymwenda89@gmail.com",
+    "telephone": "+254799188900",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Embu",
@@ -53,55 +63,45 @@
     },
     "sameAs": [
       "https://bestronny.netlify.app",
-      "https://ronnym.netlify.app",
+      "https://ronnygame.netlify.app",
       "https://themwends.netlify.app",
       "https://www.instagram.com/ronny25495/",
       "https://x.com/ronnymwenda89",
       "https://www.facebook.com/profile.php?id=61563410375799",
-      "https://github.com/Ronnym1202"
+      "https://github.com/Ronnym1202",
+      "https://www.youtube.com/@RonnyBestMath"
     ]
   }
   </script>
-
-  <!-- SVG Icons via Iconify CDN -->
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
+    /* ══════════════════════════════════════════
+       RESET & ROOT
+    ══════════════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #080c10;
-      --bg2: #0d1117;
-      --bg3: #131920;
-      --surface: #1a2230;
+      --bg:       #080c10;
+      --bg2:      #0d1117;
+      --bg3:      #131920;
+      --surface:  #1a2230;
       --surface2: #1e2a3a;
-      --border: rgba(255,255,255,0.07);
-      --border2: rgba(255,255,255,0.12);
-      --accent: #22d3a5;
-      --accent-dim: rgba(34,211,165,0.12);
-      --accent2: #4f8ef7;
-      --accent2-dim: rgba(79,142,247,0.1);
-      --gold: #f5c842;
-      --text: #e8edf2;
-      --muted: #7a8899;
-      --faint: #2e3d4f;
+      --border:   rgba(255,255,255,0.07);
+      --border2:  rgba(255,255,255,0.14);
+      --accent:   #22d3a5;
+      --accent-dim: rgba(34,211,165,0.13);
+      --accent2:  #4f8ef7;
+      --accent2-dim: rgba(79,142,247,0.11);
+      --text:     #edf2f7;
+      --muted:    #8899aa;
+      --faint:    #2e3d4f;
       --font-display: 'Fraunces', serif;
-      --font-body: 'DM Sans', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --font-body:    'DM Sans', sans-serif;
+      --font-mono:    'JetBrains Mono', monospace;
       --radius: 12px;
-      --shadow: 0 4px 24px rgba(0,0,0,0.4);
-
-      /* Brand colors */
-      --github-color: #f0f0f0;
-      --twitter-color: #1d9bf0;
-      --instagram-color: #e1306c;
-      --whatsapp-color: #25d366;
-      --facebook-color: #1877f2;
-      --youtube-color: #ff0000;
-      --email-color: #ea580c;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -114,74 +114,60 @@
     }
     ::selection { background: var(--accent); color: #000; }
 
-    /* Grid bg */
+    /* Grid background */
     body::before {
-      content: '';
-      position: fixed; inset: 0;
+      content: ''; position: fixed; inset: 0;
       background-image:
-        linear-gradient(rgba(34,211,165,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(34,211,165,0.025) 1px, transparent 1px);
+        linear-gradient(rgba(34,211,165,0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34,211,165,0.028) 1px, transparent 1px);
       background-size: 64px 64px;
       pointer-events: none; z-index: 0;
     }
 
     /* Glow orbs */
-    .orb {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(100px);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .orb-1 { width: 500px; height: 500px; background: rgba(34,211,165,0.06); top: -100px; right: -100px; }
-    .orb-2 { width: 400px; height: 400px; background: rgba(79,142,247,0.05); bottom: 20%; left: -100px; }
+    .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; }
+    .orb-1 { width: 600px; height: 600px; background: rgba(34,211,165,0.07); top: -150px; right: -150px; }
+    .orb-2 { width: 500px; height: 500px; background: rgba(79,142,247,0.06); bottom: 15%; left: -150px; }
 
-    /* NAV */
+    /* ══════════════════════════════════════════
+       NAVIGATION
+    ══════════════════════════════════════════ */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      padding: 0 48px;
-      height: 68px;
+      padding: 0 48px; height: 68px;
       display: flex; align-items: center; justify-content: space-between;
-      background: rgba(8,12,16,0.9);
-      backdrop-filter: blur(16px);
+      background: rgba(8,12,16,0.93);
+      backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
     .nav-logo {
-      font-family: var(--font-mono);
-      font-size: 14px; color: var(--accent);
-      text-decoration: none; letter-spacing: 0.06em;
+      font-family: var(--font-mono); font-size: 14px;
+      color: var(--accent); text-decoration: none;
+      letter-spacing: 0.06em;
       display: flex; align-items: center; gap: 8px;
     }
     .nav-logo::before {
-      content: '';
-      width: 8px; height: 8px;
-      background: var(--accent);
-      border-radius: 50%;
-      animation: pulse 2s ease infinite;
+      content: ''; width: 8px; height: 8px;
+      background: var(--accent); border-radius: 50%;
+      animation: pulse-dot 2s ease infinite;
     }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
-    .nav-links { display: flex; gap: 4px; list-style: none; }
+    @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.45;transform:scale(.75)} }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
     .nav-links a {
       color: var(--muted); text-decoration: none;
       font-size: 13px; font-weight: 600;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      padding: 6px 14px; border-radius: 6px;
-      transition: color 0.2s, background 0.2s;
+      letter-spacing: .05em; text-transform: uppercase;
+      padding: 6px 13px; border-radius: 6px;
+      transition: color .2s, background .2s;
     }
-    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
-    .nav-hire {
-      background: var(--accent) !important;
-      color: #000 !important;
-      font-weight: 700 !important;
-    }
-    .nav-hire:hover { background: #1bbf93 !important; }
-
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,.05); }
+    .nav-hire { background: var(--accent) !important; color: #000 !important; font-weight: 700 !important; border-radius: 6px; }
+    .nav-hire:hover { background: #1bbf93 !important; color: #000 !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
     .mobile-nav {
       display: none; position: fixed; inset: 0; z-index: 199;
-      background: var(--bg2);
-      padding: 88px 32px 40px;
+      background: var(--bg2); padding: 88px 32px 40px;
       flex-direction: column; gap: 8px;
       border-right: 1px solid var(--border);
     }
@@ -190,219 +176,179 @@
       color: var(--text); text-decoration: none;
       font-size: 20px; font-weight: 600;
       padding: 14px 16px; border-radius: 8px;
-      transition: background 0.2s, color 0.2s;
+      transition: background .2s, color .2s;
     }
     .mobile-nav a:hover { background: var(--surface); color: var(--accent); }
 
-    /* BASE */
+    /* ══════════════════════════════════════════
+       LAYOUT
+    ══════════════════════════════════════════ */
     section { position: relative; z-index: 1; }
     .container { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
 
-    /* HERO */
-    #hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 120px 0 80px;
-    }
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 440px;
-      gap: 64px; align-items: center;
-    }
+    /* ══════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════ */
+    #hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 80px; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 440px; gap: 64px; align-items: center; }
+
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--accent-dim);
-      border: 1px solid rgba(34,211,165,0.25);
-      color: var(--accent);
-      font-family: var(--font-mono); font-size: 11px;
-      padding: 5px 14px; border-radius: 40px;
-      margin-bottom: 28px;
-      animation: fadeUp 0.5s ease both;
+      background: var(--accent-dim); border: 1px solid rgba(34,211,165,.28);
+      color: var(--accent); font-family: var(--font-mono); font-size: 11px;
+      padding: 5px 14px; border-radius: 40px; margin-bottom: 28px;
+      animation: fadeUp .5s ease both;
     }
-    .hero-badge .dot { width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite; }
+    .hero-badge .dot { width:6px; height:6px; background:var(--accent); border-radius:50%; animation:pulse-dot 2s infinite; }
+
     h1.hero-name {
       font-family: var(--font-display);
-      font-size: clamp(52px, 7vw, 88px);
-      font-weight: 900;
-      line-height: 0.95;
-      letter-spacing: -2px;
+      font-size: clamp(52px,7vw,88px);
+      font-weight: 900; line-height: .95; letter-spacing: -2px;
       margin-bottom: 6px;
-      animation: fadeUp 0.5s ease 0.08s both;
+      animation: fadeUp .5s ease .08s both;
     }
     h1.hero-name em { color: var(--accent); font-style: italic; font-weight: 300; }
-    .hero-aka {
-      font-family: var(--font-mono); font-size: 12px;
-      color: var(--muted); margin-bottom: 22px;
-      animation: fadeUp 0.5s ease 0.14s both;
-    }
+
+    .hero-aka { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-bottom: 22px; animation: fadeUp .5s ease .14s both; }
     .hero-aka span { color: var(--accent2); }
-    .hero-roles {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin-bottom: 28px;
-      animation: fadeUp 0.5s ease 0.18s both;
-    }
-    .role-pill {
-      background: var(--surface);
-      border: 1px solid var(--border2);
-      color: var(--text); font-size: 13px; font-weight: 600;
-      padding: 6px 16px; border-radius: 40px;
-    }
-    .role-pill.active { background: var(--accent-dim); border-color: rgba(34,211,165,0.3); color: var(--accent); }
-    .hero-desc {
-      font-size: 15px; color: var(--muted); line-height: 1.85;
-      max-width: 500px; margin-bottom: 40px;
-      animation: fadeUp 0.5s ease 0.22s both;
-    }
-    .hero-btns {
-      display: flex; gap: 14px; flex-wrap: wrap;
-      animation: fadeUp 0.5s ease 0.28s both;
-    }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 28px; border-radius: 8px;
-      text-decoration: none; font-weight: 700; font-size: 14px;
-      letter-spacing: 0.02em; transition: all 0.2s;
-    }
+
+    .hero-roles { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; animation: fadeUp .5s ease .18s both; }
+    .role-pill { background: var(--surface); border: 1px solid var(--border2); color: var(--text); font-size: 13px; font-weight: 600; padding: 6px 16px; border-radius: 40px; }
+    .role-pill.active { background: var(--accent-dim); border-color: rgba(34,211,165,.35); color: var(--accent); }
+
+    .hero-desc { font-size: 15px; color: var(--muted); line-height: 1.85; max-width: 500px; margin-bottom: 40px; animation: fadeUp .5s ease .22s both; }
+
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp .5s ease .28s both; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: .02em; transition: all .2s; }
     .btn-primary { background: var(--accent); color: #000; }
-    .btn-primary:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,0.35); }
+    .btn-primary:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,.38); }
     .btn-outline { border: 1px solid var(--border2); color: var(--text); background: transparent; }
     .btn-outline:hover { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); }
 
-    /* Profile card */
+    /* ══════════════════════════════════════════
+       PROFILE CARD
+    ══════════════════════════════════════════ */
     .hero-card {
-      background: var(--surface);
-      border: 1px solid var(--border2);
-      border-radius: 20px;
-      overflow: hidden;
-      animation: fadeUp 0.5s ease 0.32s both;
-      position: relative;
+      background: var(--surface); border: 1px solid var(--border2);
+      border-radius: 20px; overflow: hidden;
+      animation: fadeUp .5s ease .32s both;
     }
     .hero-card-top {
-      background: linear-gradient(135deg, rgba(34,211,165,0.15), rgba(79,142,247,0.1));
-      padding: 40px 32px 32px;
-      text-align: center;
+      background: linear-gradient(135deg,rgba(34,211,165,.15),rgba(79,142,247,.1));
+      padding: 40px 32px 28px; text-align: center;
       border-bottom: 1px solid var(--border);
     }
     .profile-img-wrap {
-      width: 110px; height: 110px;
-      border-radius: 50%;
+      width: 120px; height: 120px; border-radius: 50%;
       margin: 0 auto 18px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      padding: 3px;
-      position: relative;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      padding: 3px; position: relative;
     }
     .profile-img-wrap img {
-      width: 100%; height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
+      width: 100%; height: 100%; border-radius: 50%;
+      object-fit: cover; object-position: center top;
       display: block;
     }
     .profile-initials {
-      width: 100%; height: 100%;
-      border-radius: 50%;
-      background: var(--bg3);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display);
-      font-size: 38px; font-weight: 900; color: var(--accent);
+      width: 100%; height: 100%; border-radius: 50%; background: var(--bg3);
+      display: none; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 38px; font-weight: 900; color: var(--accent);
     }
     .status-badge {
-      position: absolute; bottom: 4px; right: 4px;
-      width: 20px; height: 20px;
-      background: #22c55e; border: 2px solid var(--surface);
+      position: absolute; bottom: 5px; right: 5px;
+      width: 22px; height: 22px;
+      background: #22c55e; border: 3px solid var(--surface);
       border-radius: 50%;
     }
-    .hc-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .hc-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 4px; color: var(--text); }
     .hc-role { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
     .hc-location {
-      display: inline-flex; align-items: center; gap: 6px;
+      display: inline-flex; align-items: center; gap: 5px;
       font-size: 12px; color: var(--muted);
-      background: rgba(255,255,255,0.06); padding: 4px 12px; border-radius: 20px;
+      background: rgba(255,255,255,.06); padding: 4px 12px; border-radius: 20px;
     }
-    .hero-card-stats {
-      display: grid; grid-template-columns: 1fr 1fr 1fr;
-      padding: 20px 16px;
-    }
-    .hero-card-stats .stat {
-      text-align: center; padding: 8px 0;
-    }
-    .hero-card-stats .stat + .stat {
-      border-left: 1px solid var(--border);
-    }
+    .hero-card-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 18px 12px; }
+    .hero-card-stats .stat { text-align: center; padding: 8px 0; }
+    .hero-card-stats .stat + .stat { border-left: 1px solid var(--border); }
     .stat-n { font-family: var(--font-mono); font-size: 22px; color: var(--accent); font-weight: 500; }
-    .stat-l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 2px; }
+    .stat-l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-top: 2px; }
+
+    /* ══════════════════════════════════════════
+       SOCIAL ICONS  ← FULLY INLINE SVG, ALWAYS VISIBLE BRAND COLORS
+       No CDN. No class color tricks. Pure background + white icon.
+    ══════════════════════════════════════════ */
     .hero-card-socials {
-      display: flex; justify-content: center; gap: 10px;
-      padding: 16px; border-top: 1px solid var(--border);
+      display: flex; justify-content: center;
+      gap: 10px; padding: 16px 12px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
     }
 
-    /* === SOCIAL ICONS — real brand colors === */
-    .social-ico {
-      width: 36px; height: 36px;
-      border-radius: 8px; border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      text-decoration: none; transition: all 0.2s;
-      font-size: 18px; color: var(--muted);
-      position: relative;
+    /* Base icon button */
+    .si {
+      width: 42px; height: 42px; border-radius: 11px;
+      display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s, filter .2s;
+      flex-shrink: 0;
     }
-    /* default idle: subtle muted */
-    .social-ico iconify-icon { transition: color 0.2s; }
+    .si:hover { transform: translateY(-4px) scale(1.1); box-shadow: 0 8px 22px rgba(0,0,0,.55); filter: brightness(1.12); }
+    .si svg { width: 22px; height: 22px; display: block; }
+    /* All SVG paths = white */
+    .si svg path, .si svg rect, .si svg circle, .si svg polygon { fill: #ffffff; }
 
-    /* GitHub */
-    .social-ico.soc-github { color: var(--muted); }
-    .social-ico.soc-github:hover {
-      color: var(--github-color);
-      border-color: rgba(240,240,240,0.4);
-      background: rgba(240,240,240,0.08);
-      transform: translateY(-2px);
-    }
-    /* X / Twitter */
-    .social-ico.soc-twitter { color: var(--muted); }
-    .social-ico.soc-twitter:hover {
-      color: var(--twitter-color);
-      border-color: rgba(29,155,240,0.4);
-      background: rgba(29,155,240,0.1);
-      transform: translateY(-2px);
-    }
-    /* Instagram */
-    .social-ico.soc-instagram { color: var(--muted); }
-    .social-ico.soc-instagram:hover {
-      color: var(--instagram-color);
-      border-color: rgba(225,48,108,0.4);
-      background: rgba(225,48,108,0.1);
-      transform: translateY(-2px);
-    }
-    /* WhatsApp */
-    .social-ico.soc-whatsapp { color: var(--muted); }
-    .social-ico.soc-whatsapp:hover {
-      color: var(--whatsapp-color);
-      border-color: rgba(37,211,102,0.4);
-      background: rgba(37,211,102,0.1);
-      transform: translateY(-2px);
-    }
-    /* Facebook */
-    .social-ico.soc-facebook { color: var(--muted); }
-    .social-ico.soc-facebook:hover {
-      color: var(--facebook-color);
-      border-color: rgba(24,119,242,0.4);
-      background: rgba(24,119,242,0.1);
-      transform: translateY(-2px);
-    }
-    /* YouTube */
-    .social-ico.soc-youtube { color: var(--muted); }
-    .social-ico.soc-youtube:hover {
-      color: var(--youtube-color);
-      border-color: rgba(255,0,0,0.4);
-      background: rgba(255,0,0,0.08);
-      transform: translateY(-2px);
-    }
+    /* Brand backgrounds */
+    .si-gh  { background: #24292e; }
+    .si-tw  { background: #000000; }
+    .si-ig  { background: radial-gradient(circle at 28% 110%, #fcdf8f 0%, #fbd377 5%, #fa8231 45%, #d7006c 60%, #2b53f5 90%); }
+    .si-wa  { background: #25d366; }
+    .si-fb  { background: #1877f2; }
+    .si-yt  { background: #ff0000; }
+    .si-em  { background: #ea580c; }
+    .si-li  { background: #0a66c2; }
 
-    /* SECTION HEADINGS */
-    .sec-label { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; }
+    /* ══════════════════════════════════════════
+       CONTACT LINKS  (same brand-color treatment)
+    ══════════════════════════════════════════ */
+    .contact-links { display: flex; flex-direction: column; gap: 10px; }
+    .c-link {
+      display: flex; align-items: center; gap: 14px;
+      color: var(--text); text-decoration: none; font-size: 14px; font-weight: 500;
+      padding: 14px 16px; border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      transition: all .22s;
+    }
+    .c-link:hover { border-color: rgba(255,255,255,.22); transform: translateX(5px); background: var(--surface2); }
+    .c-ico {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .c-ico svg { width: 22px; height: 22px; display: block; }
+    .c-ico svg path, .c-ico svg rect, .c-ico svg circle, .c-ico svg polygon { fill: #ffffff; }
+    .c-ico-gh  { background: #24292e; }
+    .c-ico-tw  { background: #000000; }
+    .c-ico-ig  { background: radial-gradient(circle at 28% 110%, #fcdf8f 0%, #fbd377 5%, #fa8231 45%, #d7006c 60%, #2b53f5 90%); }
+    .c-ico-wa  { background: #25d366; }
+    .c-ico-fb  { background: #1877f2; }
+    .c-ico-yt  { background: #ff0000; }
+    .c-ico-em  { background: #ea580c; }
+    .c-label { display: flex; flex-direction: column; }
+    .c-label strong { font-weight: 700; font-size: 13px; color: var(--text); }
+    .c-label span   { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+    /* ══════════════════════════════════════════
+       SECTION HEADINGS
+    ══════════════════════════════════════════ */
+    .sec-label { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: .2em; text-transform: uppercase; margin-bottom: 10px; }
     .sec-title { font-family: var(--font-display); font-size: clamp(34px,5vw,54px); font-weight: 700; line-height: 1.05; margin-bottom: 14px; }
-    .sec-sub { color: var(--muted); font-size: 16px; max-width: 560px; line-height: 1.75; margin-bottom: 56px; }
-    .sec-divider { width: 48px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; margin: 16px 0 52px; }
+    .sec-sub   { color: var(--muted); font-size: 16px; max-width: 560px; line-height: 1.75; margin-bottom: 52px; }
+    .sec-divider { width: 48px; height: 3px; background: linear-gradient(90deg,var(--accent),var(--accent2)); border-radius: 2px; margin: 16px 0 52px; }
 
-    /* ABOUT */
+    /* ══════════════════════════════════════════
+       ABOUT
+    ══════════════════════════════════════════ */
     #about { padding: 110px 0; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
     .about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 18px; font-size: 15px; }
@@ -412,170 +358,107 @@
       background: var(--surface); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 20px 22px;
       display: flex; align-items: flex-start; gap: 14px;
-      transition: border-color 0.2s, background 0.2s;
+      transition: border-color .2s, background .2s;
     }
-    .hl-card:hover { border-color: rgba(34,211,165,0.3); background: var(--surface2); }
-    .hl-icon-wrap {
-      width: 42px; height: 42px; flex-shrink: 0;
-      background: var(--accent-dim); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-    }
-    .hl-title { font-weight: 700; font-size: 14px; margin-bottom: 3px; }
-    .hl-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .hl-card:hover { border-color: rgba(34,211,165,.32); background: var(--surface2); }
+    .hl-icon { width: 44px; height: 44px; flex-shrink: 0; background: var(--accent-dim); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+    .hl-title { font-weight: 700; font-size: 14px; margin-bottom: 3px; color: var(--text); }
+    .hl-desc  { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
-    /* SKILLS */
+    /* ══════════════════════════════════════════
+       SKILLS
+    ══════════════════════════════════════════ */
     #skills { padding: 110px 0; background: var(--bg2); }
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .skill-cat {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 28px;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 20px; }
+    .skill-cat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
     .skill-cat-title {
-      font-family: var(--font-mono); font-size: 11px;
-      color: var(--accent); text-transform: uppercase;
-      letter-spacing: 0.12em; margin-bottom: 18px;
+      font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+      text-transform: uppercase; letter-spacing: .12em; margin-bottom: 18px;
       display: flex; align-items: center; gap: 8px;
     }
-    .skill-cat-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .skill-cat-title::after { content:''; flex:1; height:1px; background:var(--border); }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .tag {
-      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
-      color: var(--text); font-size: 12px; font-weight: 600;
-      padding: 5px 12px; border-radius: 4px;
-    }
-    .tag.hi { background: var(--accent-dim); border-color: rgba(34,211,165,0.25); color: var(--accent); }
-    .tag.hi2 { background: var(--accent2-dim); border-color: rgba(79,142,247,0.25); color: var(--accent2); }
+    .tag  { background: rgba(255,255,255,.05); border: 1px solid var(--border); color: var(--text); font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 4px; }
+    .tag.hi  { background: var(--accent-dim); border-color: rgba(34,211,165,.28); color: var(--accent); }
+    .tag.hi2 { background: var(--accent2-dim); border-color: rgba(79,142,247,.28); color: var(--accent2); }
 
-    /* PROJECTS */
+    /* ══════════════════════════════════════════
+       PROJECTS
+    ══════════════════════════════════════════ */
     #projects { padding: 110px 0; }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap: 22px; }
     .project-card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 16px; overflow: hidden;
-      transition: transform 0.22s, border-color 0.22s, box-shadow 0.22s;
+      transition: transform .22s, border-color .22s, box-shadow .22s;
     }
-    .project-card:hover { transform: translateY(-5px); border-color: rgba(34,211,165,0.3); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+    .project-card:hover { transform: translateY(-5px); border-color: rgba(34,211,165,.32); box-shadow: 0 16px 48px rgba(0,0,0,.45); }
     .project-top { padding: 28px; border-bottom: 1px solid var(--border); }
-    .project-num { font-family: var(--font-mono); font-size: 10px; color: var(--faint); margin-bottom: 12px; letter-spacing: 0.1em; }
-    .project-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 10px; }
-    .project-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+    .project-num { font-family: var(--font-mono); font-size: 10px; color: var(--faint); margin-bottom: 12px; letter-spacing: .1em; }
+    .project-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+    .project-desc  { font-size: 14px; color: var(--muted); line-height: 1.75; }
     .project-bottom { padding: 20px 28px 24px; }
-    .stack { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
-    .s-tag {
-      font-family: var(--font-mono); font-size: 10px;
-      color: var(--accent2); background: var(--accent2-dim);
-      border: 1px solid rgba(79,142,247,0.2);
-      padding: 3px 9px; border-radius: 3px;
-    }
-    .proj-link {
-      display: inline-flex; align-items: center; gap: 6px;
-      color: var(--accent); text-decoration: none; font-size: 13px; font-weight: 700;
-      transition: gap 0.2s;
-    }
-    .proj-link:hover { gap: 10px; }
+    .stack  { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+    .s-tag  { font-family: var(--font-mono); font-size: 10px; color: var(--accent2); background: var(--accent2-dim); border: 1px solid rgba(79,142,247,.22); padding: 3px 9px; border-radius: 3px; }
+    .proj-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); text-decoration: none; font-size: 13px; font-weight: 700; transition: gap .2s; }
+    .proj-link:hover { gap: 11px; }
 
-    /* SERVICES */
+    /* ══════════════════════════════════════════
+       SERVICES
+    ══════════════════════════════════════════ */
     #services { padding: 110px 0; background: var(--bg2); }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 18px; }
     .service-card {
       border: 1px solid var(--border); border-radius: var(--radius);
       padding: 32px 26px; background: var(--bg3);
-      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      transition: border-color .2s, background .2s, transform .2s;
     }
-    .service-card:hover { border-color: rgba(34,211,165,0.3); background: var(--surface); transform: translateY(-3px); }
-    .svc-icon-wrap {
-      width: 52px; height: 52px; border-radius: 12px;
-      background: var(--accent-dim); border: 1px solid rgba(34,211,165,0.2);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 26px; margin-bottom: 18px;
-    }
-    .svc-name { font-weight: 700; font-size: 16px; margin-bottom: 10px; }
+    .service-card:hover { border-color: rgba(34,211,165,.32); background: var(--surface); transform: translateY(-3px); }
+    .svc-icon { width: 54px; height: 54px; border-radius: 13px; background: var(--accent-dim); border: 1px solid rgba(34,211,165,.22); display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 18px; }
+    .svc-name { font-weight: 700; font-size: 16px; margin-bottom: 10px; color: var(--text); }
     .svc-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
 
-    /* BLOG */
+    /* ══════════════════════════════════════════
+       BLOG
+    ══════════════════════════════════════════ */
     #blog { padding: 110px 0; }
-    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
-    .blog-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 28px;
-      transition: border-color 0.2s;
-    }
-    .blog-card:hover { border-color: rgba(34,211,165,0.3); }
-    .blog-tag {
-      display: inline-block; font-family: var(--font-mono); font-size: 10px;
-      color: var(--accent2); background: var(--accent2-dim);
-      border: 1px solid rgba(79,142,247,0.2);
-      padding: 3px 10px; border-radius: 3px; margin-bottom: 14px;
-    }
-    .blog-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 10px; line-height: 1.25; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 22px; }
+    .blog-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: border-color .2s, transform .2s; }
+    .blog-card:hover { border-color: rgba(34,211,165,.32); transform: translateY(-3px); }
+    .blog-cat { display: inline-block; font-family: var(--font-mono); font-size: 10px; color: var(--accent2); background: var(--accent2-dim); border: 1px solid rgba(79,142,247,.22); padding: 3px 10px; border-radius: 3px; margin-bottom: 14px; }
+    .blog-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 10px; line-height: 1.25; color: var(--text); }
     .blog-excerpt { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 18px; }
     .blog-meta { font-family: var(--font-mono); font-size: 10px; color: var(--faint); }
 
-    /* CONTACT */
+    /* ══════════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════════ */
     #contact { padding: 110px 0; background: var(--bg2); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-    .contact-info h3 { font-family: var(--font-display); font-size: 30px; font-weight: 700; margin-bottom: 16px; }
-    .contact-info p { color: var(--muted); font-size: 15px; line-height: 1.85; margin-bottom: 32px; }
-    .contact-links { display: flex; flex-direction: column; gap: 10px; }
-
-    /* === CONTACT LINKS — real brand colors on hover === */
-    .c-link {
-      display: flex; align-items: center; gap: 12px;
-      color: var(--muted); text-decoration: none; font-size: 14px;
-      padding: 12px 14px; border-radius: 10px;
-      border: 1px solid transparent;
-      transition: all 0.22s;
-    }
-    .c-link:hover { color: var(--text); background: var(--surface); border-color: var(--border); }
-    .c-link-icon {
-      width: 38px; height: 38px; border-radius: 9px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; flex-shrink: 0;
-      transition: background 0.22s, color 0.22s;
-    }
-
-    /* Idle state — subtle */
-    .c-icon-email  { background: rgba(234,88,12,0.12);  color: #ea580c; }
-    .c-icon-wa     { background: rgba(37,211,102,0.12); color: #25d366; }
-    .c-icon-github { background: rgba(255,255,255,0.07); color: #c0cad6; }
-    .c-icon-ig     { background: rgba(225,48,108,0.12); color: #e1306c; }
-    .c-icon-twitter{ background: rgba(29,155,240,0.12); color: #1d9bf0; }
-    .c-icon-fb     { background: rgba(24,119,242,0.12); color: #1877f2; }
-    .c-icon-yt     { background: rgba(255,0,0,0.10);    color: #ff0000; }
-
-    /* Hover — saturated brand color */
-    .c-link:hover .c-icon-email  { background: rgba(234,88,12,0.22);  color: #fb923c; }
-    .c-link:hover .c-icon-wa     { background: rgba(37,211,102,0.22); color: #4ade80; }
-    .c-link:hover .c-icon-github { background: rgba(255,255,255,0.12); color: #f0f6fc; }
-    .c-link:hover .c-icon-ig     { background: rgba(225,48,108,0.22); color: #f472b6; }
-    .c-link:hover .c-icon-twitter{ background: rgba(29,155,240,0.22); color: #60a5fa; }
-    .c-link:hover .c-icon-fb     { background: rgba(24,119,242,0.22); color: #60a5fa; }
-    .c-link:hover .c-icon-yt     { background: rgba(255,0,0,0.18);    color: #f87171; }
-
+    .contact-info h3 { font-family: var(--font-display); font-size: 30px; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+    .contact-info p  { color: var(--muted); font-size: 15px; line-height: 1.85; margin-bottom: 32px; }
     .contact-form { display: flex; flex-direction: column; gap: 16px; }
     .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .form-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
     .form-input, .form-textarea {
       background: var(--surface); border: 1px solid var(--border);
-      border-radius: 9px; color: var(--text);
-      font-family: var(--font-body); font-size: 14px;
-      padding: 12px 16px; outline: none;
-      transition: border-color 0.2s;
+      border-radius: 9px; color: var(--text); font-family: var(--font-body);
+      font-size: 14px; padding: 12px 16px; outline: none; transition: border-color .2s;
     }
     .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
     .form-input::placeholder, .form-textarea::placeholder { color: var(--faint); }
     .form-textarea { resize: vertical; min-height: 130px; }
     .form-submit {
-      background: var(--accent); color: #000; border: none;
-      border-radius: 8px; padding: 14px; font-family: var(--font-body);
-      font-size: 14px; font-weight: 700; cursor: pointer;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.03em;
+      background: var(--accent); color: #000; border: none; border-radius: 8px;
+      padding: 14px; font-family: var(--font-body); font-size: 14px; font-weight: 700;
+      cursor: pointer; letter-spacing: .03em;
+      transition: background .2s, transform .2s, box-shadow .2s;
     }
-    .form-submit:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,0.35); }
+    .form-submit:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,.38); }
 
-    /* FOOTER */
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
     footer {
       background: var(--bg); border-top: 1px solid var(--border);
       padding: 40px 48px;
@@ -585,28 +468,32 @@
     }
     .footer-copy { font-size: 13px; color: var(--muted); }
     .footer-copy a { color: var(--accent); text-decoration: none; }
-    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color .2s; }
     .footer-links a:hover { color: var(--accent); }
 
-    /* REVEAL */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    /* ══════════════════════════════════════════
+       ANIMATIONS & REVEAL
+    ══════════════════════════════════════════ */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .55s ease, transform .55s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
     @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
 
-    @media(max-width:900px) {
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media(max-width:960px) {
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
+      .hero-card  { display: none; }
       .about-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
     }
     @media(max-width:700px) {
-      nav { padding: 0 24px; }
+      nav { padding: 0 20px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
-      .container { padding: 0 24px; }
-      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+      .container { padding: 0 20px; }
+      footer { padding: 28px 20px; flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -615,7 +502,7 @@
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 
-<!-- NAV -->
+<!-- ══════ NAV ══════ -->
 <nav>
   <a href="#hero" class="nav-logo">ronny.dev</a>
   <ul class="nav-links">
@@ -627,32 +514,27 @@
     <li><a href="about.html">More</a></li>
     <li><a href="#contact" class="nav-hire">Hire Me</a></li>
   </ul>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-  <a href="#about" onclick="toggleMenu()">About</a>
-  <a href="#skills" onclick="toggleMenu()">Skills</a>
+  <a href="#about"   onclick="toggleMenu()">About</a>
+  <a href="#skills"  onclick="toggleMenu()">Skills</a>
   <a href="#projects" onclick="toggleMenu()">Projects</a>
   <a href="#services" onclick="toggleMenu()">Services</a>
-  <a href="#blog" onclick="toggleMenu()">Blog</a>
+  <a href="#blog"    onclick="toggleMenu()">Blog</a>
   <a href="about.html" onclick="toggleMenu()">Full Profile</a>
-  <a href="contact.html" onclick="toggleMenu()">Contact</a>
   <a href="#contact" onclick="toggleMenu()" style="color:var(--accent);margin-top:8px">Hire Me →</a>
 </div>
 
-<!-- HERO -->
+<!-- ══════ HERO ══════ -->
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
+      <!-- LEFT -->
       <div>
-        <div class="hero-badge">
-          <span class="dot"></span>
-          Available for hire &nbsp;·&nbsp; Embu, Kenya
-        </div>
+        <div class="hero-badge"><span class="dot"></span> Available for hire &nbsp;·&nbsp; Embu, Kenya</div>
         <h1 class="hero-name">Ronny<br><em>Mwenda</em></h1>
         <p class="hero-aka">also known as <span>"Ronny Best"</span></p>
         <div class="hero-roles">
@@ -660,70 +542,75 @@
           <span class="role-pill">Math Teacher</span>
           <span class="role-pill">Programmer</span>
         </div>
-        <p class="hero-desc">
-          I build beautiful, fast websites and teach Mathematics &amp; Computer Science.
-          B.Ed Science student at the University of Embu — passionate about making
-          technology and education accessible across Kenya.
-        </p>
+        <p class="hero-desc">I build beautiful, fast websites and teach Mathematics &amp; Computer Science. B.Ed Science student at the University of Embu — passionate about making technology and education accessible across Kenya.</p>
         <div class="hero-btns">
-          <a href="#projects" class="btn btn-primary">
-            <iconify-icon icon="solar:play-bold" width="14"></iconify-icon>
-            View My Work
-          </a>
-          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          <a href="#projects" class="btn btn-primary">▶&nbsp; View My Work</a>
+          <a href="#contact"  class="btn btn-outline">Get In Touch</a>
         </div>
       </div>
 
-      <!-- Profile card -->
+      <!-- RIGHT — PROFILE CARD -->
       <div class="hero-card">
         <div class="hero-card-top">
           <div class="profile-img-wrap">
-            <img src="profile.jpeg" alt="Ronny Mwenda — Frontend Developer & Math Teacher, Embu Kenya"
+            <!-- ✅ Uses your profile.jpeg — fallback to initials if missing -->
+            <img src="profile.jpeg"
+                 alt="Ronny Mwenda — Frontend Developer & Math Teacher, Embu Kenya"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-            <div class="profile-initials" style="display:none">RM</div>
+            <div class="profile-initials">RM</div>
             <div class="status-badge" title="Available for work"></div>
           </div>
           <div class="hc-name">Ronny Mwenda</div>
           <div class="hc-role">Developer · Teacher · Creator</div>
-          <div class="hc-location">
-            <iconify-icon icon="solar:map-point-bold" width="12"></iconify-icon>
-            Embu County, Kenya
-          </div>
+          <div class="hc-location">📍 Embu County, Kenya</div>
         </div>
+
         <div class="hero-card-stats">
-          <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Sites Built</div></div>
+          <div class="stat"><div class="stat-n">4+</div><div class="stat-l">Sites Built</div></div>
           <div class="stat"><div class="stat-n">2+</div><div class="stat-l">Yrs Dev</div></div>
           <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Math Love</div></div>
         </div>
-        <!-- Hero card social icons with brand colors on hover -->
+
+        <!-- ✅ SOCIAL ICONS — inline SVG paths, brand backgrounds, ALWAYS VISIBLE -->
         <div class="hero-card-socials">
-          <a href="https://github.com/Ronnym1202" target="_blank" rel="noopener"
-             class="social-ico soc-github" title="GitHub — Ronnym1202">
-            <iconify-icon icon="mdi:github" width="18"></iconify-icon>
+
+          <!-- GitHub -->
+          <a href="https://github.com/Ronnym1202" target="_blank" rel="noopener" class="si si-gh" title="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           </a>
-          <a href="https://x.com/ronnymwenda89" target="_blank" rel="noopener"
-             class="social-ico soc-twitter" title="X / Twitter — @ronnymwenda89">
-            <iconify-icon icon="ri:twitter-x-fill" width="16"></iconify-icon>
+
+          <!-- X / Twitter -->
+          <a href="https://x.com/ronnymwenda89" target="_blank" rel="noopener" class="si si-tw" title="X / Twitter">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </a>
-          <a href="https://www.instagram.com/ronny25495/" target="_blank" rel="noopener"
-             class="social-ico soc-instagram" title="Instagram — @ronny25495">
-            <iconify-icon icon="mdi:instagram" width="18"></iconify-icon>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/ronny25495/" target="_blank" rel="noopener" class="si si-ig" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
           </a>
-          <a href="https://wa.me/254799188900" target="_blank" rel="noopener"
-             class="social-ico soc-whatsapp" title="WhatsApp — +254 799 188 900">
-            <iconify-icon icon="mdi:whatsapp" width="18"></iconify-icon>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/254799188900" target="_blank" rel="noopener" class="si si-wa" title="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
           </a>
-          <a href="https://www.facebook.com/profile.php?id=61563410375799" target="_blank" rel="noopener"
-             class="social-ico soc-facebook" title="Facebook — Ronny Mwenda">
-            <iconify-icon icon="mdi:facebook" width="18"></iconify-icon>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/profile.php?id=61563410375799" target="_blank" rel="noopener" class="si si-fb" title="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </a>
-        </div>
-      </div>
-    </div>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@RonnyBestMath" target="_blank" rel="noopener" class="si si-yt" title="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+
+        </div><!-- /hero-card-socials -->
+      </div><!-- /hero-card -->
+    </div><!-- /hero-inner -->
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ══════ ABOUT ══════ -->
 <section id="about">
   <div class="container">
     <div class="reveal">
@@ -733,63 +620,24 @@
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>
-          I'm <strong>Ronny Mwenda</strong> — widely known online as <strong>"Ronny Best"</strong> —
-          a frontend web developer and educator from <strong>Embu County, Kenya</strong>.
-          I combine a love of clean code with a passion for teaching.
-        </p>
-        <p>
-          Currently pursuing a <strong>Bachelor of Education (Science)</strong> at the
-          <strong>University of Embu</strong>, majoring in Computer Science and Mathematics.
-          My goal is to bridge the gap between technology and education in Kenya.
-        </p>
-        <p>
-          I've successfully built and deployed <strong>3 live websites</strong> including a dedicated
-          mathematics resource site, and I'm constantly expanding my frontend skills —
-          from responsive layouts to performance-optimised, SEO-ready web experiences.
-        </p>
-        <p>
-          When I'm not coding, I'm teaching mathematics, mentoring students, or exploring
-          how technology can solve real-world problems across East Africa.
-        </p>
+        <p>I'm <strong>Ronny Mwenda</strong> — widely known online as <strong>"Ronny Best"</strong> — a frontend web developer and educator from <strong>Embu County, Kenya</strong>. I combine a love of clean code with a passion for teaching.</p>
+        <p>Currently pursuing a <strong>Bachelor of Education (Science)</strong> at the <strong>University of Embu</strong>, majoring in Computer Science and Mathematics. My goal is to bridge the gap between technology and education in Kenya.</p>
+        <p>I've successfully built and deployed <strong>4 live websites</strong> including a dedicated mathematics resource site, and I'm constantly expanding my frontend skills — from responsive layouts to performance-optimised, SEO-ready web experiences.</p>
+        <p>When I'm not coding, I'm teaching mathematics, mentoring students, or exploring how technology can solve real-world problems across East Africa.</p>
         <br>
         <a href="about.html" class="btn btn-outline" style="display:inline-flex">Read Full Profile →</a>
       </div>
       <div class="about-highlights reveal">
-        <div class="hl-card">
-          <div class="hl-icon-wrap">🎓</div>
-          <div>
-            <div class="hl-title">University of Embu</div>
-            <div class="hl-desc">B.Ed Science — Computer Science &amp; Mathematics (In Progress)</div>
-          </div>
-        </div>
-        <div class="hl-card">
-          <div class="hl-icon-wrap">💻</div>
-          <div>
-            <div class="hl-title">Frontend Developer</div>
-            <div class="hl-desc">3 live sites deployed. Clean UI, performance &amp; SEO-optimised builds.</div>
-          </div>
-        </div>
-        <div class="hl-card">
-          <div class="hl-icon-wrap">📐</div>
-          <div>
-            <div class="hl-title">Math Specialist</div>
-            <div class="hl-desc">Teaching Mathematics. Creator of bestronny.netlify.app — free math resources.</div>
-          </div>
-        </div>
-        <div class="hl-card">
-          <div class="hl-icon-wrap">📍</div>
-          <div>
-            <div class="hl-title">Based in Embu, Kenya</div>
-            <div class="hl-desc">Available for remote work &amp; local collaborations across Kenya.</div>
-          </div>
-        </div>
+        <div class="hl-card"><div class="hl-icon">🎓</div><div><div class="hl-title">University of Embu</div><div class="hl-desc">B.Ed Science — Computer Science &amp; Mathematics (In Progress)</div></div></div>
+        <div class="hl-card"><div class="hl-icon">💻</div><div><div class="hl-title">Frontend Developer</div><div class="hl-desc">4 live sites deployed. Clean UI, performance &amp; SEO-optimised builds.</div></div></div>
+        <div class="hl-card"><div class="hl-icon">📐</div><div><div class="hl-title">Math Specialist</div><div class="hl-desc">Teaching Mathematics. Creator of bestronny.netlify.app — free math resources.</div></div></div>
+        <div class="hl-card"><div class="hl-icon">📍</div><div><div class="hl-title">Based in Embu, Kenya</div><div class="hl-desc">Available for remote work &amp; local collaborations across Kenya.</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- ══════ SKILLS ══════ -->
 <section id="skills">
   <div class="container">
     <div class="reveal">
@@ -800,73 +648,46 @@
     <div class="skills-grid reveal">
       <div class="skill-cat">
         <div class="skill-cat-title">Frontend</div>
-        <div class="tags">
-          <span class="tag hi">HTML5</span>
-          <span class="tag hi">CSS3</span>
-          <span class="tag hi">JavaScript</span>
-          <span class="tag">Responsive Design</span>
-          <span class="tag">SEO Optimisation</span>
-          <span class="tag">Netlify Deploy</span>
-        </div>
+        <div class="tags"><span class="tag hi">HTML5</span><span class="tag hi">CSS3</span><span class="tag hi">JavaScript</span><span class="tag">Responsive Design</span><span class="tag">SEO Optimisation</span><span class="tag">Netlify Deploy</span></div>
       </div>
       <div class="skill-cat">
         <div class="skill-cat-title">Education</div>
-        <div class="tags">
-          <span class="tag hi">Mathematics</span>
-          <span class="tag hi">Computer Science</span>
-          <span class="tag">Curriculum Design</span>
-          <span class="tag">Student Mentoring</span>
-          <span class="tag">E-learning</span>
-        </div>
+        <div class="tags"><span class="tag hi">Mathematics</span><span class="tag hi">Computer Science</span><span class="tag">Curriculum Design</span><span class="tag">Student Mentoring</span><span class="tag">E-learning</span></div>
       </div>
       <div class="skill-cat">
         <div class="skill-cat-title">Tools &amp; Platforms</div>
-        <div class="tags">
-          <span class="tag hi2">Git &amp; GitHub</span>
-          <span class="tag hi2">VS Code</span>
-          <span class="tag">Netlify</span>
-          <span class="tag">Google Search Console</span>
-          <span class="tag">Google Analytics</span>
-        </div>
+        <div class="tags"><span class="tag hi2">Git &amp; GitHub</span><span class="tag hi2">VS Code</span><span class="tag">Netlify</span><span class="tag">Google Search Console</span><span class="tag">Google Analytics</span></div>
       </div>
       <div class="skill-cat">
         <div class="skill-cat-title">Currently Learning</div>
-        <div class="tags">
-          <span class="tag">React.js</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">Python</span>
-          <span class="tag">Databases</span>
-        </div>
+        <div class="tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">Databases</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- ══════ PROJECTS ══════ -->
 <section id="projects">
   <div class="container">
     <div class="reveal">
       <p class="sec-label">// 03 · Projects</p>
       <h2 class="sec-title">Live Projects</h2>
-      <p class="sec-sub">Three production websites built, deployed, and running — real work, real impact.</p>
+      <p class="sec-sub">Four production websites built, deployed, and running — real work, real impact.</p>
     </div>
     <div class="projects-grid">
+
       <div class="project-card reveal">
         <div class="project-top">
           <div class="project-num">PROJECT 01 — FLAGSHIP</div>
           <h3 class="project-title">Ronny Best Math</h3>
-          <p class="project-desc">My main mathematics resource website. Covers topics from secondary to university level with clear explanations, worked examples, and problem solving guides.</p>
+          <p class="project-desc">My main mathematics resource website. Covers topics from secondary to university level with clear explanations, worked examples, and problem-solving guides.</p>
         </div>
         <div class="project-bottom">
-          <div class="stack">
-            <span class="s-tag">HTML5</span>
-            <span class="s-tag">CSS3</span>
-            <span class="s-tag">JavaScript</span>
-            <span class="s-tag">Netlify</span>
-          </div>
+          <div class="stack"><span class="s-tag">HTML5</span><span class="s-tag">CSS3</span><span class="s-tag">JavaScript</span><span class="s-tag">Netlify</span></div>
           <a href="https://bestronny.netlify.app" target="_blank" rel="noopener" class="proj-link">Visit Site →</a>
         </div>
       </div>
+
       <div class="project-card reveal">
         <div class="project-top">
           <div class="project-num">PROJECT 02</div>
@@ -874,16 +695,11 @@
           <p class="project-desc">My professional portfolio site — showcasing my skills, projects, and services as a frontend developer and mathematics educator based in Kenya.</p>
         </div>
         <div class="project-bottom">
-          <div class="stack">
-            <span class="s-tag">HTML5</span>
-            <span class="s-tag">CSS3</span>
-            <span class="s-tag">JavaScript</span>
-            <span class="s-tag">Netlify</span>
-            <span class="s-tag">SEO</span>
-          </div>
+          <div class="stack"><span class="s-tag">HTML5</span><span class="s-tag">CSS3</span><span class="s-tag">JavaScript</span><span class="s-tag">Netlify</span><span class="s-tag">SEO</span></div>
           <a href="https://ronnymwenda.netlify.app" target="_blank" rel="noopener" class="proj-link">Visit Site →</a>
         </div>
       </div>
+
       <div class="project-card reveal">
         <div class="project-top">
           <div class="project-num">PROJECT 03</div>
@@ -891,15 +707,12 @@
           <p class="project-desc">A fun, interactive games platform built for Kenyan audiences — clean design, smooth UX, and engaging browser-based gaming experiences.</p>
         </div>
         <div class="project-bottom">
-          <div class="stack">
-            <span class="s-tag">HTML5</span>
-            <span class="s-tag">CSS3</span>
-            <span class="s-tag">JavaScript</span>
-            <span class="s-tag">Netlify</span>
-          </div>
+          <div class="stack"><span class="s-tag">HTML5</span><span class="s-tag">CSS3</span><span class="s-tag">JavaScript</span><span class="s-tag">Netlify</span></div>
+          <!-- ✅ CORRECT URL -->
           <a href="https://ronnygame.netlify.app" target="_blank" rel="noopener" class="proj-link">Visit Site →</a>
         </div>
       </div>
+
       <div class="project-card reveal">
         <div class="project-top">
           <div class="project-num">PROJECT 04</div>
@@ -907,20 +720,16 @@
           <p class="project-desc">A creative digital project exploring community, storytelling, and culture through a modern, visually engaging web experience built for East African audiences.</p>
         </div>
         <div class="project-bottom">
-          <div class="stack">
-            <span class="s-tag">HTML5</span>
-            <span class="s-tag">CSS3</span>
-            <span class="s-tag">JavaScript</span>
-            <span class="s-tag">Netlify</span>
-          </div>
+          <div class="stack"><span class="s-tag">HTML5</span><span class="s-tag">CSS3</span><span class="s-tag">JavaScript</span><span class="s-tag">Netlify</span></div>
           <a href="https://themwends.netlify.app" target="_blank" rel="noopener" class="proj-link">Visit Site →</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- ══════ SERVICES ══════ -->
 <section id="services">
   <div class="container">
     <div class="reveal">
@@ -930,30 +739,22 @@
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
-        <div class="svc-icon-wrap">
-          <iconify-icon icon="solar:monitor-smartphone-bold" width="26" style="color:var(--accent)"></iconify-icon>
-        </div>
+        <div class="svc-icon">🖥️</div>
         <div class="svc-name">Website Development</div>
         <div class="svc-desc">Custom, responsive websites built from scratch. Fast-loading, mobile-first, and SEO-ready for Kenyan and global audiences.</div>
       </div>
       <div class="service-card reveal">
-        <div class="svc-icon-wrap">
-          <iconify-icon icon="solar:calculator-bold" width="26" style="color:var(--accent)"></iconify-icon>
-        </div>
+        <div class="svc-icon">📐</div>
         <div class="svc-name">Math Tutoring</div>
         <div class="svc-desc">Secondary and university-level mathematics tutoring. Online and in-person sessions. KCSE and university exam preparation.</div>
       </div>
       <div class="service-card reveal">
-        <div class="svc-icon-wrap">
-          <iconify-icon icon="solar:code-bold" width="26" style="color:var(--accent)"></iconify-icon>
-        </div>
+        <div class="svc-icon">💡</div>
         <div class="svc-name">Programming Mentorship</div>
         <div class="svc-desc">Guiding beginners through HTML, CSS, JavaScript and web fundamentals. Structured learning paths for aspiring Kenyan developers.</div>
       </div>
       <div class="service-card reveal">
-        <div class="svc-icon-wrap">
-          <iconify-icon icon="solar:chart-2-bold" width="26" style="color:var(--accent)"></iconify-icon>
-        </div>
+        <div class="svc-icon">📊</div>
         <div class="svc-name">SEO &amp; Google Setup</div>
         <div class="svc-desc">Search Console setup, meta tags, sitemap generation, structured data and analytics configuration for your website.</div>
       </div>
@@ -961,7 +762,7 @@
   </div>
 </section>
 
-<!-- BLOG -->
+<!-- ══════ BLOG ══════ -->
 <section id="blog">
   <div class="container">
     <div class="reveal">
@@ -971,19 +772,19 @@
     </div>
     <div class="blog-grid">
       <div class="blog-card reveal">
-        <span class="blog-tag">Mathematics</span>
+        <span class="blog-cat">Mathematics</span>
         <h3 class="blog-title">Understanding Quadratic Equations: A Visual Approach</h3>
         <p class="blog-excerpt">Breaking down the quadratic formula step by step — why it works, how to use it, and the mistakes students most commonly make.</p>
         <div class="blog-meta">Ronny Mwenda &nbsp;·&nbsp; Coming Soon</div>
       </div>
       <div class="blog-card reveal">
-        <span class="blog-tag">Web Development</span>
+        <span class="blog-cat">Web Development</span>
         <h3 class="blog-title">How I Built My First Website with HTML &amp; CSS</h3>
         <p class="blog-excerpt">My journey from zero to a live website on Netlify — the lessons, mistakes, and breakthroughs along the way.</p>
         <div class="blog-meta">Ronny Mwenda &nbsp;·&nbsp; Coming Soon</div>
       </div>
       <div class="blog-card reveal">
-        <span class="blog-tag">Tech in Kenya</span>
+        <span class="blog-cat">Tech in Kenya</span>
         <h3 class="blog-title">Why Every Student in Embu Should Learn to Code</h3>
         <p class="blog-excerpt">The opportunity that web development represents for young people in Embu County and across Kenya in 2025 and beyond.</p>
         <div class="blog-meta">Ronny Mwenda &nbsp;·&nbsp; Coming Soon</div>
@@ -992,7 +793,7 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ══════ CONTACT ══════ -->
 <section id="contact">
   <div class="container">
     <div class="reveal">
@@ -1001,86 +802,97 @@
       <p class="sec-sub">Available for website projects, math tutoring, and programming mentorship. Get in touch below.</p>
     </div>
     <div class="contact-grid">
+
+      <!-- LEFT: Direct links with brand-color icons -->
       <div class="contact-info reveal">
         <h3>Reach Out Directly</h3>
         <p>Whether you need a website built, a math tutor, or just want to connect — I'd love to hear from you. Based in Embu, Kenya. Available remotely across East Africa.</p>
         <div class="contact-links">
+
           <a href="mailto:ronnymwenda89@gmail.com" class="c-link">
-            <div class="c-link-icon c-icon-email">
-              <iconify-icon icon="mdi:email" width="18"></iconify-icon>
+            <div class="c-ico c-ico-em">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
             </div>
-            ronnymwenda89@gmail.com
+            <div class="c-label"><strong>Email</strong><span>ronnymwenda89@gmail.com</span></div>
           </a>
+
           <a href="https://wa.me/254799188900" target="_blank" rel="noopener" class="c-link">
-            <div class="c-link-icon c-icon-wa">
-              <iconify-icon icon="mdi:whatsapp" width="20"></iconify-icon>
+            <div class="c-ico c-ico-wa">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
             </div>
-            WhatsApp: +254 799 188 900
+            <div class="c-label"><strong>WhatsApp</strong><span>+254 799 188 900</span></div>
           </a>
+
           <a href="https://github.com/Ronnym1202" target="_blank" rel="noopener" class="c-link">
-            <div class="c-link-icon c-icon-github">
-              <iconify-icon icon="mdi:github" width="20"></iconify-icon>
+            <div class="c-ico c-ico-gh">
+              <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
             </div>
-            github.com/Ronnym1202
+            <div class="c-label"><strong>GitHub</strong><span>github.com/Ronnym1202</span></div>
           </a>
+
           <a href="https://www.instagram.com/ronny25495/" target="_blank" rel="noopener" class="c-link">
-            <div class="c-link-icon c-icon-ig">
-              <iconify-icon icon="mdi:instagram" width="20"></iconify-icon>
+            <div class="c-ico c-ico-ig">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
             </div>
-            @ronny25495 on Instagram
+            <div class="c-label"><strong>Instagram</strong><span>@ronny25495</span></div>
           </a>
+
           <a href="https://x.com/ronnymwenda89" target="_blank" rel="noopener" class="c-link">
-            <div class="c-link-icon c-icon-twitter">
-              <iconify-icon icon="ri:twitter-x-fill" width="17"></iconify-icon>
+            <div class="c-ico c-ico-tw">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </div>
-            @ronnymwenda89 on X
+            <div class="c-label"><strong>X / Twitter</strong><span>@ronnymwenda89</span></div>
           </a>
+
           <a href="https://www.facebook.com/profile.php?id=61563410375799" target="_blank" rel="noopener" class="c-link">
-            <div class="c-link-icon c-icon-fb">
-              <iconify-icon icon="mdi:facebook" width="20"></iconify-icon>
+            <div class="c-ico c-ico-fb">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </div>
-            Ronny Mwenda on Facebook
+            <div class="c-label"><strong>Facebook</strong><span>Ronny Mwenda</span></div>
           </a>
+
           <a href="https://www.youtube.com/@RonnyBestMath" target="_blank" rel="noopener" class="c-link">
-            <div class="c-link-icon c-icon-yt">
-              <iconify-icon icon="mdi:youtube" width="20"></iconify-icon>
+            <div class="c-ico c-ico-yt">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             </div>
-            YouTube — Ronny Best Math
+            <div class="c-label"><strong>YouTube</strong><span>Ronny Best Math</span></div>
           </a>
+
         </div>
       </div>
+
+      <!-- RIGHT: Contact form -->
       <div class="reveal">
         <div class="contact-form">
           <div class="form-group">
             <label class="form-label">Your Name</label>
-            <input type="text" class="form-input" placeholder="John Kamau" id="cName"/>
+            <input type="text" class="form-input" placeholder="John Kamau" id="cName" />
           </div>
           <div class="form-group">
             <label class="form-label">Email Address</label>
-            <input type="email" class="form-input" placeholder="john@example.com" id="cEmail"/>
+            <input type="email" class="form-input" placeholder="john@example.com" id="cEmail" />
           </div>
           <div class="form-group">
             <label class="form-label">Subject</label>
-            <input type="text" class="form-input" placeholder="Website project / Tutoring / Mentorship" id="cSubject"/>
+            <input type="text" class="form-input" placeholder="Website project / Tutoring / Mentorship" id="cSubject" />
           </div>
           <div class="form-group">
             <label class="form-label">Message</label>
             <textarea class="form-textarea" placeholder="Tell me about your project or what you need help with..." id="cMessage"></textarea>
           </div>
-          <button class="form-submit" onclick="handleContact()">
-            Send Message &nbsp;→
-          </button>
+          <button class="form-submit" onclick="handleContact()">Send Message →</button>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══════ FOOTER ══════ -->
 <footer>
   <div class="footer-copy">
-    © 2025 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya ·
-    Built with ❤️ · <a href="https://bestronny.netlify.app" target="_blank" rel="noopener">bestronny.netlify.app</a>
+    © 2025 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · Built with ❤️ ·
+    <a href="https://bestronny.netlify.app" target="_blank" rel="noopener">bestronny.netlify.app</a>
   </div>
   <div class="footer-links">
     <a href="about.html">About</a>
@@ -1093,30 +905,37 @@
 </footer>
 
 <script>
+  // Mobile menu toggle
   function toggleMenu() {
     document.getElementById('mobileNav').classList.toggle('open');
   }
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Contact form → mailto
   function handleContact() {
     const n = document.getElementById('cName').value.trim();
     const e = document.getElementById('cEmail').value.trim();
     const s = document.getElementById('cSubject').value.trim();
     const m = document.getElementById('cMessage').value.trim();
-    if(!n || !e || !m) { alert('Please fill in your name, email and message.'); return; }
-    const mailto = `mailto:ronnymwenda89@gmail.com?subject=${encodeURIComponent(s||'Website Enquiry')}&body=${encodeURIComponent('Name: '+n+'\nEmail: '+e+'\n\n'+m)}`;
-    window.location.href = mailto;
+    if (!n || !e || !m) { alert('Please fill in your name, email and message.'); return; }
+    window.location.href =
+      'mailto:ronnymwenda89@gmail.com' +
+      '?subject=' + encodeURIComponent(s || 'Website Enquiry') +
+      '&body='    + encodeURIComponent('Name: ' + n + '\nEmail: ' + e + '\n\n' + m);
   }
 
-  const sections = document.querySelectorAll('section[id]');
+  // Active nav highlight on scroll
+  const navSections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
     let cur = '';
-    sections.forEach(s => { if(window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    navSections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
     document.querySelectorAll('.nav-links a').forEach(a => {
-      a.style.color = a.getAttribute('href') === '#'+cur ? 'var(--accent)' : '';
+      a.style.color = (a.getAttribute('href') === '#' + cur) ? 'var(--accent)' : '';
     });
   });
 </script>
