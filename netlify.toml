@@ -18,14 +18,15 @@
   targetPort = 8080
   autoLaunch = true
 
-# ─── REDIRECTS ────────────────────────────────────────────────────────────────
-# (Also in _redirects file — toml takes precedence)
+# ─── REDIRECTS ──────────────────────────────────────────────────────────────
+# This file is the single source of truth for redirects.
+# (The plain-text _redirects file has been removed to avoid drift between
+# the two formats — Netlify gives netlify.toml precedence anyway.)
 
 [[redirects]]
   from = "/home"
   to = "/"
   status = 301
-  force = false
 
 [[redirects]]
   from = "/about-me"
@@ -69,7 +70,17 @@
 
 [[redirects]]
   from = "/games"
-  to = "https://ronnym.netlify.app"
+  to = "https://ronnygame.netlify.app"
+  status = 301
+
+[[redirects]]
+  from = "/bank"
+  to = "https://ronnybank.onrender.com"
+  status = 301
+
+[[redirects]]
+  from = "/articles"
+  to = "/blog.html"
   status = 301
 
 [[redirects]]

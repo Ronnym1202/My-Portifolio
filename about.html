@@ -21,7 +21,8 @@
       --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
       --accent: #22d3a5; --accent-dim: rgba(34,211,165,0.12);
       --accent2: #4f8ef7; --accent2-dim: rgba(79,142,247,0.1);
-      --text: #e8edf2; --muted: #7a8899; --faint: #2e3d4f;
+      --violet: #a78bfa; --violet-dim: rgba(167,139,250,0.12);
+      --text: #e8edf2; --muted: #93a5b8; --faint: #2e3d4f;
       --font-display: 'Fraunces', serif;
       --font-body: 'DM Sans', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
@@ -29,6 +30,7 @@
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
     ::selection { background: var(--accent); color: #000; }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
     body::before {
       content: ''; position: fixed; inset: 0;
       background-image: linear-gradient(rgba(34,211,165,0.025) 1px,transparent 1px), linear-gradient(90deg,rgba(34,211,165,0.025) 1px,transparent 1px);
@@ -52,6 +54,9 @@
     .nav-hire:hover { background: #1bbf93 !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .mobile-nav { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg2); padding: 88px 32px 40px; flex-direction: column; gap: 8px; }
     .mobile-nav.open { display: flex; }
     .mobile-nav a { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 600; padding: 14px 16px; border-radius: 8px; transition: background 0.2s, color 0.2s; }
@@ -60,7 +65,6 @@
     section { position: relative; z-index: 1; }
     .container { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
 
-    /* PAGE HERO */
     .page-hero {
       padding: 130px 0 70px;
       border-bottom: 1px solid var(--border);
@@ -72,21 +76,11 @@
     .page-title em { color: var(--accent); font-style: italic; font-weight: 300; }
     .page-sub { font-size: 16px; color: var(--muted); max-width: 580px; line-height: 1.8; }
 
-    /* PROFILE SECTION */
     #profile { padding: 90px 0; }
     .profile-grid { display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start; }
-    .profile-sidebar {
-      position: sticky; top: 90px;
-    }
-    .profile-card {
-      background: var(--surface); border: 1px solid var(--border2);
-      border-radius: 18px; overflow: hidden; margin-bottom: 20px;
-    }
-    .profile-card-top {
-      background: linear-gradient(135deg, rgba(34,211,165,0.15), rgba(79,142,247,0.1));
-      padding: 32px 24px 28px; text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
+    .profile-sidebar { position: sticky; top: 90px; }
+    .profile-card { background: var(--surface); border: 1px solid var(--border2); border-radius: 18px; overflow: hidden; margin-bottom: 20px; }
+    .profile-card-top { background: linear-gradient(135deg, rgba(34,211,165,0.15), rgba(79,142,247,0.1)); padding: 32px 24px 28px; text-align: center; border-bottom: 1px solid var(--border); }
     .profile-img-wrap { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 16px; background: linear-gradient(135deg, var(--accent), var(--accent2)); padding: 3px; position: relative; }
     .profile-img-wrap img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
     .profile-initials { width: 100%; height: 100%; border-radius: 50%; background: var(--bg3); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 34px; font-weight: 900; color: var(--accent); }
@@ -102,23 +96,11 @@
     .sidebar-socials { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
     .ss-title { font-family: var(--font-mono); font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 14px; }
     .ss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .ss-link {
-      display: flex; align-items: center; gap: 8px;
-      padding: 8px 10px; border-radius: 8px;
-      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-      text-decoration: none; font-size: 12px; color: var(--muted);
-      transition: all 0.2s;
-    }
+    .ss-link { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); text-decoration: none; font-size: 12px; color: var(--muted); transition: all 0.2s; }
     .ss-link:hover { background: var(--surface2); color: var(--text); border-color: var(--border2); }
     .ss-link iconify-icon { font-size: 16px; flex-shrink: 0; }
-    .ig-c { color: #e1306c; }
-    .wa-c { color: #25d366; }
-    .gh-c { color: #f0f0f0; }
-    .tw-c { color: #1d9bf0; }
-    .fb-c { color: #1877f2; }
-    .yt-c { color: #ff0000; }
+    .ig-c { color: #e1306c; } .wa-c { color: #25d366; } .gh-c { color: #f0f0f0; } .tw-c { color: #1d9bf0; } .fb-c { color: #1877f2; } .yt-c { color: #ff0000; }
 
-    /* MAIN CONTENT */
     .profile-content h2 { font-family: var(--font-display); font-size: 30px; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
     .profile-content p { color: var(--muted); font-size: 15px; line-height: 1.9; margin-bottom: 18px; }
     .profile-content p strong { color: var(--text); }
@@ -126,17 +108,17 @@
     .profile-content p a:hover { text-decoration: underline; }
     .divider { height: 1px; background: var(--border); margin: 40px 0; }
 
-    /* TIMELINE */
     .timeline { position: relative; padding-left: 28px; }
     .timeline::before { content: ''; position: absolute; left: 8px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent); border-radius: 2px; }
     .tl-item { position: relative; margin-bottom: 32px; }
     .tl-item::before { content: ''; position: absolute; left: -24px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+    .tl-item.violet::before { background: var(--violet); }
     .tl-date { font-family: var(--font-mono); font-size: 10px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+    .tl-item.violet .tl-date { color: var(--violet); }
     .tl-title { font-weight: 700; font-size: 16px; color: var(--text); margin-bottom: 4px; }
     .tl-org { font-size: 13px; color: var(--accent2); margin-bottom: 8px; }
     .tl-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
 
-    /* VALUES */
     .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
     .value-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; transition: border-color 0.2s; }
     .value-card:hover { border-color: rgba(34,211,165,0.3); }
@@ -144,7 +126,6 @@
     .value-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
     .value-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
-    /* SKILLS FULL */
     .skills-detail { margin-top: 24px; display: flex; flex-direction: column; gap: 16px; }
     .skill-row { display: flex; flex-direction: column; gap: 6px; }
     .skill-row-top { display: flex; justify-content: space-between; align-items: center; }
@@ -153,12 +134,7 @@
     .skill-bar { height: 5px; background: var(--faint); border-radius: 3px; overflow: hidden; }
     .skill-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 3px; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); width: 0; }
 
-    /* CTA */
-    .cta-box {
-      background: linear-gradient(135deg, rgba(34,211,165,0.12), rgba(79,142,247,0.08));
-      border: 1px solid rgba(34,211,165,0.25);
-      border-radius: 16px; padding: 40px; text-align: center; margin-top: 48px;
-    }
+    .cta-box { background: linear-gradient(135deg, rgba(34,211,165,0.12), rgba(79,142,247,0.08)); border: 1px solid rgba(34,211,165,0.25); border-radius: 16px; padding: 40px; text-align: center; margin-top: 48px; }
     .cta-box h3 { font-family: var(--font-display); font-size: 28px; font-weight: 700; margin-bottom: 12px; }
     .cta-box p { color: var(--muted); font-size: 15px; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.2s; }
@@ -180,6 +156,7 @@
     @media(max-width:900px) { .profile-grid { grid-template-columns: 1fr; } .profile-sidebar { position: static; } }
     @media(max-width:700px) { nav { padding: 0 24px; } .nav-links { display: none; } .hamburger { display: flex; } .container { padding: 0 24px; } .values-grid { grid-template-columns: 1fr; } footer { padding: 32px 24px; flex-direction: column; text-align: center; } }
   </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3509173858076202" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav>
@@ -189,20 +166,20 @@
     <li><a href="index.html#skills">Skills</a></li>
     <li><a href="index.html#projects">Projects</a></li>
     <li><a href="index.html#services">Services</a></li>
-    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="about.html" class="active">Full Profile</a></li>
     <li><a href="contact.html" class="nav-hire">Hire Me</a></li>
   </ul>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
 </nav>
-<div class="mobile-nav" id="mobileNav">
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
   <a href="index.html" onclick="toggleMenu()">Home</a>
   <a href="index.html#projects" onclick="toggleMenu()">Projects</a>
   <a href="index.html#services" onclick="toggleMenu()">Services</a>
+  <a href="blog.html" onclick="toggleMenu()">Blog</a>
   <a href="contact.html" onclick="toggleMenu()" style="color:var(--accent)">Hire Me →</a>
-</div>
+</nav>
 
-<!-- PAGE HERO -->
 <section class="page-hero">
   <div class="container">
     <div class="breadcrumb">
@@ -215,17 +192,16 @@
   </div>
 </section>
 
-<!-- PROFILE -->
+<main>
 <section id="profile">
   <div class="container">
     <div class="profile-grid">
 
-      <!-- SIDEBAR -->
       <div class="profile-sidebar reveal">
         <div class="profile-card">
           <div class="profile-card-top">
             <div class="profile-img-wrap">
-              <img src="profile.jpeg" alt="Ronny Mwenda" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <img src="profile.jpeg" alt="Portrait of Ronny Mwenda" width="100" height="100" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
               <div class="profile-initials" style="display:none">RM</div>
               <div class="available-badge" title="Available for work"></div>
             </div>
@@ -254,8 +230,8 @@
             </div>
             <div class="pc-detail">
               <iconify-icon icon="solar:monitor-bold" width="15" style="color:var(--accent)"></iconify-icon>
-              Sites Built
-              <strong>3 Live</strong>
+              Projects Built
+              <strong>6 Live</strong>
             </div>
             <div class="pc-detail">
               <iconify-icon icon="solar:global-bold" width="15" style="color:var(--accent)"></iconify-icon>
@@ -295,7 +271,6 @@
         </div>
       </div>
 
-      <!-- MAIN -->
       <div class="profile-content">
         <div class="reveal">
           <h2>Hi, I'm Ronny Mwenda 👋</h2>
@@ -312,29 +287,34 @@
 
         <div class="divider"></div>
 
-        <!-- JOURNEY -->
         <div class="reveal">
           <h2>My Journey</h2>
           <p>Here's a snapshot of my path from student to developer and educator.</p>
           <br>
           <div class="timeline">
             <div class="tl-item">
-              <div class="tl-date">2023 – Present</div>
+              <div class="tl-date">2024 – Present</div>
               <div class="tl-title">B.Ed Science Student</div>
               <div class="tl-org">University of Embu</div>
               <div class="tl-desc">Pursuing a Bachelor of Education in Science, specialising in Computer Science and Mathematics. Developing both subject mastery and pedagogy skills to become an effective STEM educator.</div>
             </div>
             <div class="tl-item">
-              <div class="tl-date">2023 – Present</div>
+              <div class="tl-date">2024 – Present</div>
               <div class="tl-title">Frontend Web Developer</div>
               <div class="tl-org">Freelance / Independent</div>
-              <div class="tl-desc">Designing and building custom responsive websites using HTML5, CSS3, and JavaScript. Deployed 3 live production sites on Netlify with full SEO optimisation and Google Search Console integration.</div>
+              <div class="tl-desc">Designing and building custom responsive websites using HTML5, CSS3, and JavaScript. Deployed multiple live production sites on Netlify with full SEO optimisation and Google Search Console integration.</div>
             </div>
             <div class="tl-item">
-              <div class="tl-date">2023 – Present</div>
+              <div class="tl-date">2024 – Present</div>
               <div class="tl-title">Founder — Ronny Best Math</div>
               <div class="tl-org">bestronny.netlify.app</div>
               <div class="tl-desc">Created a free online mathematics resource platform covering secondary and university-level topics. Helping students across Kenya access quality maths explanations and worked examples at no cost.</div>
+            </div>
+            <div class="tl-item violet">
+              <div class="tl-date">2026</div>
+              <div class="tl-title">Built RonnyBank — Full-Stack Flask App</div>
+              <div class="tl-org">ronnybank.onrender.com</div>
+              <div class="tl-desc">Designed and shipped a full-stack banking simulation using Python and Flask — session-based authentication, deposits, transfers, loans, and an admin panel, deployed live with CI/CD from GitHub to Render.</div>
             </div>
             <div class="tl-item">
               <div class="tl-date">Ongoing</div>
@@ -347,7 +327,6 @@
 
         <div class="divider"></div>
 
-        <!-- SKILLS -->
         <div class="reveal">
           <h2>Technical Skills</h2>
           <p>My core skills, built through real projects and continuous self-study.</p>
@@ -365,12 +344,16 @@
               <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
             </div>
             <div class="skill-row">
+              <div class="skill-row-top"><span class="skill-name">Python &amp; Flask</span><span class="skill-pct">60%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-w="60"></div></div>
+            </div>
+            <div class="skill-row">
               <div class="skill-row-top"><span class="skill-name">SEO &amp; Web Performance</span><span class="skill-pct">80%</span></div>
               <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
             </div>
             <div class="skill-row">
-              <div class="skill-row-top"><span class="skill-name">Git &amp; GitHub</span><span class="skill-pct">70%</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-w="70"></div></div>
+              <div class="skill-row-top"><span class="skill-name">Git &amp; GitHub</span><span class="skill-pct">75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
             </div>
             <div class="skill-row">
               <div class="skill-row-top"><span class="skill-name">Mathematics (Teaching)</span><span class="skill-pct">92%</span></div>
@@ -381,7 +364,6 @@
 
         <div class="divider"></div>
 
-        <!-- VALUES -->
         <div class="reveal">
           <h2>What Drives Me</h2>
           <p>These are the core values behind everything I build and teach.</p>
@@ -404,12 +386,11 @@
             <div class="value-card">
               <div class="value-icon">🔄</div>
               <div class="value-title">Always Learning</div>
-              <div class="value-desc">Currently learning React.js, Node.js, and Python. I invest daily in growing my skillset and staying current.</div>
+              <div class="value-desc">Currently learning React.js, Node.js, and PostgreSQL. I invest daily in growing my skillset and staying current.</div>
             </div>
           </div>
         </div>
 
-        <!-- CTA -->
         <div class="cta-box reveal">
           <h3>Ready to work together?</h3>
           <p>I'm available for website projects, mathematics tutoring, and programming mentorship. Let's build something meaningful.</p>
@@ -423,12 +404,14 @@
     </div>
   </div>
 </section>
+</main>
 
 <footer>
-  <div class="footer-copy">© 2025 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="index.html">Home</a></div>
+  <div class="footer-copy">© 2026 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="index.html">Home</a></div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms &amp; Conditions</a>
@@ -436,12 +419,16 @@
 </footer>
 
 <script>
-  function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.querySelector('.hamburger');
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if(e.isIntersecting) {
         e.target.classList.add('visible');
-        // Animate skill bars
         e.target.querySelectorAll('.skill-fill').forEach(bar => {
           bar.style.width = bar.dataset.w + '%';
         });

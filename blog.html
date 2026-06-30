@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Ronny Mwenda — Web Development, CBC Maths & Teaching Insights</title>
+  <link rel="icon" type="image/jpeg" href="profile.jpeg">
+  <meta name="description" content="Articles by Ronny Mwenda on web development, CBC mathematics, full-stack projects, and the journey of building a career between code and the classroom in Kenya." />
+  <meta name="author" content="Ronny Mwenda" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ronnymwenda.netlify.app/blog.html" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Ronny Mwenda's Blog",
+    "url": "https://ronnymwenda.netlify.app/blog.html",
+    "author": { "@type": "Person", "name": "Ronny Mwenda" }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --bg2: #0d1117; --bg3: #131920;
+      --surface: #1a2230; --surface2: #1e2a3a;
+      --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+      --accent: #22d3a5; --accent-dim: rgba(34,211,165,0.12);
+      --accent2: #4f8ef7; --accent2-dim: rgba(79,142,247,0.1);
+      --violet: #a78bfa; --violet-dim: rgba(167,139,250,0.12);
+      --amber: #f5c842; --amber-dim: rgba(245,200,66,0.1);
+      --text: #e8edf2; --muted: #93a5b8; --faint: #2e3d4f;
+      --font-display: 'Fraunces', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    ::selection { background: var(--accent); color: #000; }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(34,211,165,0.025) 1px,transparent 1px), linear-gradient(90deg,rgba(34,211,165,0.025) 1px,transparent 1px);
+      background-size: 64px 64px; pointer-events: none; z-index: 0;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 48px; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(8,12,16,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: var(--font-mono); font-size: 14px; color: var(--accent); text-decoration: none; letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px; }
+    .nav-logo::before { content: ''; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 6px 14px; border-radius: 6px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); background: rgba(255,255,255,0.05); }
+    .nav-hire { background: var(--accent) !important; color: #000 !important; font-weight: 700 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg2); padding: 88px 32px 40px; flex-direction: column; gap: 8px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 600; padding: 14px 16px; border-radius: 8px; transition: background 0.2s, color 0.2s; }
+    .mobile-nav a:hover { background: var(--surface); color: var(--accent); }
+
+    section { position: relative; z-index: 1; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 48px; }
+
+    /* ══ HERO ══ */
+    .page-hero { padding: 130px 0 56px; border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; }
+    .breadcrumb span { color: var(--faint); }
+    .hero-flex { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
+    .page-title { font-family: var(--font-display); font-size: clamp(38px, 5.5vw, 64px); font-weight: 900; line-height: 1.0; letter-spacing: -2px; margin-bottom: 16px; }
+    .page-title em { color: var(--accent); font-style: italic; font-weight: 300; }
+    .page-sub { font-size: 15.5px; color: var(--muted); max-width: 520px; line-height: 1.8; }
+    .hero-stats { display: flex; gap: 28px; flex-shrink: 0; }
+    .hstat { text-align: right; }
+    .hstat-n { font-family: var(--font-mono); font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1; }
+    .hstat-l { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px; }
+
+    /* ══ CONTROL BAR (search + filter) ══ */
+    .control-bar {
+      position: sticky; top: 68px; z-index: 50;
+      background: rgba(8,12,16,0.96); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+    }
+    .control-inner { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .search-wrap { position: relative; flex: 1; min-width: 220px; max-width: 360px; }
+    .search-wrap iconify-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--faint); font-size: 16px; }
+    .search-input {
+      width: 100%; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; color: var(--text); font-family: var(--font-body);
+      font-size: 13.5px; padding: 10px 14px 10px 38px; outline: none; transition: border-color 0.2s;
+    }
+    .search-input:focus { border-color: var(--accent); }
+    .search-input::placeholder { color: var(--faint); }
+    .filter-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-pill {
+      font-family: var(--font-mono); font-size: 11.5px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--muted); padding: 8px 16px; border-radius: 20px;
+      cursor: pointer; transition: all 0.2s; white-space: nowrap;
+    }
+    .filter-pill:hover { border-color: var(--border2); color: var(--text); }
+    .filter-pill.active[data-cat="all"] { background: var(--text); color: #000; border-color: var(--text); }
+    .filter-pill.active[data-cat="dev"] { background: var(--accent-dim); color: var(--accent); border-color: rgba(34,211,165,0.4); }
+    .filter-pill.active[data-cat="math"] { background: var(--accent2-dim); color: var(--accent2); border-color: rgba(79,142,247,0.4); }
+    .filter-pill.active[data-cat="story"] { background: var(--violet-dim); color: var(--violet); border-color: rgba(167,139,250,0.4); }
+    .filter-pill.active[data-cat="edu"] { background: var(--amber-dim); color: var(--amber); border-color: rgba(245,200,66,0.4); }
+    .result-count { font-family: var(--font-mono); font-size: 11.5px; color: var(--faint); margin-left: auto; white-space: nowrap; }
+
+    /* ══ START HERE STRIP ══ */
+    .start-here { padding: 36px 0 0; }
+    .sh-label { font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .sh-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .sh-row { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; }
+    .sh-chip {
+      flex-shrink: 0; display: flex; align-items: center; gap: 10px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+      padding: 10px 16px; text-decoration: none; color: var(--text);
+      font-size: 13px; font-weight: 600; transition: all 0.2s; white-space: nowrap;
+    }
+    .sh-chip:hover { border-color: rgba(34,211,165,0.35); background: var(--surface2); transform: translateY(-2px); }
+    .sh-chip-icon { font-size: 16px; }
+
+    /* ══ POSTS ══ */
+    #posts { padding: 44px 0 110px; }
+
+    .featured-post {
+      background: var(--surface); border: 1px solid rgba(34,211,165,0.25);
+      border-radius: 20px; padding: 0; margin-bottom: 32px;
+      text-decoration: none; color: var(--text); display: grid;
+      grid-template-columns: 1fr 280px;
+      transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+      overflow: hidden;
+    }
+    .featured-post:hover { transform: translateY(-4px); box-shadow: 0 24px 64px rgba(0,0,0,0.45); border-color: rgba(34,211,165,0.4); }
+    .featured-left { padding: 38px 40px; }
+    .featured-label { font-family: var(--font-mono); font-size: 10.5px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .featured-title { font-family: var(--font-display); font-size: clamp(24px, 3.4vw, 32px); font-weight: 800; line-height: 1.18; margin-bottom: 14px; letter-spacing: -0.5px; }
+    .featured-excerpt { font-size: 14.5px; color: var(--muted); line-height: 1.85; margin-bottom: 22px; max-width: 540px; }
+    .featured-meta { font-family: var(--font-mono); font-size: 12px; color: var(--faint); display: flex; align-items: center; gap: 14px; }
+    .featured-read { color: var(--accent); font-weight: 700; }
+    .featured-right {
+      background: linear-gradient(160deg, rgba(34,211,165,0.12), rgba(79,142,247,0.06));
+      border-left: 1px solid rgba(34,211,165,0.2);
+      display: flex; flex-direction: column; justify-content: center; gap: 16px;
+      padding: 32px 28px;
+    }
+    .fr-stat { display: flex; align-items: center; gap: 12px; }
+    .fr-icon { width: 38px; height: 38px; border-radius: 9px; background: rgba(34,211,165,0.12); border: 1px solid rgba(34,211,165,0.25); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .fr-text { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
+    .fr-text strong { display: block; color: var(--text); font-size: 13px; }
+
+    .posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 20px; }
+    .post-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden; text-decoration: none; color: var(--text);
+      display: flex; flex-direction: column;
+      transition: transform 0.22s, border-color 0.22s, box-shadow 0.22s, opacity 0.2s;
+    }
+    .post-card:hover { transform: translateY(-5px); border-color: rgba(34,211,165,0.3); box-shadow: 0 18px 50px rgba(0,0,0,0.4); }
+    .post-card.hidden-card { display: none; }
+    .post-top { padding: 24px 24px 16px; flex: 1; }
+    .post-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 4px 11px; border-radius: 20px; margin-bottom: 13px;
+    }
+    .post-tag.tag-dev { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(34,211,165,0.25); }
+    .post-tag.tag-math { background: var(--accent2-dim); color: var(--accent2); border: 1px solid rgba(79,142,247,0.25); }
+    .post-tag.tag-story { background: var(--violet-dim); color: var(--violet); border: 1px solid rgba(167,139,250,0.25); }
+    .post-tag.tag-edu { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(245,200,66,0.25); }
+    .post-title { font-family: var(--font-display); font-size: 19.5px; font-weight: 700; line-height: 1.28; margin-bottom: 9px; }
+    .post-excerpt { font-size: 13px; color: var(--muted); line-height: 1.7; }
+    .post-bottom {
+      padding: 14px 24px; border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: var(--font-mono); font-size: 11px; color: var(--faint);
+    }
+    .post-read { color: var(--accent); font-weight: 700; display: inline-flex; align-items: center; gap: 5px; transition: gap 0.2s; }
+    .post-card:hover .post-read { gap: 9px; }
+
+    .no-results { display: none; text-align: center; padding: 60px 20px; color: var(--muted); font-size: 14.5px; }
+    .no-results.show { display: block; }
+    .no-results iconify-icon { font-size: 32px; color: var(--faint); margin-bottom: 14px; display: block; }
+
+    /* ══ NEWSLETTER-STYLE CTA STRIP ══ */
+    .blog-cta { margin-top: 56px; background: linear-gradient(135deg, rgba(34,211,165,0.1), rgba(79,142,247,0.07)); border: 1px solid rgba(34,211,165,0.22); border-radius: 18px; padding: 38px 42px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .bc-text h3 { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+    .bc-text p { font-size: 13.5px; color: var(--muted); max-width: 420px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.2s; white-space: nowrap; }
+    .btn-primary { background: var(--accent); color: #000; }
+    .btn-primary:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,0.35); }
+
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; position: relative; z-index: 1; }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-copy a { color: var(--accent); text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media(max-width:900px) {
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-right { border-left: none; border-top: 1px solid rgba(34,211,165,0.2); flex-direction: row; flex-wrap: wrap; }
+    }
+    @media(max-width:700px) {
+      nav { padding: 0 24px; } .nav-links { display: none; } .hamburger { display: flex; }
+      .container { padding: 0 24px; }
+      .control-bar { top: 0; }
+      .hero-flex { flex-direction: column; align-items: flex-start; }
+      .hero-stats { gap: 20px; }
+      .result-count { width: 100%; margin: 4px 0 0; }
+      footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+      .featured-left { padding: 28px 24px; }
+      .blog-cta { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3509173858076202" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">ronny.dev</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="contact.html" class="nav-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="blog.html" onclick="toggleMenu()">Blog</a>
+  <a href="contact.html" onclick="toggleMenu()" style="color:var(--accent)">Hire Me →</a>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Blog</span></div>
+    <div class="hero-flex">
+      <div>
+        <h1 class="page-title">Notes from the <em>Code</em><br>&amp; the Classroom</h1>
+        <p class="page-sub">Writing on web development, CBC mathematics, and what it's actually like building a career at the intersection of both — from Embu County, Kenya.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-n">8</div><div class="hstat-l">Articles</div></div>
+        <div class="hstat"><div class="hstat-n">4</div><div class="hstat-l">Topics</div></div>
+        <div class="hstat"><div class="hstat-n">60+</div><div class="hstat-l">Min Read</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="control-bar">
+  <div class="container">
+    <div class="control-inner">
+      <div class="search-wrap">
+        <iconify-icon icon="solar:magnifer-linear"></iconify-icon>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search articles..." aria-label="Search articles">
+      </div>
+      <div class="filter-pills" role="group" aria-label="Filter articles by category">
+        <button class="filter-pill active" data-cat="all">All</button>
+        <button class="filter-pill" data-cat="dev">Web Dev</button>
+        <button class="filter-pill" data-cat="math">CBC Maths</button>
+        <button class="filter-pill" data-cat="edu">Education</button>
+        <button class="filter-pill" data-cat="story">Personal</button>
+      </div>
+      <span class="result-count" id="resultCount">8 articles</span>
+    </div>
+  </div>
+</div>
+
+<main>
+<section class="start-here">
+  <div class="container">
+    <div class="sh-label">New here? Start with one of these</div>
+    <div class="sh-row">
+      <a href="blog/building-ronnybank.html" class="sh-chip"><span class="sh-chip-icon">🏦</span> Building RonnyBank</a>
+      <a href="blog/web-dev-tips-kenya.html" class="sh-chip"><span class="sh-chip-icon">💻</span> Web Dev Tips for Kenya</a>
+      <a href="blog/cbc-maths-struggles.html" class="sh-chip"><span class="sh-chip-icon">📐</span> CBC Maths Struggles</a>
+      <a href="blog/student-to-developer-teacher.html" class="sh-chip"><span class="sh-chip-icon">🎓</span> My Journey</a>
+    </div>
+  </div>
+</section>
+
+<section id="posts">
+  <div class="container">
+
+    <a href="blog/building-ronnybank.html" class="featured-post reveal" data-cat="dev" data-title="Building RonnyBank: What I Learned Taking a Project from a Python Script to a Live Flask App" data-excerpt="A behind-the-scenes look at how a simple command-line banking simulator became a fully deployed, session-authenticated Flask web application">
+      <div class="featured-left">
+        <div class="featured-label"><iconify-icon icon="solar:star-bold" width="13"></iconify-icon> Featured · Full-Stack Development</div>
+        <h2 class="featured-title">Building RonnyBank: What I Learned Taking a Project from a Python Script to a Live Flask App</h2>
+        <p class="featured-excerpt">A behind-the-scenes look at how a simple command-line banking simulator became a fully deployed, session-authenticated Flask web application — the real mistakes, the folder-structure confusion, and what actually clicked.</p>
+        <div class="featured-meta">
+          <span>12 min read</span>
+          <span>·</span>
+          <span>Web Development</span>
+          <span class="featured-read">Read article →</span>
+        </div>
+      </div>
+      <div class="featured-right">
+        <div class="fr-stat">
+          <div class="fr-icon">🐍</div>
+          <div class="fr-text"><strong>Python &amp; Flask</strong>From script to server</div>
+        </div>
+        <div class="fr-stat">
+          <div class="fr-icon">🔐</div>
+          <div class="fr-text"><strong>Real Deployment</strong>GitHub → Render, live</div>
+        </div>
+        <div class="fr-stat">
+          <div class="fr-icon">🛠️</div>
+          <div class="fr-text"><strong>Honest Mistakes</strong>Folder structure &amp; more</div>
+        </div>
+      </div>
+    </a>
+
+    <div class="posts-grid" id="postsGrid">
+
+      <a href="blog/cbc-maths-struggles.html" class="post-card reveal" data-cat="math" data-title="5 CBC Maths Topics Kenyan Students Struggle With Most — And How to Actually Fix It" data-excerpt="From algebraic fractions to probability, here's what consistently trips up learners under the CBC curriculum">
+        <div class="post-top">
+          <span class="post-tag tag-math">CBC Mathematics</span>
+          <h3 class="post-title">5 CBC Maths Topics Kenyan Students Struggle With Most</h3>
+          <p class="post-excerpt">From algebraic fractions to probability, here's what consistently trips up learners under the CBC curriculum — and what helps.</p>
+        </div>
+        <div class="post-bottom">
+          <span>8 min read</span>
+          <span class="post-read">Read article →</span>
+        </div>
+      </a>
+
+      <a href="blog/student-to-developer-teacher.html" class="post-card reveal" data-cat="story" data-title="From B.Ed Student to Self-Taught Developer: My Path Into Tech While Training to Teach" data-excerpt="Why I started building websites alongside a Bachelor of Education degree">
+        <div class="post-top">
+          <span class="post-tag tag-story">Personal Journey</span>
+          <h3 class="post-title">From B.Ed Student to Self-Taught Developer</h3>
+          <p class="post-excerpt">Why I started building websites alongside a Bachelor of Education degree, and how teaching and coding ended up shaping each other.</p>
+        </div>
+        <div class="post-bottom">
+          <span>7 min read</span>
+          <span class="post-read">Read article →</span>
+        </div>
+      </a>
+
+      <a href="blog/ronny-best-math-story.html" class="post-card reveal" data-cat="edu" data-title="Why I Built a Free Maths Platform for Kenyan Students — The Story Behind Ronny Best Math" data-excerpt="The gap I noticed in accessible, worked-example-driven maths resources">
+        <div class="post-top">
+          <span class="post-tag tag-edu">Education Platform</span>
+          <h3 class="post-title">Why I Built a Free Maths Platform for Kenyan Students</h3>
+          <p class="post-excerpt">The gap I noticed in accessible, worked-example-driven maths resources — and how that turned into a real, growing website.</p>
+        </div>
+        <div class="post-bottom">
+          <span>6 min read</span>
+          <span class="post-read">Read article →</span>
+        </div>
+      </a>
+
+      <a href="blog/web-dev-tips-kenya.html" class="post-card reveal" data-cat="dev" data-title="Practical Web Development Tips for Beginners in Kenya" data-excerpt="Realistic advice for learning web development with unreliable internet and limited budgets">
+        <div class="post-top">
+          <span class="post-tag tag-dev">Web Development</span>
+          <h3 class="post-title">Practical Web Development Tips for Beginners in Kenya</h3>
+          <p class="post-excerpt">Realistic advice for learning web development with unreliable internet, limited budgets, and tutorials that assume neither.</p>
+        </div>
+        <div class="post-bottom">
+          <span>9 min read</span>
+          <span class="post-read">Read article →</span>
+        </div>
+      </a>
+
+      <a href="blog/cbc-assessment-pathways.html" class="post-card reveal" data-cat="edu" data-title="Understanding CBC Assessment & Pathways: A Plain-Language Guide" data-excerpt="What CBC assessment actually measures and what the Senior School pathways mean in practice">
+        <div class="post-top">
+          <span class="post-tag tag-edu">CBC Education</span>
+          <h3 class="post-title">Understanding CBC Assessment &amp; Pathways</h3>
+          <p class="post-excerpt">What CBC assessment actually measures and what the Senior School pathways mean in practice — for parents and students.</p>
+        </div>
+        <div class="post-bottom">
+          <span>8 min read</span>
+          <span class="post-read">Read article →</span>
+        </div>
+      </a>
+
+      <a href="blog/static-vs-flask.html" class="post-card reveal" data-cat="dev" data-title="Flask vs Static Sites: When to Use Which" data-excerpt="A practical decision guide for choosing between a static site and a Flask backend application">
+        <div class="post-top">
+          <span class="post-tag tag-dev">Web Development</span>
+          <h3 class="post-title">Flask vs Static Sites: When to Use Which</h3>
+          <p class="post-excerpt">A practical decision guide for choosing between a static site and a Flask backend application, based on real lessons.</p>
+        </div>
+        <div class="post-bottom">
+          <span>8 min read</span>
+          <span class="post-read">Read article →</span>
+        </div>
+      </a>
+
+      <a href="blog/choosing-hosting.html" class="post-card reveal" data-cat="dev" data-title="Where Should You Host Your First Project? Netlify vs Render vs Alternatives" data-excerpt="A practical, free-tier-focused guide to deploying your first website or web app">
+        <div class="post-top">
+          <span class="post-tag tag-dev">Web Development</span>
+          <h3 class="post-title">Where Should You Host Your First Project?</h3>
+          <p class="post-excerpt">Netlify vs Render vs alternatives — a practical, free-tier-focused guide based on real deployment experience.</p>
+        </div>
+        <div class="post-bottom">
+          <span>7 min read</span>
+          <span class="post-read">Read article →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="no-results" id="noResults">
+      <iconify-icon icon="solar:file-search-linear"></iconify-icon>
+      No articles match your search. Try a different keyword or filter.
+    </div>
+
+    <div class="blog-cta reveal">
+      <div class="bc-text">
+        <h3>Have a question about any of this?</h3>
+        <p>Whether it's a web project, CBC tutoring, or mentorship — I'd love to hear from you.</p>
+      </div>
+      <a href="contact.html" class="btn btn-primary">Get In Touch →</a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-copy">© 2026 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="index.html">Home</a></div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.querySelector('.hamburger');
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  const observer = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ══ Search + Filter logic ══
+  const searchInput = document.getElementById('searchInput');
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const postCards = document.querySelectorAll('#postsGrid .post-card');
+  const featuredPost = document.querySelector('.featured-post');
+  const resultCount = document.getElementById('resultCount');
+  const noResults = document.getElementById('noResults');
+
+  let activeCategory = 'all';
+
+  function applyFilters() {
+    const query = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    // Featured post: hide if a search/filter is active and it doesn't match
+    const featCat = featuredPost.dataset.cat;
+    const featTitle = featuredPost.dataset.title.toLowerCase();
+    const featExcerpt = featuredPost.dataset.excerpt.toLowerCase();
+    const featMatchesCat = activeCategory === 'all' || featCat === activeCategory;
+    const featMatchesSearch = !query || featTitle.includes(query) || featExcerpt.includes(query);
+    const featVisible = featMatchesCat && featMatchesSearch;
+    featuredPost.style.display = featVisible ? '' : 'none';
+    if (featVisible) visibleCount++;
+
+    postCards.forEach(card => {
+      const cat = card.dataset.cat;
+      const title = card.dataset.title.toLowerCase();
+      const excerpt = card.dataset.excerpt.toLowerCase();
+      const matchesCat = activeCategory === 'all' || cat === activeCategory;
+      const matchesSearch = !query || title.includes(query) || excerpt.includes(query);
+      const visible = matchesCat && matchesSearch;
+      card.classList.toggle('hidden-card', !visible);
+      if (visible) visibleCount++;
+    });
+
+    resultCount.textContent = visibleCount === 1 ? '1 article' : visibleCount + ' articles';
+    noResults.classList.toggle('show', visibleCount === 0);
+  }
+
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      filterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeCategory = pill.dataset.cat;
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilters);
+</script>
+</body>
+</html>

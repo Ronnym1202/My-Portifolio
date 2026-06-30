@@ -20,12 +20,13 @@
       --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
       --accent: #22d3a5; --accent-dim: rgba(34,211,165,0.12);
       --accent2: #4f8ef7;
-      --text: #e8edf2; --muted: #7a8899; --faint: #2e3d4f;
+      --text: #e8edf2; --muted: #93a5b8; --faint: #2e3d4f;
       --font-display: 'Fraunces', serif; --font-body: 'DM Sans', sans-serif; --font-mono: 'JetBrains Mono', monospace;
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
     ::selection { background: var(--accent); color: #000; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
     body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(34,211,165,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,165,0.02) 1px,transparent 1px); background-size: 64px 64px; pointer-events: none; z-index: 0; }
 
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 0 48px; height: 68px; display: flex; align-items: center; justify-content: space-between; background: rgba(8,12,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
@@ -38,6 +39,9 @@
     .nav-hire { background: var(--accent) !important; color: #000 !important; font-weight: 700 !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .mobile-nav { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg2); padding: 88px 32px 40px; flex-direction: column; gap: 8px; }
     .mobile-nav.open { display: flex; }
     .mobile-nav a { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 600; padding: 14px 16px; border-radius: 8px; }
@@ -88,6 +92,7 @@
 
     @media(max-width:700px) { nav { padding: 0 24px; } .nav-links { display: none; } .hamburger { display: flex; } .container { padding: 0 24px; } footer { padding: 32px 24px; flex-direction: column; text-align: center; } }
   </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3509173858076202" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav>
@@ -99,26 +104,27 @@
     <li><a href="privacy.html">Privacy</a></li>
     <li><a href="contact.html" class="nav-hire">Hire Me</a></li>
   </ul>
-  <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
 </nav>
-<div class="mobile-nav" id="mobileNav">
-  <a href="index.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Home</a>
-  <a href="about.html" onclick="this.closest('.mobile-nav').classList.remove('open')">About</a>
-  <a href="contact.html" onclick="this.closest('.mobile-nav').classList.remove('open')" style="color:var(--accent)">Contact →</a>
-</div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="contact.html" onclick="toggleMenu()" style="color:var(--accent)">Contact →</a>
+</nav>
 
 <section class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Terms &amp; Conditions</span></div>
     <h1 class="page-title">Terms &amp; <em>Conditions</em></h1>
     <div class="meta-info">
-      <span class="meta-pill"><iconify-icon icon="solar:calendar-bold" width="12"></iconify-icon> Effective: 1 January 2025</span>
+      <span class="meta-pill"><iconify-icon icon="solar:calendar-bold" width="12"></iconify-icon> Effective: 24 June 2026</span>
       <span class="meta-pill"><iconify-icon icon="solar:global-bold" width="12"></iconify-icon> ronnymwenda.netlify.app</span>
       <span class="meta-pill"><iconify-icon icon="solar:map-point-bold" width="12"></iconify-icon> Embu County, Kenya</span>
     </div>
   </div>
 </section>
 
+<main>
 <section class="doc-body">
   <div class="container">
 
@@ -129,8 +135,8 @@
         <li><a href="#t2">Use of the Website</a></li>
         <li><a href="#t3">Intellectual Property Rights</a></li>
         <li><a href="#t4">Services Offered</a></li>
-        <li><a href="#t5">Payment &amp; Fees</a></li>
-        <li><a href="#t6">Cancellation &amp; Refund Policy</a></li>
+        <li><a href="#t5">Payment</a></li>
+        <li><a href="#t6">Cancellation Policy</a></li>
         <li><a href="#t7">User Conduct</a></li>
         <li><a href="#t8">Disclaimer of Warranties</a></li>
         <li><a href="#t9">Limitation of Liability</a></li>
@@ -142,7 +148,6 @@
       </ol>
     </div>
 
-    <!-- 1 -->
     <div class="doc-section" id="t1">
       <h2><span class="sec-num">01</span> Agreement to Terms</h2>
       <p>These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User", "you") and <strong>Ronny Mwenda</strong> ("I", "me", "my") governing your access to and use of the website located at <strong>ronnymwenda.netlify.app</strong> and any associated services.</p>
@@ -154,7 +159,6 @@
 
     <div class="divider"></div>
 
-    <!-- 2 -->
     <div class="doc-section" id="t2">
       <h2><span class="sec-num">02</span> Use of the Website</h2>
       <p>You may use this website for lawful purposes only, subject to these Terms. Specifically, you agree <strong>not</strong> to:</p>
@@ -171,7 +175,6 @@
 
     <div class="divider"></div>
 
-    <!-- 3 -->
     <div class="doc-section" id="t3">
       <h2><span class="sec-num">03</span> Intellectual Property Rights</h2>
       <p>Unless otherwise stated, all content on this website — including but not limited to text, code, HTML/CSS/JavaScript files, design elements, graphics, layout, logo, and mathematical content — is the intellectual property of <strong>Ronny Mwenda</strong> and is protected under applicable copyright and intellectual property laws.</p>
@@ -193,7 +196,6 @@
 
     <div class="divider"></div>
 
-    <!-- 4 -->
     <div class="doc-section" id="t4">
       <h2><span class="sec-num">04</span> Services Offered</h2>
       <p>Through this website, I offer the following professional services:</p>
@@ -201,7 +203,7 @@
         <li><strong>Website Development:</strong> Custom website design and development using HTML, CSS, and JavaScript. Includes deployment on Netlify, basic SEO setup, and one round of revisions unless otherwise agreed.</li>
         <li><strong>Mathematics Tutoring:</strong> One-on-one or small group sessions for secondary and university-level mathematics. Available online (WhatsApp, video call) or in-person in Embu County.</li>
         <li><strong>Programming Mentorship:</strong> Structured learning sessions for beginner to intermediate web developers covering HTML, CSS, and JavaScript fundamentals.</li>
-        <li><strong>SEO &amp; Google Setup:</strong> Google Search Console and Analytics setup, meta tag optimisation, sitemap creation, and structured data implementation.</li>
+        <li><strong>SEO &amp; Google Setup:</strong> Google Search Console setup, meta tag optimisation, sitemap creation, and structured data implementation.</li>
       </ul>
       <p>All service deliverables, timelines, and specific terms will be agreed upon in writing (via email or WhatsApp) before work commences.</p>
       <div class="highlight-box">
@@ -211,42 +213,37 @@
 
     <div class="divider"></div>
 
-    <!-- 5 -->
     <div class="doc-section" id="t5">
-      <h2><span class="sec-num">05</span> Payment &amp; Fees</h2>
-      <p>All service fees are agreed upon before work begins. By engaging my services, you agree to the following payment terms:</p>
+      <h2><span class="sec-num">05</span> Payment</h2>
+      <p>My payment policy is simple and applies to all website development projects:</p>
       <ul>
-        <li><strong>Deposit:</strong> A deposit of 50% of the agreed fee is required before work commences on website development projects.</li>
-        <li><strong>Final Payment:</strong> The remaining balance is due upon project completion, before files are handed over or the website goes live.</li>
-        <li><strong>Tutoring:</strong> Tutoring sessions are payable per session or via agreed package rates, payable in advance.</li>
+        <li><strong>No deposit required.</strong> Work begins once the project scope is agreed in writing.</li>
+        <li><strong>Full payment is due after you have reviewed and approved the completed work</strong> — before final files are handed over or the website is connected to your own domain/hosting.</li>
+        <li><strong>Payment method:</strong> M-Pesa.</li>
         <li><strong>Currency:</strong> All fees are quoted and payable in <strong>Kenyan Shillings (KES)</strong> unless otherwise agreed.</li>
-        <li><strong>Payment Methods:</strong> M-Pesa, bank transfer, or other methods as mutually agreed.</li>
+        <li><strong>Tutoring &amp; mentorship:</strong> Payable per session, in advance of each session, via M-Pesa.</li>
       </ul>
-      <p>Invoices are issued via email. Payment is due within 3 business days of invoice date unless otherwise agreed.</p>
+      <p>For larger projects, I may share work-in-progress for feedback before the final review — this does not constitute approval or trigger payment; only your explicit sign-off on the finished deliverable does.</p>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 6 -->
     <div class="doc-section" id="t6">
-      <h2><span class="sec-num">06</span> Cancellation &amp; Refund Policy</h2>
+      <h2><span class="sec-num">06</span> Cancellation Policy</h2>
       <h3>Website Development Projects</h3>
       <ul>
-        <li>If the client cancels a project before work has commenced, the full deposit is refunded.</li>
-        <li>If the client cancels after work has commenced, the deposit is non-refundable to cover work already completed.</li>
-        <li>If I am unable to complete the project due to unforeseen circumstances, a full or partial refund will be issued proportional to work not yet completed.</li>
+        <li>Since no deposit is collected, you may cancel a project at any point before final approval with no financial obligation for incomplete work.</li>
+        <li>If I am unable to complete an agreed project due to unforeseen circumstances on my end, I will inform you promptly and no payment will be due for undelivered work.</li>
       </ul>
       <h3>Tutoring &amp; Mentorship Sessions</h3>
       <ul>
-        <li>Sessions cancelled with less than 24 hours notice may be charged at 50% of the session rate.</li>
-        <li>No-shows are charged at the full session rate.</li>
-        <li>Prepaid session packages: unused sessions are refundable within 30 days of purchase if the client wishes to discontinue.</li>
+        <li>Sessions should be cancelled with at least 12 hours notice where possible, as a courtesy.</li>
+        <li>Since sessions are paid per session in advance, a missed session without notice may not be refunded, but can typically be rescheduled — let's discuss directly if this happens.</li>
       </ul>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 7 -->
     <div class="doc-section" id="t7">
       <h2><span class="sec-num">07</span> User Conduct</h2>
       <p>When communicating with me through this website, contact forms, email, WhatsApp, or social media, you agree to:</p>
@@ -262,7 +259,6 @@
 
     <div class="divider"></div>
 
-    <!-- 8 -->
     <div class="doc-section" id="t8">
       <h2><span class="sec-num">08</span> Disclaimer of Warranties</h2>
       <p>This website and all its content are provided on an <strong>"as is" and "as available"</strong> basis, without warranties of any kind, either express or implied.</p>
@@ -277,7 +273,6 @@
 
     <div class="divider"></div>
 
-    <!-- 9 -->
     <div class="doc-section" id="t9">
       <h2><span class="sec-num">09</span> Limitation of Liability</h2>
       <p>To the fullest extent permitted by Kenyan law, Ronny Mwenda shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from:</p>
@@ -293,7 +288,6 @@
 
     <div class="divider"></div>
 
-    <!-- 10 -->
     <div class="doc-section" id="t10">
       <h2><span class="sec-num">10</span> Third-Party Links &amp; Content</h2>
       <p>This website contains links to third-party websites including GitHub, Instagram, Facebook, X (Twitter), WhatsApp, and YouTube. These links are provided for your convenience and do not constitute endorsement of those sites or their content.</p>
@@ -302,21 +296,19 @@
 
     <div class="divider"></div>
 
-    <!-- 11 -->
     <div class="doc-section" id="t11">
       <h2><span class="sec-num">11</span> Advertising</h2>
-      <p>This website may display advertisements served by <strong>Google AdSense</strong> or other advertising networks. By using this website, you acknowledge that:</p>
+      <p>This website does not currently display any advertisements. If I introduce advertising (such as Google AdSense) in the future, this section will be updated before any ads go live, and you will be notified via the "Effective Date" change at the top of this page. At that time, this section will disclose:</p>
       <ul>
-        <li>Advertisement content is controlled by the advertising network, not by Ronny Mwenda</li>
-        <li>Google and other third-party vendors may use cookies to serve ads based on your browsing history</li>
-        <li>You can opt out of personalised ads via <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a> or the <a href="https://www.networkadvertising.org/choices/" target="_blank" rel="noopener">NAI opt-out page</a></li>
-        <li>I do not endorse or take responsibility for any advertised products or services</li>
+        <li>Which advertising network is used and how it serves ads</li>
+        <li>What cookies or tracking, if any, are involved</li>
+        <li>How to opt out of personalised advertising</li>
       </ul>
+      <p>I do not endorse or take responsibility for any advertised products or services that may appear on this site in the future.</p>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 12 -->
     <div class="doc-section" id="t12">
       <h2><span class="sec-num">12</span> Governing Law</h2>
       <p>These Terms and Conditions are governed by and construed in accordance with the laws of the <strong>Republic of Kenya</strong>. Any disputes arising from these Terms or your use of this website shall be subject to the exclusive jurisdiction of the courts of Kenya.</p>
@@ -325,7 +317,6 @@
 
     <div class="divider"></div>
 
-    <!-- 13 -->
     <div class="doc-section" id="t13">
       <h2><span class="sec-num">13</span> Changes to Terms</h2>
       <p>I reserve the right to update or modify these Terms and Conditions at any time. When changes are made, the "Effective Date" at the top of this page will be updated. For significant changes, I will make reasonable efforts to notify users.</p>
@@ -334,7 +325,6 @@
 
     <div class="divider"></div>
 
-    <!-- 14 -->
     <div class="doc-section" id="t14">
       <h2><span class="sec-num">14</span> Contact Information</h2>
       <p>If you have questions, concerns, or feedback about these Terms and Conditions, please contact me:</p>
@@ -346,21 +336,32 @@
         <li><strong>Website:</strong> <a href="https://ronnymwenda.netlify.app">ronnymwenda.netlify.app</a></li>
       </ul>
       <div class="highlight-box">
-        <strong>Last Updated:</strong> 1 January 2025. These Terms supersede all previous versions.
+        <strong>Last Updated:</strong> 24 June 2026. These Terms supersede all previous versions.
       </div>
     </div>
 
   </div>
 </section>
+</main>
 
 <footer>
-  <div class="footer-copy">© 2025 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="index.html">Home</a></div>
+  <div class="footer-copy">© 2026 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="index.html">Home</a></div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
     <a href="privacy.html">Privacy Policy</a>
   </div>
 </footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.querySelector('.hamburger');
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+</script>
 </body>
 </html>

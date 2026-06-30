@@ -20,12 +20,13 @@
       --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
       --accent: #22d3a5; --accent-dim: rgba(34,211,165,0.12);
       --accent2: #4f8ef7;
-      --text: #e8edf2; --muted: #7a8899; --faint: #2e3d4f;
+      --text: #e8edf2; --muted: #93a5b8; --faint: #2e3d4f;
       --font-display: 'Fraunces', serif; --font-body: 'DM Sans', sans-serif; --font-mono: 'JetBrains Mono', monospace;
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
     ::selection { background: var(--accent); color: #000; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
     body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(34,211,165,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,165,0.02) 1px,transparent 1px); background-size: 64px 64px; pointer-events: none; z-index: 0; }
 
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 0 48px; height: 68px; display: flex; align-items: center; justify-content: space-between; background: rgba(8,12,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
@@ -38,6 +39,9 @@
     .nav-hire { background: var(--accent) !important; color: #000 !important; font-weight: 700 !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .mobile-nav { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg2); padding: 88px 32px 40px; flex-direction: column; gap: 8px; }
     .mobile-nav.open { display: flex; }
     .mobile-nav a { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 600; padding: 14px 16px; border-radius: 8px; }
@@ -73,11 +77,7 @@
     .doc-section li strong { color: var(--text); }
     .doc-section h3 { font-weight: 700; font-size: 16px; color: var(--text); margin: 20px 0 8px; }
 
-    .highlight-box {
-      background: var(--accent-dim); border: 1px solid rgba(34,211,165,0.2);
-      border-radius: 10px; padding: 16px 20px; margin: 20px 0;
-      font-size: 14px; color: var(--muted); line-height: 1.75;
-    }
+    .highlight-box { background: var(--accent-dim); border: 1px solid rgba(34,211,165,0.2); border-radius: 10px; padding: 16px 20px; margin: 20px 0; font-size: 14px; color: var(--muted); line-height: 1.75; }
     .highlight-box strong { color: var(--accent); }
     .divider { height: 1px; background: var(--border); margin: 40px 0; }
 
@@ -90,6 +90,7 @@
 
     @media(max-width:700px) { nav { padding: 0 24px; } .nav-links { display: none; } .hamburger { display: flex; } .container { padding: 0 24px; } footer { padding: 32px 24px; flex-direction: column; text-align: center; } }
   </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3509173858076202" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav>
@@ -101,26 +102,27 @@
     <li><a href="terms.html">Terms</a></li>
     <li><a href="contact.html" class="nav-hire">Hire Me</a></li>
   </ul>
-  <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
 </nav>
-<div class="mobile-nav" id="mobileNav">
-  <a href="index.html" onclick="this.closest('.mobile-nav').classList.remove('open')">Home</a>
-  <a href="about.html" onclick="this.closest('.mobile-nav').classList.remove('open')">About</a>
-  <a href="contact.html" onclick="this.closest('.mobile-nav').classList.remove('open')" style="color:var(--accent)">Contact →</a>
-</div>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="contact.html" onclick="toggleMenu()" style="color:var(--accent)">Contact →</a>
+</nav>
 
 <section class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Privacy Policy</span></div>
     <h1 class="page-title">Privacy <em>Policy</em></h1>
     <div class="meta-info">
-      <span class="meta-pill"><iconify-icon icon="solar:calendar-bold" width="12"></iconify-icon> Last Updated: 1 January 2025</span>
+      <span class="meta-pill"><iconify-icon icon="solar:calendar-bold" width="12"></iconify-icon> Last Updated: 24 June 2026</span>
       <span class="meta-pill"><iconify-icon icon="solar:global-bold" width="12"></iconify-icon> ronnymwenda.netlify.app</span>
       <span class="meta-pill"><iconify-icon icon="solar:map-point-bold" width="12"></iconify-icon> Embu County, Kenya</span>
     </div>
   </div>
 </section>
 
+<main>
 <section class="doc-body">
   <div class="container">
 
@@ -131,7 +133,7 @@
         <li><a href="#s2">Information We Collect</a></li>
         <li><a href="#s3">How We Use Your Information</a></li>
         <li><a href="#s4">Cookies and Tracking Technologies</a></li>
-        <li><a href="#s5">Google Services &amp; Third-Party Tools</a></li>
+        <li><a href="#s5">Third-Party Tools</a></li>
         <li><a href="#s6">Sharing of Information</a></li>
         <li><a href="#s7">Data Retention</a></li>
         <li><a href="#s8">Your Rights</a></li>
@@ -143,100 +145,76 @@
       </ol>
     </div>
 
-    <!-- 1 -->
     <div class="doc-section" id="s1">
       <h2><span class="sec-num">01</span> Introduction</h2>
       <p>Welcome to <strong>ronnymwenda.netlify.app</strong> (the "Website"), operated by <strong>Ronny Mwenda</strong> ("I", "me", or "my"), a frontend web developer and mathematics teacher based in Embu County, Kenya.</p>
       <p>This Privacy Policy explains how I collect, use, disclose, and safeguard your information when you visit my website. Please read this policy carefully. If you disagree with its terms, please discontinue use of the site.</p>
       <div class="highlight-box">
-        <strong>Summary:</strong> I respect your privacy. I only collect information necessary to operate this website and provide my services. I do not sell your personal data to anyone.
+        <strong>Summary:</strong> I respect your privacy. I only collect information necessary to operate this website and respond to your enquiries. I do not sell your personal data to anyone.
       </div>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 2 -->
     <div class="doc-section" id="s2">
       <h2><span class="sec-num">02</span> Information We Collect</h2>
       <h3>Information You Provide Directly</h3>
-      <p>When you use the contact form on this website, I may collect:</p>
+      <p>When you use the contact form on this website, I collect:</p>
       <ul>
         <li><strong>Name</strong> — to address you appropriately in responses</li>
         <li><strong>Email address</strong> — to reply to your enquiry</li>
         <li><strong>Phone number</strong> — only if you voluntarily provide it</li>
         <li><strong>Message content</strong> — the details of your enquiry or request</li>
       </ul>
+      <p>This information is submitted through a third-party form service, <strong>Formspree</strong>, which delivers your message directly to my email inbox. See Section 5 for details.</p>
       <h3>Information Collected Automatically</h3>
-      <p>When you visit the Website, certain information may be collected automatically, including:</p>
-      <ul>
-        <li><strong>Browser type and version</strong></li>
-        <li><strong>Pages visited and time spent</strong></li>
-        <li><strong>Referring website</strong></li>
-        <li><strong>General geographic location</strong> (country or region level, not precise location)</li>
-        <li><strong>Device type</strong> (desktop, mobile, tablet)</li>
-      </ul>
-      <p>This data is collected through analytics tools such as Google Analytics and is used only in aggregate form to understand how visitors use the site.</p>
+      <p>This website does not currently use any visitor analytics or tracking software. I do not collect browsing behaviour, IP addresses, device information, or location data through this site at this time.</p>
+      <p>If I introduce analytics tools (such as Google Analytics) or advertising (such as Google AdSense) in the future, this policy will be updated in advance to reflect exactly what is collected and why.</p>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 3 -->
     <div class="doc-section" id="s3">
       <h2><span class="sec-num">03</span> How We Use Your Information</h2>
-      <p>The information I collect is used to:</p>
+      <p>The information I collect through the contact form is used solely to:</p>
       <ul>
         <li>Respond to your enquiries, messages, and service requests</li>
-        <li>Provide mathematics tutoring, web development, and mentorship services</li>
-        <li>Improve the design, content, and performance of this website</li>
-        <li>Understand visitor behaviour through aggregated analytics</li>
+        <li>Provide mathematics tutoring, web development, and mentorship services you have requested</li>
         <li>Comply with applicable Kenyan laws and regulations</li>
-        <li>Send you relevant information about my services, only if you have requested it</li>
       </ul>
       <p>I will <strong>never</strong> use your personal information to send unsolicited commercial messages (spam), sell your data to third parties, or use it for any purpose you have not consented to.</p>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 4 -->
     <div class="doc-section" id="s4">
       <h2><span class="sec-num">04</span> Cookies and Tracking Technologies</h2>
-      <p>This website may use cookies — small text files placed on your device — to improve your experience. Types of cookies used may include:</p>
-      <ul>
-        <li><strong>Essential cookies:</strong> Necessary for basic website functionality.</li>
-        <li><strong>Analytics cookies:</strong> Used by Google Analytics to collect anonymous usage data.</li>
-        <li><strong>Advertising cookies:</strong> If Google AdSense is enabled in the future, it may set cookies to serve relevant advertisements based on your interests.</li>
-      </ul>
-      <p>You can control and/or delete cookies as you wish through your browser settings. Note that disabling cookies may affect certain website functionality. For more information about cookies, visit <a href="https://www.aboutcookies.org" target="_blank" rel="noopener">aboutcookies.org</a>.</p>
-      <div class="highlight-box">
-        <strong>Note on Advertising:</strong> This website may display advertisements served by Google AdSense. Google uses the DoubleClick cookie to serve ads based on your prior visits to this website and other websites. You may opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>.
-      </div>
+      <p>This website does not set its own cookies for tracking or advertising purposes. The only cookies that may be present are those set by third-party services embedded in the site (such as Google Fonts or the Formspree submission service), which are necessary for those features to function.</p>
+      <p>If advertising (such as Google AdSense) is enabled on this site in the future, this section will be updated to disclose exactly which cookies are used and how to opt out, before any such cookies are set.</p>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 5 -->
     <div class="doc-section" id="s5">
-      <h2><span class="sec-num">05</span> Google Services &amp; Third-Party Tools</h2>
-      <p>This website uses the following third-party services, each with their own privacy policies:</p>
+      <h2><span class="sec-num">05</span> Third-Party Tools</h2>
+      <p>This website currently uses the following third-party services, each with their own privacy policies:</p>
       <ul>
-        <li><strong>Google Analytics</strong> — Website traffic and usage analytics. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
-        <li><strong>Google Search Console</strong> — Website indexing and search performance monitoring.</li>
-        <li><strong>Google AdSense</strong> — Advertising platform (may be enabled in future). <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Ads Policy</a></li>
+        <li><strong>Formspree</strong> — Processes and delivers contact form submissions to my email. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Formspree Privacy Policy</a></li>
         <li><strong>Netlify</strong> — Website hosting. <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">Netlify Privacy Policy</a></li>
+        <li><strong>Google Search Console</strong> — Website indexing and search performance monitoring (data visible only to me, not collected from visitors directly).</li>
+        <li><strong>Google Fonts</strong> — Typography library, loaded from Google's servers.</li>
         <li><strong>Iconify</strong> — Icon library loaded via CDN. No personal data is collected.</li>
-        <li><strong>Google Fonts</strong> — Typography library. Google may log font requests.</li>
       </ul>
       <p>I have no control over the data collection practices of these third-party services. I encourage you to review their respective privacy policies.</p>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 6 -->
     <div class="doc-section" id="s6">
       <h2><span class="sec-num">06</span> Sharing of Information</h2>
       <p>I do <strong>not</strong> sell, trade, rent, or otherwise transfer your personal information to third parties except in the following limited circumstances:</p>
       <ul>
-        <li><strong>Service providers:</strong> Trusted third-party services used to operate this website (e.g., Netlify hosting) under confidentiality obligations.</li>
+        <li><strong>Service providers:</strong> Trusted third-party services used to operate this website (e.g., Netlify hosting, Formspree form delivery) under their own confidentiality and security practices.</li>
         <li><strong>Legal requirements:</strong> If required to do so by Kenyan law, a court order, or governmental authority.</li>
         <li><strong>Protection of rights:</strong> To protect the rights, property, or safety of Ronny Mwenda, website users, or the public.</li>
         <li><strong>With your consent:</strong> In any other circumstances, only with your explicit prior consent.</li>
@@ -245,13 +223,11 @@
 
     <div class="divider"></div>
 
-    <!-- 7 -->
     <div class="doc-section" id="s7">
       <h2><span class="sec-num">07</span> Data Retention</h2>
       <p>I retain your personal information only for as long as necessary to fulfil the purposes outlined in this policy:</p>
       <ul>
-        <li><strong>Contact form submissions:</strong> Retained for up to 12 months to allow follow-up on enquiries, then deleted.</li>
-        <li><strong>Analytics data:</strong> Retained by Google Analytics per their standard data retention settings (typically 26 months).</li>
+        <li><strong>Contact form submissions:</strong> Retained in my email inbox to allow follow-up on enquiries. You may request deletion at any time.</li>
         <li><strong>Email correspondence:</strong> Retained for the duration of our business relationship and up to 2 years after its conclusion.</li>
       </ul>
       <p>You may request deletion of your data at any time by contacting me at <a href="mailto:ronnymwenda89@gmail.com">ronnymwenda89@gmail.com</a>.</p>
@@ -259,7 +235,6 @@
 
     <div class="divider"></div>
 
-    <!-- 8 -->
     <div class="doc-section" id="s8">
       <h2><span class="sec-num">08</span> Your Rights</h2>
       <p>Depending on applicable law, you may have the following rights regarding your personal data:</p>
@@ -275,7 +250,6 @@
 
     <div class="divider"></div>
 
-    <!-- 9 -->
     <div class="doc-section" id="s9">
       <h2><span class="sec-num">09</span> Children's Privacy</h2>
       <p>This website is not directed to children under the age of 13. I do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided personal information to this website, please contact me immediately at <a href="mailto:ronnymwenda89@gmail.com">ronnymwenda89@gmail.com</a> so I can delete that information.</p>
@@ -284,39 +258,35 @@
 
     <div class="divider"></div>
 
-    <!-- 10 -->
     <div class="doc-section" id="s10">
       <h2><span class="sec-num">10</span> External Links</h2>
-      <p>This website contains links to external websites including GitHub, Instagram, Facebook, X (Twitter), YouTube, and WhatsApp. These sites have their own privacy policies, and I have no control over their content or data practices.</p>
+      <p>This website contains links to external websites including GitHub, Instagram, Facebook, X (Twitter), YouTube, and WhatsApp, as well as to my other projects (CBC Best, Ronny Best Math, RonnyBank). These sites have their own privacy policies, and I have no control over their content or data practices.</p>
       <p>I strongly advise you to review the privacy policies of any external sites you visit through links on this website. I am not responsible for the content, privacy policies, or practices of any third-party sites or services.</p>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 11 -->
     <div class="doc-section" id="s11">
       <h2><span class="sec-num">11</span> Security</h2>
-      <p>I implement reasonable technical and organisational measures to protect your personal information against unauthorised access, alteration, disclosure, or destruction. These include:</p>
+      <p>I implement reasonable technical measures to protect your personal information against unauthorised access, alteration, disclosure, or destruction. These include:</p>
       <ul>
         <li>HTTPS encryption on all pages</li>
         <li>Secure hosting through Netlify's infrastructure</li>
-        <li>Limited data collection — only what is necessary</li>
+        <li>Limited data collection — only what is necessary, collected only via the contact form</li>
       </ul>
       <p>However, please note that no method of data transmission over the internet is 100% secure. While I strive to protect your information, I cannot guarantee absolute security.</p>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 12 -->
     <div class="doc-section" id="s12">
       <h2><span class="sec-num">12</span> Changes to This Policy</h2>
-      <p>I may update this Privacy Policy from time to time to reflect changes in my practices, technology, legal requirements, or for other operational reasons. When I update this policy, I will revise the "Last Updated" date at the top of this page.</p>
+      <p>I may update this Privacy Policy from time to time to reflect changes in my practices, technology, legal requirements, or for other operational reasons — for example, if I add analytics or advertising tools. When I update this policy, I will revise the "Last Updated" date at the top of this page.</p>
       <p>I encourage you to review this Privacy Policy periodically. Your continued use of the website after any changes constitutes your acceptance of the updated policy.</p>
     </div>
 
     <div class="divider"></div>
 
-    <!-- 13 -->
     <div class="doc-section" id="s13">
       <h2><span class="sec-num">13</span> Contact Us</h2>
       <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how your personal data is handled, please contact me:</p>
@@ -331,15 +301,26 @@
 
   </div>
 </section>
+</main>
 
 <footer>
-  <div class="footer-copy">© 2025 <strong>Ronny Mwenda</strong> ("Ronny Best") · <a href="index.html">Home</a></div>
+  <div class="footer-copy">© 2026 <strong>Ronny Mwenda</strong> ("Ronny Best") · <a href="index.html">Home</a></div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
     <a href="terms.html">Terms &amp; Conditions</a>
   </div>
 </footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.querySelector('.hamburger');
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+</script>
 </body>
 </html>

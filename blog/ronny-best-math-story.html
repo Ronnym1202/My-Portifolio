@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why I Built a Free Maths Platform for Kenyan Students | Ronny Mwenda</title>
+  <link rel="icon" type="image/jpeg" href="../profile.jpeg">
+  <meta name="description" content="The gap I noticed in accessible, worked-example-driven maths resources for Kenyan secondary and university students — and how that turned into Ronny Best Math." />
+  <meta name="author" content="Ronny Mwenda" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ronnymwenda.netlify.app/blog/ronny-best-math-story.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Why I Built a Free Maths Platform for Kenyan Students" />
+  <meta property="og:description" content="The story behind Ronny Best Math — and the resource gap it was built to close." />
+  <meta property="og:url" content="https://ronnymwenda.netlify.app/blog/ronny-best-math-story.html" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why I Built a Free Maths Platform for Kenyan Students — The Story Behind Ronny Best Math",
+    "author": { "@type": "Person", "name": "Ronny Mwenda" },
+    "datePublished": "2026-06-24",
+    "dateModified": "2026-06-24",
+    "publisher": { "@type": "Person", "name": "Ronny Mwenda" },
+    "mainEntityOfPage": "https://ronnymwenda.netlify.app/blog/ronny-best-math-story.html"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --bg2: #0d1117; --bg3: #131920;
+      --surface: #1a2230; --surface2: #1e2a3a;
+      --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+      --accent: #f5c842; --accent-dim: rgba(245,200,66,0.12);
+      --accent2: #22d3a5;
+      --text: #e8edf2; --muted: #93a5b8; --faint: #2e3d4f;
+      --font-display: 'Fraunces', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    ::selection { background: var(--accent); color: #000; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(245,200,66,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(245,200,66,0.02) 1px,transparent 1px); background-size: 64px 64px; pointer-events: none; z-index: 0; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 0 48px; height: 68px; display: flex; align-items: center; justify-content: space-between; background: rgba(8,12,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--font-mono); font-size: 14px; color: var(--accent2); text-decoration: none; letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px; }
+    .nav-logo::before { content: ''; width: 8px; height: 8px; background: var(--accent2); border-radius: 50%; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 6px 14px; border-radius: 6px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .nav-hire { background: var(--accent2) !important; color: #000 !important; font-weight: 700 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg2); padding: 88px 32px 40px; flex-direction: column; gap: 8px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 600; padding: 14px 16px; border-radius: 8px; }
+
+    section { position: relative; z-index: 1; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+    .article-hero { padding: 130px 0 50px; border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-bottom: 24px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--accent2); text-decoration: none; }
+    .breadcrumb span { color: var(--faint); }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(245,200,66,0.3); padding: 5px 14px; border-radius: 20px; margin-bottom: 22px; }
+    .article-title { font-family: var(--font-display); font-size: clamp(28px, 5vw, 42px); font-weight: 800; line-height: 1.18; letter-spacing: -1px; margin-bottom: 22px; }
+    .article-meta { display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+    .article-meta span { display: flex; align-items: center; gap: 6px; }
+
+    .article-body { padding: 50px 0 90px; }
+    .article-body p { color: var(--muted); font-size: 16px; line-height: 1.95; margin-bottom: 22px; }
+    .article-body p strong { color: var(--text); }
+    .article-body p a { color: var(--accent2); text-decoration: none; }
+    .article-body p a:hover { text-decoration: underline; }
+    .article-body h2 { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--text); margin: 44px 0 18px; letter-spacing: -0.5px; }
+    .article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--text); margin: 26px 0 12px; }
+    .article-body ul { padding-left: 22px; margin-bottom: 22px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { color: var(--muted); font-size: 15.5px; line-height: 1.85; }
+    .article-body li strong { color: var(--text); }
+    .pull-quote { border-left: 3px solid var(--accent); padding: 4px 0 4px 22px; margin: 32px 0; font-family: var(--font-display); font-style: italic; font-size: 19px; color: var(--text); line-height: 1.6; }
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 28px 0; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px; text-align: center; }
+    .stat-num { font-family: var(--font-mono); font-size: 22px; font-weight: 700; color: var(--accent); }
+    .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+    .divider { height: 1px; background: var(--border); margin: 44px 0; }
+
+    .article-cta { background: linear-gradient(135deg, rgba(245,200,66,0.12), rgba(34,211,165,0.08)); border: 1px solid rgba(245,200,66,0.3); border-radius: 16px; padding: 36px; text-align: center; margin-top: 50px; }
+    .article-cta h3 { font-family: var(--font-display); font-size: 23px; font-weight: 700; margin-bottom: 10px; }
+    .article-cta p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.2s; }
+    .btn-primary { background: var(--accent2); color: #000; }
+    .btn-primary:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,0.35); }
+    .btn-outline { border: 1px solid var(--border2); color: var(--text); background: transparent; margin-left: 10px; }
+    .btn-outline:hover { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); }
+
+    .related-posts { margin-top: 60px; }
+    .related-title { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 18px; }
+    .related-link { display: block; padding: 14px 0; border-top: 1px solid var(--border); text-decoration: none; color: var(--text); font-weight: 600; font-size: 14.5px; transition: color 0.2s; }
+    .related-link:hover { color: var(--accent2); }
+
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; position: relative; z-index: 1; }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-copy a { color: var(--accent2); text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent2); }
+
+    @media(max-width:700px) { nav { padding: 0 24px; } .nav-links { display: none; } .hamburger { display: flex; } .container { padding: 0 24px; } footer { padding: 32px 24px; flex-direction: column; text-align: center; } .article-cta { padding: 28px 20px; } .stat-row { grid-template-columns: 1fr; } }
+
+    /* ══ READING PROGRESS BAR ══ */
+    .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); z-index: 300; width: 0%; transition: width 0.1s ease-out; box-shadow: 0 0 8px var(--accent); }
+
+    /* ══ BACK LINK ══ */
+    .back-link { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--muted); text-decoration: none; margin-bottom: 22px; transition: color 0.2s, gap 0.2s; }
+    .back-link:hover { color: var(--accent); gap: 11px; }
+
+    /* ══ AUTHOR CARD ══ */
+    .author-card { display: flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; margin: 28px 0 0; }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 16px; color: #000; flex-shrink: 0; }
+    .author-info strong { display: block; font-size: 14px; color: var(--text); }
+    .author-info span { font-size: 12px; color: var(--muted); }
+    .author-card .share-btn { margin-left: auto; flex-shrink: 0; }
+
+    /* ══ SHARE BUTTON ══ */
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--bg3); border: 1px solid var(--border2); color: var(--muted); font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; padding: 8px 14px; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+    .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .share-btn.copied { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3509173858076202" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<nav>
+  <a href="../index.html" class="nav-logo">ronny.dev</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#projects">Projects</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../contact.html" class="nav-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="../index.html" onclick="toggleMenu()">Home</a>
+  <a href="../blog.html" onclick="toggleMenu()">Blog</a>
+  <a href="../contact.html" onclick="toggleMenu()" style="color:var(--accent2)">Hire Me →</a>
+</nav>
+
+<section class="article-hero">
+  <div class="container">
+    <a href="../blog.html" class="back-link"><iconify-icon icon="solar:arrow-left-linear" width="13"></iconify-icon> All Articles</a>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span>›</span>
+      <a href="../blog.html">Blog</a><span>›</span>
+      <span>Ronny Best Math</span>
+    </div>
+    <span class="article-tag"><iconify-icon icon="solar:book-bookmark-bold" width="13"></iconify-icon> Education Platform</span>
+    <h1 class="article-title">Why I Built a Free Maths Platform for Kenyan Students — The Story Behind Ronny Best Math</h1>
+    <div class="article-meta">
+      <span><iconify-icon icon="solar:calendar-bold" width="13"></iconify-icon> 24 June 2026</span>
+      <span><iconify-icon icon="solar:clock-circle-bold" width="13"></iconify-icon> 6 min read</span>
+      <span><iconify-icon icon="solar:user-bold" width="13"></iconify-icon> Ronny Mwenda</span>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">RM</div>
+      <div class="author-info">
+        <strong>Ronny Mwenda</strong>
+        <span>Frontend Developer &amp; Mathematics Teacher, Embu County</span>
+      </div>
+      <button class="share-btn" id="shareBtn" onclick="copyLink()">
+        <iconify-icon icon="solar:link-linear" width="13"></iconify-icon>
+        <span id="shareLabel">Copy Link</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="article-body">
+  <div class="article-body">
+  <div class="container">
+
+    <p>Ronny Best Math didn't start as a business idea or a portfolio piece. It started from a specific, repeated frustration: watching students who clearly understood a concept in class lose that understanding entirely by the time they sat down at home to revise, simply because they had nothing to refer back to that matched how the idea was actually explained to them.</p>
+
+    <p>Textbooks exist, of course, and they're valuable — but textbook explanations are necessarily general, written for a wide audience, and often skip the small connective steps that a live classroom explanation fills in naturally. Once that explanation is gone, a student is often left with a worked example that jumps from line 2 to line 5, with no record of why lines 3 and 4 happened.</p>
+
+    <h2>The actual gap</h2>
+    <p>The specific problem wasn't "students need more maths resources" in some abstract sense — Kenya has no shortage of revision books and past papers. The real gap was narrower and more specific:</p>
+    <ul>
+      <li><strong>Free, on-demand access</strong> — available at 9pm on a Tuesday when a student is stuck on homework, not only during scheduled tutoring hours.</li>
+      <li><strong>Worked examples that show every intermediate step</strong>, not just the final answer or a heavily compressed solution.</li>
+      <li><strong>Content aligned with the actual curriculum students are sitting</strong> — CBC-aligned, not generic international content that uses different notation or skips locally-examined topics entirely.</li>
+    </ul>
+    <p>That specific combination — free, detailed, and curriculum-aligned — was harder to find than expected. Plenty of resources had one or two of those three. Few had all three together, consistently.</p>
+
+    <div class="pull-quote">The idea wasn't to replace a teacher. It was to make sure the explanation didn't disappear the moment class ended.</div>
+
+    <h2>Starting small, deliberately</h2>
+    <p>The first version of Ronny Best Math didn't try to cover everything at once. It started with a focused set of topics — the ones that came up most often in tutoring sessions and generated the most repeated questions — built out with full worked examples rather than a wide, thin spread of topics with minimal detail on each.</p>
+    <p>That decision mattered more than it might seem. A handful of genuinely thorough topic pages are more useful to a struggling student than thirty shallow ones, because the thorough version is the one that actually answers the "but why did you do that step?" question a student is silently asking.</p>
+
+    <h2>Why "free" was never up for negotiation</h2>
+    <p>This is worth being direct about: access to a maths tutor, or to quality revision material, often tracks closely with a family's financial situation — and that has nothing to do with a student's ability or effort. A capable student without consistent access to a tutor is at a real disadvantage through no fault of their own, especially heading into KCSE or university-entry mathematics.</p>
+    <p>Hosting Ronny Best Math on Netlify's free tier, with no login wall and no payment requirement, was a direct response to that. It doesn't solve the broader access problem in Kenya on its own — one website can't — but it removes at least one barrier for any student with a phone or shared computer and an internet connection, which is a meaningfully larger group than those who can afford private tutoring.</p>
+
+    <h2>What teaching taught the website, and what the website taught the teaching</h2>
+    <p>Running an actual classroom and building a website turned out to sharpen each other in unexpected ways. Classroom teaching revealed exactly which steps students silently skip over or misunderstand — the moments where a worked example needs to slow down rather than speed up. Building the website, in turn, demanded a kind of explicit precision that live teaching doesn't always require, since there's no student in front of a webpage to ask "wait, why?" in real time. The explanation has to anticipate that question and answer it before it's asked.</p>
+
+    <h2>Where it stands now, and where it's heading</h2>
+    <p>Ronny Best Math continues to grow topic by topic, alongside its sibling project <strong>CBC Best</strong> — a broader curriculum resource hub covering pathways, assessment tools, and learning outcome models beyond just mathematics. Both are part of the same underlying goal: making genuinely useful, properly aligned educational content freely available to Kenyan students and teachers, without a paywall standing between a student and an explanation they need.</p>
+
+    <div class="article-cta">
+      <h3>See it for yourself</h3>
+      <p>Browse the worked examples and CBC-aligned topics on Ronny Best Math — completely free, no login required.</p>
+      <a href="https://bestronny.netlify.app" target="_blank" rel="noopener" class="btn btn-primary">Visit Ronny Best Math →</a>
+      <a href="https://cbcbest.netlify.app" target="_blank" rel="noopener" class="btn btn-outline">Explore CBC Best</a>
+    </div>
+
+    <div class="related-posts">
+      <div class="related-title">// Read Next</div>
+      <a href="cbc-maths-struggles.html" class="related-link">5 CBC Maths Topics Kenyan Students Struggle With Most →</a>
+      <a href="student-to-developer-teacher.html" class="related-link">From B.Ed Student to Self-Taught Developer →</a>
+    </div>
+
+  </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-copy">© 2026 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="../index.html">Home</a></div>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../terms.html">Terms &amp; Conditions</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.querySelector('.hamburger');
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  // Reading progress bar
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progressBar').style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress);
+  updateProgress();
+
+  // Copy link button
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = document.getElementById('shareBtn');
+      const label = document.getElementById('shareLabel');
+      btn.classList.add('copied');
+      label.textContent = 'Copied!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        label.textContent = 'Copy Link';
+      }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Where Should You Host Your First Project? Netlify vs Render vs Alternatives | Ronny Mwenda</title>
+  <link rel="icon" type="image/jpeg" href="../profile.jpeg">
+  <meta name="description" content="A practical, free-tier-focused guide to choosing where to deploy your first website or web app — Netlify, Render, and other genuinely free options, based on real deployment experience." />
+  <meta name="author" content="Ronny Mwenda" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ronnymwenda.netlify.app/blog/choosing-hosting.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Where Should You Host Your First Project? Netlify vs Render vs Alternatives" />
+  <meta property="og:description" content="A practical, free-tier-focused guide to deploying your first project." />
+  <meta property="og:url" content="https://ronnymwenda.netlify.app/blog/choosing-hosting.html" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Where Should You Host Your First Project? Netlify vs Render vs Alternatives",
+    "author": { "@type": "Person", "name": "Ronny Mwenda" },
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "publisher": { "@type": "Person", "name": "Ronny Mwenda" },
+    "mainEntityOfPage": "https://ronnymwenda.netlify.app/blog/choosing-hosting.html"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --bg2: #0d1117; --bg3: #131920;
+      --surface: #1a2230; --surface2: #1e2a3a;
+      --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+      --accent: #4f8ef7; --accent-dim: rgba(79,142,247,0.12);
+      --accent2: #22d3a5;
+      --text: #e8edf2; --muted: #93a5b8; --faint: #2e3d4f;
+      --font-display: 'Fraunces', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    ::selection { background: var(--accent); color: #000; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(79,142,247,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(79,142,247,0.02) 1px,transparent 1px); background-size: 64px 64px; pointer-events: none; z-index: 0; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 0 48px; height: 68px; display: flex; align-items: center; justify-content: space-between; background: rgba(8,12,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--font-mono); font-size: 14px; color: var(--accent2); text-decoration: none; letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px; }
+    .nav-logo::before { content: ''; width: 8px; height: 8px; background: var(--accent2); border-radius: 50%; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 6px 14px; border-radius: 6px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .nav-hire { background: var(--accent2) !important; color: #000 !important; font-weight: 700 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg2); padding: 88px 32px 40px; flex-direction: column; gap: 8px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 600; padding: 14px 16px; border-radius: 8px; }
+
+    section { position: relative; z-index: 1; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+    .article-hero { padding: 130px 0 50px; border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-bottom: 24px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--accent2); text-decoration: none; }
+    .breadcrumb span { color: var(--faint); }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(79,142,247,0.3); padding: 5px 14px; border-radius: 20px; margin-bottom: 22px; }
+    .article-title { font-family: var(--font-display); font-size: clamp(26px, 5vw, 40px); font-weight: 800; line-height: 1.2; letter-spacing: -1px; margin-bottom: 22px; }
+    .article-meta { display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+    .article-meta span { display: flex; align-items: center; gap: 6px; }
+
+    .article-body { padding: 50px 0 90px; }
+    .article-body p { color: var(--muted); font-size: 16px; line-height: 1.95; margin-bottom: 22px; }
+    .article-body p strong { color: var(--text); }
+    .article-body p a { color: var(--accent2); text-decoration: none; }
+    .article-body p a:hover { text-decoration: underline; }
+    .article-body h2 { font-family: var(--font-display); font-size: 25px; font-weight: 700; color: var(--text); margin: 44px 0 16px; letter-spacing: -0.5px; }
+    .article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--text); margin: 26px 0 12px; }
+    .article-body ul { padding-left: 22px; margin-bottom: 22px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { color: var(--muted); font-size: 15.5px; line-height: 1.85; }
+    .article-body li strong { color: var(--text); }
+    .article-body code { font-family: var(--font-mono); font-size: 0.9em; background: var(--surface); border: 1px solid var(--border); padding: 2px 7px; border-radius: 5px; color: var(--accent); }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13.5px; }
+    .compare-table th { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent2); text-align: left; padding: 11px 12px; border-bottom: 2px solid var(--border2); }
+    .compare-table td { padding: 11px 12px; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child { color: var(--text); font-weight: 600; }
+    .fix-card { background: rgba(34,211,165,0.06); border: 1px solid rgba(34,211,165,0.22); border-radius: 12px; padding: 18px 22px; margin: 22px 0; }
+    .fix-label { font-family: var(--font-mono); font-size: 10.5px; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+    .fix-card p { margin-bottom: 0; font-size: 14.5px; }
+    .pull-quote { border-left: 3px solid var(--accent); padding: 4px 0 4px 22px; margin: 32px 0; font-family: var(--font-display); font-style: italic; font-size: 19px; color: var(--text); line-height: 1.6; }
+    .divider { height: 1px; background: var(--border); margin: 44px 0; }
+
+    .article-cta { background: linear-gradient(135deg, rgba(79,142,247,0.12), rgba(34,211,165,0.08)); border: 1px solid rgba(79,142,247,0.3); border-radius: 16px; padding: 36px; text-align: center; margin-top: 50px; }
+    .article-cta h3 { font-family: var(--font-display); font-size: 23px; font-weight: 700; margin-bottom: 10px; }
+    .article-cta p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.2s; }
+    .btn-primary { background: var(--accent2); color: #000; }
+    .btn-primary:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,0.35); }
+    .btn-outline { border: 1px solid var(--border2); color: var(--text); background: transparent; margin-left: 10px; }
+    .btn-outline:hover { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); }
+
+    .related-posts { margin-top: 60px; }
+    .related-title { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 18px; }
+    .related-link { display: block; padding: 14px 0; border-top: 1px solid var(--border); text-decoration: none; color: var(--text); font-weight: 600; font-size: 14.5px; transition: color 0.2s; }
+    .related-link:hover { color: var(--accent2); }
+
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; position: relative; z-index: 1; }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-copy a { color: var(--accent2); text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent2); }
+
+    @media(max-width:700px) { nav { padding: 0 24px; } .nav-links { display: none; } .hamburger { display: flex; } .container { padding: 0 24px; } footer { padding: 32px 24px; flex-direction: column; text-align: center; } .article-cta { padding: 28px 20px; } .compare-table { font-size: 11.5px; } .compare-table th, .compare-table td { padding: 8px 6px; } }
+
+    /* ══ READING PROGRESS BAR ══ */
+    .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); z-index: 300; width: 0%; transition: width 0.1s ease-out; box-shadow: 0 0 8px var(--accent); }
+
+    /* ══ BACK LINK ══ */
+    .back-link { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--muted); text-decoration: none; margin-bottom: 22px; transition: color 0.2s, gap 0.2s; }
+    .back-link:hover { color: var(--accent); gap: 11px; }
+
+    /* ══ AUTHOR CARD ══ */
+    .author-card { display: flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; margin: 28px 0 0; }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 16px; color: #000; flex-shrink: 0; }
+    .author-info strong { display: block; font-size: 14px; color: var(--text); }
+    .author-info span { font-size: 12px; color: var(--muted); }
+    .author-card .share-btn { margin-left: auto; flex-shrink: 0; }
+
+    /* ══ SHARE BUTTON ══ */
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--bg3); border: 1px solid var(--border2); color: var(--muted); font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; padding: 8px 14px; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+    .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .share-btn.copied { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3509173858076202" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<nav>
+  <a href="../index.html" class="nav-logo">ronny.dev</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#projects">Projects</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../contact.html" class="nav-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="../index.html" onclick="toggleMenu()">Home</a>
+  <a href="../blog.html" onclick="toggleMenu()">Blog</a>
+  <a href="../contact.html" onclick="toggleMenu()" style="color:var(--accent2)">Hire Me →</a>
+</nav>
+
+<section class="article-hero">
+  <div class="container">
+    <a href="../blog.html" class="back-link"><iconify-icon icon="solar:arrow-left-linear" width="13"></iconify-icon> All Articles</a>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span>›</span>
+      <a href="../blog.html">Blog</a><span>›</span>
+      <span>Choosing Hosting</span>
+    </div>
+    <span class="article-tag"><iconify-icon icon="solar:server-square-bold" width="13"></iconify-icon> Web Development</span>
+    <h1 class="article-title">Where Should You Host Your First Project? Netlify vs Render vs Alternatives</h1>
+    <div class="article-meta">
+      <span><iconify-icon icon="solar:calendar-bold" width="13"></iconify-icon> 25 June 2026</span>
+      <span><iconify-icon icon="solar:clock-circle-bold" width="13"></iconify-icon> 7 min read</span>
+      <span><iconify-icon icon="solar:user-bold" width="13"></iconify-icon> Ronny Mwenda</span>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">RM</div>
+      <div class="author-info">
+        <strong>Ronny Mwenda</strong>
+        <span>Frontend Developer &amp; Mathematics Teacher, Embu County</span>
+      </div>
+      <button class="share-btn" id="shareBtn" onclick="copyLink()">
+        <iconify-icon icon="solar:link-linear" width="13"></iconify-icon>
+        <span id="shareLabel">Copy Link</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="article-body">
+  <div class="container">
+
+    <p>"Where do I actually put this once it's built?" is a question that trips up a lot of beginners right after they've finished their first real project — and unlike most coding questions, it's not really a coding problem at all. It's a logistics problem, and the right answer depends entirely on what kind of project you've built. Having now deployed both static sites and a Flask backend application, here's the practical breakdown.</p>
+
+    <h2>Step one: figure out what kind of project you actually have</h2>
+    <p>This sounds obvious, but it's the single most common point of confusion. If your project is HTML, CSS, and JavaScript files that look the same for every visitor, it's a <strong>static site</strong>. If it has a backend language (Python, Node.js) actually running on a server — handling logins, databases, or per-user logic — it's a <strong>dynamic application</strong>. These two categories need genuinely different hosting, and using the wrong one either won't work at all, or will work in a needlessly complicated way.</p>
+
+    <h2>For static sites: Netlify (and similar)</h2>
+    <table class="compare-table">
+      <tr><th>Platform</th><th>Good for</th><th>Notable trait</th></tr>
+      <tr><td>Netlify</td><td>Static HTML/CSS/JS sites</td><td>Free tier never sleeps; GitHub auto-deploy; generous free bandwidth</td></tr>
+      <tr><td>GitHub Pages</td><td>Static sites, especially docs/portfolios</td><td>Tightly integrated with GitHub; slightly less flexible config than Netlify</td></tr>
+      <tr><td>Vercel</td><td>Static sites and JS frameworks (React, Next.js)</td><td>Excellent for JS-framework projects specifically</td></tr>
+    </table>
+    <p>For a beginner's first static project, Netlify is hard to beat: connect a GitHub repository, and every <code>git push</code> automatically redeploys the live site within roughly a minute, completely free, with no sleep delay ever.</p>
+
+    <h2>For backend apps: Render (and similar)</h2>
+    <table class="compare-table">
+      <tr><th>Platform</th><th>Good for</th><th>Notable trait</th></tr>
+      <tr><td>Render</td><td>Flask, Django, Node.js backend apps</td><td>Free tier sleeps after ~15 min idle; ~30-60s wake delay on next visit</td></tr>
+      <tr><td>PythonAnywhere</td><td>Simple Flask/Python apps specifically</td><td>Doesn't sleep on free tier, but more limited configuration</td></tr>
+      <tr><td>Railway</td><td>Various backend languages</td><td>Free tier is usage-credit based rather than unlimited</td></tr>
+    </table>
+    <div class="fix-card">
+      <div class="fix-label"><iconify-icon icon="solar:lightbulb-bold" width="14"></iconify-icon> What actually happened with RonnyBank</div>
+      <p>RonnyBank runs on Render's free tier. The trade-off is real: after 15 minutes without a visitor, the server sleeps, and the next person to visit waits up to a minute for it to wake. For a learning project or portfolio demo, that's a perfectly acceptable trade-off for $0/month. For something needing instant response at all times, it would be worth the upgrade to a paid always-on tier.</p>
+    </div>
+
+    <h2>The mistake worth avoiding: picking hosting before picking the project type</h2>
+    <p>It's tempting to pick a hosting platform because it's popular or because a tutorial used it, then try to force a project to fit. This causes real, avoidable pain — like trying to get a Flask app's login system working on Netlify, which structurally cannot run backend Python code at all, no matter how it's configured. Decide what the project actually needs first; the hosting choice should follow from that, not the other way around.</p>
+
+    <div class="pull-quote">The hosting platform doesn't make a project dynamic. The project's actual requirements decide that — hosting just has to match it.</div>
+
+    <h2>A genuinely free path exists for almost everything</h2>
+    <p>It's worth saying directly: for a first project, a portfolio, or a learning exercise, there is essentially always a free hosting path available — for both static sites and backend apps. The only real cost of the free tier on the backend side is the sleep/wake delay, which is a fair trade for zero monthly cost while learning and building a portfolio.</p>
+
+    <h2>What to actually do</h2>
+    <ul>
+      <li><strong>Static site (portfolio, brochure, content hub):</strong> Netlify. Connect GitHub, push code, get a live URL in minutes.</li>
+      <li><strong>Backend app (logins, databases, per-user logic):</strong> Render free tier to start. Accept the sleep delay as the cost of $0/month while learning.</li>
+      <li><strong>Either way:</strong> use GitHub for version control regardless of where you host — it's what makes the "push code, auto-deploy" workflow possible on both platforms.</li>
+    </ul>
+
+    <div class="article-cta">
+      <h3>Want help deploying your own project?</h3>
+      <p>I offer mentorship and hands-on help getting beginner projects properly deployed — static or full-stack.</p>
+      <a href="../contact.html" class="btn btn-primary">Get In Touch →</a>
+      <a href="building-ronnybank.html" class="btn btn-outline">Read the RonnyBank Deploy Story</a>
+    </div>
+
+    <div class="related-posts">
+      <div class="related-title">// Read Next</div>
+      <a href="static-vs-flask.html" class="related-link">Flask vs Static Sites: When to Use Which →</a>
+      <a href="web-dev-tips-kenya.html" class="related-link">Practical Web Development Tips for Beginners in Kenya →</a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-copy">© 2026 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="../index.html">Home</a></div>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../terms.html">Terms &amp; Conditions</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.querySelector('.hamburger');
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  // Reading progress bar
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progressBar').style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress);
+  updateProgress();
+
+  // Copy link button
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = document.getElementById('shareBtn');
+      const label = document.getElementById('shareLabel');
+      btn.classList.add('copied');
+      label.textContent = 'Copied!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        label.textContent = 'Copy Link';
+      }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

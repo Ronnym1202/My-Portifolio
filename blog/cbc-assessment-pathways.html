@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding CBC Assessment & Pathways: A Plain-Language Guide | Ronny Mwenda</title>
+  <link rel="icon" type="image/jpeg" href="../profile.jpeg">
+  <meta name="description" content="A clear, plain-language breakdown of how CBC assessment actually works and what the senior school pathways mean in practice — written for parents and students navigating the system, not just educators." />
+  <meta name="author" content="Ronny Mwenda" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ronnymwenda.netlify.app/blog/cbc-assessment-pathways.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Understanding CBC Assessment & Pathways: A Plain-Language Guide" />
+  <meta property="og:description" content="What CBC assessment actually measures, and what the senior school pathways mean in practice." />
+  <meta property="og:url" content="https://ronnymwenda.netlify.app/blog/cbc-assessment-pathways.html" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Understanding CBC Assessment & Pathways: A Plain-Language Guide",
+    "author": { "@type": "Person", "name": "Ronny Mwenda" },
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "publisher": { "@type": "Person", "name": "Ronny Mwenda" },
+    "mainEntityOfPage": "https://ronnymwenda.netlify.app/blog/cbc-assessment-pathways.html"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --bg2: #0d1117; --bg3: #131920;
+      --surface: #1a2230; --surface2: #1e2a3a;
+      --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+      --accent: #f5c842; --accent-dim: rgba(245,200,66,0.12);
+      --accent2: #22d3a5;
+      --text: #e8edf2; --muted: #93a5b8; --faint: #2e3d4f;
+      --font-display: 'Fraunces', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    ::selection { background: var(--accent); color: #000; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(245,200,66,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(245,200,66,0.02) 1px,transparent 1px); background-size: 64px 64px; pointer-events: none; z-index: 0; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 0 48px; height: 68px; display: flex; align-items: center; justify-content: space-between; background: rgba(8,12,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--font-mono); font-size: 14px; color: var(--accent2); text-decoration: none; letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px; }
+    .nav-logo::before { content: ''; width: 8px; height: 8px; background: var(--accent2); border-radius: 50%; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 6px 14px; border-radius: 6px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .nav-hire { background: var(--accent2) !important; color: #000 !important; font-weight: 700 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg2); padding: 88px 32px 40px; flex-direction: column; gap: 8px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 600; padding: 14px 16px; border-radius: 8px; }
+
+    section { position: relative; z-index: 1; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+    .article-hero { padding: 130px 0 50px; border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-bottom: 24px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--accent2); text-decoration: none; }
+    .breadcrumb span { color: var(--faint); }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(245,200,66,0.3); padding: 5px 14px; border-radius: 20px; margin-bottom: 22px; }
+    .article-title { font-family: var(--font-display); font-size: clamp(28px, 5vw, 42px); font-weight: 800; line-height: 1.18; letter-spacing: -1px; margin-bottom: 22px; }
+    .article-meta { display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+    .article-meta span { display: flex; align-items: center; gap: 6px; }
+
+    .article-body { padding: 50px 0 90px; }
+    .article-body p { color: var(--muted); font-size: 16px; line-height: 1.95; margin-bottom: 22px; }
+    .article-body p strong { color: var(--text); }
+    .article-body p a { color: var(--accent2); text-decoration: none; }
+    .article-body p a:hover { text-decoration: underline; }
+    .article-body h2 { font-family: var(--font-display); font-size: 25px; font-weight: 700; color: var(--text); margin: 44px 0 16px; letter-spacing: -0.5px; }
+    .article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--text); margin: 26px 0 12px; }
+    .article-body ul { padding-left: 22px; margin-bottom: 22px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { color: var(--muted); font-size: 15.5px; line-height: 1.85; }
+    .article-body li strong { color: var(--text); }
+    .pathway-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 24px 0; }
+    .pathway-card { background: var(--surface); border: 1px solid var(--border2); border-radius: 12px; padding: 20px 22px; }
+    .pathway-name { font-family: var(--font-display); font-weight: 700; font-size: 17px; color: var(--text); margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+    .pathway-icon { font-size: 20px; }
+    .pathway-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+    .info-card { background: rgba(34,211,165,0.06); border: 1px solid rgba(34,211,165,0.2); border-radius: 12px; padding: 18px 22px; margin: 22px 0; }
+    .info-label { font-family: var(--font-mono); font-size: 10.5px; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 8px; }
+    .info-card p { margin-bottom: 0; font-size: 14.5px; }
+    .pull-quote { border-left: 3px solid var(--accent); padding: 4px 0 4px 22px; margin: 32px 0; font-family: var(--font-display); font-style: italic; font-size: 19px; color: var(--text); line-height: 1.6; }
+    .divider { height: 1px; background: var(--border); margin: 44px 0; }
+
+    .article-cta { background: linear-gradient(135deg, rgba(245,200,66,0.12), rgba(34,211,165,0.08)); border: 1px solid rgba(245,200,66,0.3); border-radius: 16px; padding: 36px; text-align: center; margin-top: 50px; }
+    .article-cta h3 { font-family: var(--font-display); font-size: 23px; font-weight: 700; margin-bottom: 10px; }
+    .article-cta p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.2s; }
+    .btn-primary { background: var(--accent2); color: #000; }
+    .btn-primary:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,0.35); }
+    .btn-outline { border: 1px solid var(--border2); color: var(--text); background: transparent; margin-left: 10px; }
+    .btn-outline:hover { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); }
+
+    .related-posts { margin-top: 60px; }
+    .related-title { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 18px; }
+    .related-link { display: block; padding: 14px 0; border-top: 1px solid var(--border); text-decoration: none; color: var(--text); font-weight: 600; font-size: 14.5px; transition: color 0.2s; }
+    .related-link:hover { color: var(--accent2); }
+
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; position: relative; z-index: 1; }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-copy a { color: var(--accent2); text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent2); }
+
+    @media(max-width:700px) { nav { padding: 0 24px; } .nav-links { display: none; } .hamburger { display: flex; } .container { padding: 0 24px; } footer { padding: 32px 24px; flex-direction: column; text-align: center; } .article-cta { padding: 28px 20px; } }
+
+    /* ══ READING PROGRESS BAR ══ */
+    .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); z-index: 300; width: 0%; transition: width 0.1s ease-out; box-shadow: 0 0 8px var(--accent); }
+
+    /* ══ BACK LINK ══ */
+    .back-link { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--muted); text-decoration: none; margin-bottom: 22px; transition: color 0.2s, gap 0.2s; }
+    .back-link:hover { color: var(--accent); gap: 11px; }
+
+    /* ══ AUTHOR CARD ══ */
+    .author-card { display: flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; margin: 28px 0 0; }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 16px; color: #000; flex-shrink: 0; }
+    .author-info strong { display: block; font-size: 14px; color: var(--text); }
+    .author-info span { font-size: 12px; color: var(--muted); }
+    .author-card .share-btn { margin-left: auto; flex-shrink: 0; }
+
+    /* ══ SHARE BUTTON ══ */
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--bg3); border: 1px solid var(--border2); color: var(--muted); font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; padding: 8px 14px; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+    .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .share-btn.copied { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3509173858076202" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<nav>
+  <a href="../index.html" class="nav-logo">ronny.dev</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#projects">Projects</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../contact.html" class="nav-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="../index.html" onclick="toggleMenu()">Home</a>
+  <a href="../blog.html" onclick="toggleMenu()">Blog</a>
+  <a href="../contact.html" onclick="toggleMenu()" style="color:var(--accent2)">Hire Me →</a>
+</nav>
+
+<section class="article-hero">
+  <div class="container">
+    <a href="../blog.html" class="back-link"><iconify-icon icon="solar:arrow-left-linear" width="13"></iconify-icon> All Articles</a>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span>›</span>
+      <a href="../blog.html">Blog</a><span>›</span>
+      <span>CBC Assessment &amp; Pathways</span>
+    </div>
+    <span class="article-tag"><iconify-icon icon="solar:document-text-bold" width="13"></iconify-icon> CBC Education</span>
+    <h1 class="article-title">Understanding CBC Assessment &amp; Pathways: A Plain-Language Guide</h1>
+    <div class="article-meta">
+      <span><iconify-icon icon="solar:calendar-bold" width="13"></iconify-icon> 25 June 2026</span>
+      <span><iconify-icon icon="solar:clock-circle-bold" width="13"></iconify-icon> 8 min read</span>
+      <span><iconify-icon icon="solar:user-bold" width="13"></iconify-icon> Ronny Mwenda</span>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">RM</div>
+      <div class="author-info">
+        <strong>Ronny Mwenda</strong>
+        <span>Frontend Developer &amp; Mathematics Teacher, Embu County</span>
+      </div>
+      <button class="share-btn" id="shareBtn" onclick="copyLink()">
+        <iconify-icon icon="solar:link-linear" width="13"></iconify-icon>
+        <span id="shareLabel">Copy Link</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="article-body">
+  <div class="container">
+
+    <p>A recurring conversation with parents and students alike goes something like: "I understand CBC is different from the old 8-4-4 system, but what does that actually mean for assessment, and what on earth is a 'pathway'?" It's a completely fair question — official documentation explains these concepts in policy language that doesn't always translate cleanly into "what does my child actually do, and why."</p>
+
+    <p>Here's the plain-language version, written from the classroom and tutoring side rather than the policy side.</p>
+
+    <h2>What CBC assessment is actually trying to measure</h2>
+    <p>The core shift from the old system isn't just "different exams" — it's a different idea of what's worth measuring in the first place. Rather than relying almost entirely on a single set of final exams at the end of a learning cycle, CBC assessment is built around tracking a learner's developing <strong>competencies</strong> — actual skills and capabilities — continuously, throughout the learning process, not just at the very end of it.</p>
+    <p>In practice, this means assessment happens in two broad forms:</p>
+    <ul>
+      <li><strong>Formative assessment</strong> — ongoing observation and feedback during regular learning, checking understanding as it develops rather than only at the end. This includes classwork, projects, presentations, and teacher observation of how a learner approaches problems.</li>
+      <li><strong>Summative assessment</strong> — assessment at the end of a learning period or level, checking what has been achieved overall.</li>
+    </ul>
+    <div class="pull-quote">The shift isn't "less exams." It's "exams stop being the only thing that counts."</div>
+
+    <h2>Why this matters practically for a learner</h2>
+    <p>For a student, this means classwork, participation, and project-based work genuinely matter to their overall academic picture — not as a token "effort grade," but as a real part of how their competency is understood. For a parent, it means a single bad day on one final exam carries less weight than it would have under a system built almost entirely around final exam performance.</p>
+    <p>It also means consistent engagement over time matters more under CBC than it did before — which is precisely why accessible, ongoing revision resources (rather than only end-of-term cramming materials) genuinely fit how the system is designed to work.</p>
+
+    <h2>The Senior School Pathways — what they actually mean</h2>
+    <p>This is the part that generates the most questions. At the Senior School level, learners choose a pathway that aligns with their strengths and interests, rather than following one identical track for everyone. The three broad pathways are:</p>
+
+    <div class="pathway-grid">
+      <div class="pathway-card">
+        <div class="pathway-name"><span class="pathway-icon">🔬</span> Science, Technology, Engineering &amp; Mathematics (STEM)</div>
+        <div class="pathway-desc">For learners with strength and interest in sciences and mathematics, preparing toward careers and further study in fields like engineering, medicine, computing, and the physical sciences.</div>
+      </div>
+      <div class="pathway-card">
+        <div class="pathway-name"><span class="pathway-icon">🎨</span> Social Sciences</div>
+        <div class="pathway-desc">For learners oriented toward humanities, languages, business, and social studies — preparing toward careers in law, business, education, journalism, and related fields.</div>
+      </div>
+      <div class="pathway-card">
+        <div class="pathway-name"><span class="pathway-icon">🎭</span> Arts and Sports Science</div>
+        <div class="pathway-desc">For learners with strength in creative arts, performing arts, or sports — recognising talent areas that the previous system gave comparatively little structured space to.</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-label">// Why this is a genuine shift</div>
+      <p>Under the previous system, nearly every learner sat the same broad set of subjects regardless of where their strengths actually were. Pathways are a deliberate move toward recognising that a learner strong in art or athletics deserves a structured, respected academic route — not just an after-school activity squeezed in around a fixed academic track that wasn't built with them in mind.</p>
+    </div>
+
+    <h2>What this means for choosing a pathway</h2>
+    <p>The honest, most useful advice here is to treat the pathway choice as a reflection of demonstrated strength and genuine interest — built from a learner's actual performance and engagement pattern across earlier grades — rather than a decision made from outside pressure about which pathway "sounds more prestigious." A learner genuinely strong in Social Sciences who's pushed into STEM because of family expectation is set up for a harder road than one allowed to follow demonstrated strength.</p>
+
+    <h2>The common thread with assessment</h2>
+    <p>Pathways and continuous assessment are really the same underlying philosophy expressed two different ways: recognising that learners differ, and that a single rigid track measured by a single high-stakes exam doesn't capture that difference well. Once that connection is clear, both pieces of CBC make a lot more sense as one coherent system, rather than two separate things to memorise for a parents' meeting.</p>
+
+    <div class="article-cta">
+      <h3>Want the full breakdown?</h3>
+      <p>CBC Best covers KICD-aligned pathways, all assessment tools, and learning outcome models in much greater depth.</p>
+      <a href="https://cbcbest.netlify.app" target="_blank" rel="noopener" class="btn btn-primary">Explore CBC Best →</a>
+      <a href="../contact.html" class="btn btn-outline">Ask a Question</a>
+    </div>
+
+    <div class="related-posts">
+      <div class="related-title">// Read Next</div>
+      <a href="cbc-maths-struggles.html" class="related-link">5 CBC Maths Topics Kenyan Students Struggle With Most →</a>
+      <a href="ronny-best-math-story.html" class="related-link">Why I Built a Free Maths Platform for Kenyan Students →</a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-copy">© 2026 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="../index.html">Home</a></div>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../terms.html">Terms &amp; Conditions</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.querySelector('.hamburger');
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  // Reading progress bar
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progressBar').style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress);
+  updateProgress();
+
+  // Copy link button
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = document.getElementById('shareBtn');
+      const label = document.getElementById('shareLabel');
+      btn.classList.add('copied');
+      label.textContent = 'Copied!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        label.textContent = 'Copy Link';
+      }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

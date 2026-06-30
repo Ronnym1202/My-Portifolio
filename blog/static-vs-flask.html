@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flask vs Static Sites: When to Use Which | Ronny Mwenda</title>
+  <link rel="icon" type="image/jpeg" href="../profile.jpeg">
+  <meta name="description" content="A practical decision guide for choosing between a static HTML/CSS/JS site and a Flask backend application — based on real lessons from building both kinds of projects." />
+  <meta name="author" content="Ronny Mwenda" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ronnymwenda.netlify.app/blog/static-vs-flask.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Flask vs Static Sites: When to Use Which" />
+  <meta property="og:description" content="A practical decision guide for choosing between a static site and a Flask backend application." />
+  <meta property="og:url" content="https://ronnymwenda.netlify.app/blog/static-vs-flask.html" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Flask vs Static Sites: When to Use Which",
+    "author": { "@type": "Person", "name": "Ronny Mwenda" },
+    "datePublished": "2026-06-25",
+    "dateModified": "2026-06-25",
+    "publisher": { "@type": "Person", "name": "Ronny Mwenda" },
+    "mainEntityOfPage": "https://ronnymwenda.netlify.app/blog/static-vs-flask.html"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080c10; --bg2: #0d1117; --bg3: #131920;
+      --surface: #1a2230; --surface2: #1e2a3a;
+      --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
+      --accent: #a78bfa; --accent-dim: rgba(167,139,250,0.12);
+      --accent2: #22d3a5;
+      --text: #e8edf2; --muted: #93a5b8; --faint: #2e3d4f;
+      --font-display: 'Fraunces', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+    ::selection { background: var(--accent); color: #000; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(167,139,250,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(167,139,250,0.02) 1px,transparent 1px); background-size: 64px 64px; pointer-events: none; z-index: 0; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 0 48px; height: 68px; display: flex; align-items: center; justify-content: space-between; background: rgba(8,12,16,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--font-mono); font-size: 14px; color: var(--accent2); text-decoration: none; letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px; }
+    .nav-logo::before { content: ''; width: 8px; height: 8px; background: var(--accent2); border-radius: 50%; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 6px 14px; border-radius: 6px; transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .nav-hire { background: var(--accent2) !important; color: #000 !important; font-weight: 700 !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg2); padding: 88px 32px 40px; flex-direction: column; gap: 8px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 600; padding: 14px 16px; border-radius: 8px; }
+
+    section { position: relative; z-index: 1; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+    .article-hero { padding: 130px 0 50px; border-bottom: 1px solid var(--border); }
+    .breadcrumb { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-bottom: 24px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--accent2); text-decoration: none; }
+    .breadcrumb span { color: var(--faint); }
+    .article-tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(167,139,250,0.3); padding: 5px 14px; border-radius: 20px; margin-bottom: 22px; }
+    .article-title { font-family: var(--font-display); font-size: clamp(28px, 5vw, 42px); font-weight: 800; line-height: 1.18; letter-spacing: -1px; margin-bottom: 22px; }
+    .article-meta { display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+    .article-meta span { display: flex; align-items: center; gap: 6px; }
+
+    .article-body { padding: 50px 0 90px; }
+    .article-body p { color: var(--muted); font-size: 16px; line-height: 1.95; margin-bottom: 22px; }
+    .article-body p strong { color: var(--text); }
+    .article-body p a { color: var(--accent2); text-decoration: none; }
+    .article-body p a:hover { text-decoration: underline; }
+    .article-body h2 { font-family: var(--font-display); font-size: 25px; font-weight: 700; color: var(--text); margin: 44px 0 16px; letter-spacing: -0.5px; }
+    .article-body h3 { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--text); margin: 26px 0 12px; }
+    .article-body ul { padding-left: 22px; margin-bottom: 22px; display: flex; flex-direction: column; gap: 10px; }
+    .article-body li { color: var(--muted); font-size: 15.5px; line-height: 1.85; }
+    .article-body li strong { color: var(--text); }
+    .article-body code { font-family: var(--font-mono); font-size: 0.9em; background: var(--surface); border: 1px solid var(--border); padding: 2px 7px; border-radius: 5px; color: var(--accent); }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .compare-table th { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent2); text-align: left; padding: 12px 14px; border-bottom: 2px solid var(--border2); }
+    .compare-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table td:first-child { color: var(--text); font-weight: 600; }
+
+    .decision-card { background: var(--surface); border: 1px solid var(--border2); border-radius: 12px; padding: 22px 24px; margin: 20px 0; }
+    .decision-card.static-card { border-color: rgba(34,211,165,0.3); }
+    .decision-card.flask-card { border-color: rgba(167,139,250,0.3); }
+    .decision-title { font-family: var(--font-display); font-weight: 700; font-size: 17px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .decision-title.static-title { color: var(--accent2); }
+    .decision-title.flask-title { color: var(--accent); }
+    .pull-quote { border-left: 3px solid var(--accent); padding: 4px 0 4px 22px; margin: 32px 0; font-family: var(--font-display); font-style: italic; font-size: 19px; color: var(--text); line-height: 1.6; }
+    .divider { height: 1px; background: var(--border); margin: 44px 0; }
+
+    .article-cta { background: linear-gradient(135deg, rgba(167,139,250,0.12), rgba(34,211,165,0.08)); border: 1px solid rgba(167,139,250,0.3); border-radius: 16px; padding: 36px; text-align: center; margin-top: 50px; }
+    .article-cta h3 { font-family: var(--font-display); font-size: 23px; font-weight: 700; margin-bottom: 10px; }
+    .article-cta p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; transition: all 0.2s; }
+    .btn-primary { background: var(--accent2); color: #000; }
+    .btn-primary:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,0.35); }
+    .btn-outline { border: 1px solid var(--border2); color: var(--text); background: transparent; margin-left: 10px; }
+    .btn-outline:hover { border-color: var(--accent); background: var(--accent-dim); color: var(--accent); }
+
+    .related-posts { margin-top: 60px; }
+    .related-title { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 18px; }
+    .related-link { display: block; padding: 14px 0; border-top: 1px solid var(--border); text-decoration: none; color: var(--text); font-weight: 600; font-size: 14.5px; transition: color 0.2s; }
+    .related-link:hover { color: var(--accent2); }
+
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; position: relative; z-index: 1; }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+    .footer-copy a { color: var(--accent2); text-decoration: none; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent2); }
+
+    @media(max-width:700px) { nav { padding: 0 24px; } .nav-links { display: none; } .hamburger { display: flex; } .container { padding: 0 24px; } footer { padding: 32px 24px; flex-direction: column; text-align: center; } .article-cta { padding: 28px 20px; } .compare-table { font-size: 12.5px; } .compare-table th, .compare-table td { padding: 9px 8px; } }
+
+    /* ══ READING PROGRESS BAR ══ */
+    .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); z-index: 300; width: 0%; transition: width 0.1s ease-out; box-shadow: 0 0 8px var(--accent); }
+
+    /* ══ BACK LINK ══ */
+    .back-link { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--muted); text-decoration: none; margin-bottom: 22px; transition: color 0.2s, gap 0.2s; }
+    .back-link:hover { color: var(--accent); gap: 11px; }
+
+    /* ══ AUTHOR CARD ══ */
+    .author-card { display: flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; margin: 28px 0 0; }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 16px; color: #000; flex-shrink: 0; }
+    .author-info strong { display: block; font-size: 14px; color: var(--text); }
+    .author-info span { font-size: 12px; color: var(--muted); }
+    .author-card .share-btn { margin-left: auto; flex-shrink: 0; }
+
+    /* ══ SHARE BUTTON ══ */
+    .share-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--bg3); border: 1px solid var(--border2); color: var(--muted); font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; padding: 8px 14px; border-radius: 20px; cursor: pointer; transition: all 0.2s; }
+    .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .share-btn.copied { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3509173858076202" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<nav>
+  <a href="../index.html" class="nav-logo">ronny.dev</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#projects">Projects</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../contact.html" class="nav-hire">Hire Me</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <a href="../index.html" onclick="toggleMenu()">Home</a>
+  <a href="../blog.html" onclick="toggleMenu()">Blog</a>
+  <a href="../contact.html" onclick="toggleMenu()" style="color:var(--accent2)">Hire Me →</a>
+</nav>
+
+<section class="article-hero">
+  <div class="container">
+    <a href="../blog.html" class="back-link"><iconify-icon icon="solar:arrow-left-linear" width="13"></iconify-icon> All Articles</a>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span>›</span>
+      <a href="../blog.html">Blog</a><span>›</span>
+      <span>Flask vs Static Sites</span>
+    </div>
+    <span class="article-tag"><iconify-icon icon="solar:scale-bold" width="13"></iconify-icon> Web Development</span>
+    <h1 class="article-title">Flask vs Static Sites: When to Use Which</h1>
+    <div class="article-meta">
+      <span><iconify-icon icon="solar:calendar-bold" width="13"></iconify-icon> 25 June 2026</span>
+      <span><iconify-icon icon="solar:clock-circle-bold" width="13"></iconify-icon> 8 min read</span>
+      <span><iconify-icon icon="solar:user-bold" width="13"></iconify-icon> Ronny Mwenda</span>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">RM</div>
+      <div class="author-info">
+        <strong>Ronny Mwenda</strong>
+        <span>Frontend Developer &amp; Mathematics Teacher, Embu County</span>
+      </div>
+      <button class="share-btn" id="shareBtn" onclick="copyLink()">
+        <iconify-icon icon="solar:link-linear" width="13"></iconify-icon>
+        <span id="shareLabel">Copy Link</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="article-body">
+  <div class="container">
+
+    <p>Having now built and deployed both kinds of projects — several static HTML/CSS/JS sites (this portfolio, CBC Best, Ronny Best Math) and a full Flask backend application (RonnyBank) — the question "should this be static or should it use a backend framework like Flask?" has a clearer answer in my head than it did before actually building both. Here's the practical version of that answer.</p>
+
+    <h2>The actual difference, in plain terms</h2>
+    <p>A <strong>static site</strong> is just files — HTML, CSS, JavaScript — sent to a visitor's browser exactly as written. Nothing runs on a server when someone visits; the server's only job is handing over the same files to everyone who asks.</p>
+    <p>A <strong>Flask application</strong> runs actual Python code on a server every time someone visits a page. That code can check who's logged in, read and write to a database, calculate something fresh for each visitor, and return a different result depending on who's asking and what they're doing.</p>
+    <div class="pull-quote">A static site is a brochure. A Flask app is a clerk who actually does something each time you ask.</div>
+
+    <h2>The decision table</h2>
+    <table class="compare-table">
+      <tr><th>Question</th><th>Static Site</th><th>Flask App</th></tr>
+      <tr><td>Does each visitor see the same content?</td><td>Yes → static fits</td><td>No, personalized → Flask needed</td></tr>
+      <tr><td>Do users need to log in / have accounts?</td><td>Not possible with static alone</td><td>Yes, this is exactly Flask's job</td></tr>
+      <tr><td>Does data need to be saved between visits?</td><td>No persistent storage</td><td>Yes, via a database or file</td></tr>
+      <tr><td>Hosting cost &amp; complexity</td><td>Lower — Netlify free tier, no server logic</td><td>Higher — needs a real running server</td></tr>
+      <tr><td>Speed</td><td>Extremely fast, served from CDN</td><td>Slightly slower, server has to compute a response</td></tr>
+    </table>
+
+    <h2>Where this actually applied in my own projects</h2>
+
+    <div class="decision-card static-card">
+      <div class="decision-title static-title"><iconify-icon icon="solar:document-bold" width="18"></iconify-icon> Static was the right call: CBC Best &amp; Ronny Best Math</div>
+      <p>Every visitor to these sites sees the same worked examples, the same curriculum content, the same FAQ. Nobody logs in. Nothing needs to be remembered between visits. Adding Flask here would have added real hosting complexity — and the cost of keeping a server running — for zero actual benefit, since nothing about the experience needs to differ per visitor.</p>
+    </div>
+
+    <div class="decision-card flask-card">
+      <div class="decision-title flask-title"><iconify-icon icon="solar:code-square-bold" width="18"></iconify-icon> Flask was the right call: RonnyBank</div>
+      <p>RonnyBank fundamentally requires knowing <em>who</em> is visiting — which account, which balance, which transaction history — and that information has to be checked and updated on every single action. There's no version of "login, deposit, transfer money" that a static site can do; it's not a limitation of skill, it's a limitation of what static files are structurally capable of.</p>
+    </div>
+
+    <h2>The trap to avoid in both directions</h2>
+    <p>It's tempting, once Flask feels comfortable, to reach for it on every new project — but that's its own kind of mistake. A portfolio site, a curriculum resource hub, a landing page: none of these need a running backend, and adding one means more to deploy, more to secure, more that can go wrong, for content that was never going to change per visitor anyway.</p>
+    <p>Equally, trying to force genuinely interactive, account-based functionality onto a static site — usually via increasingly elaborate JavaScript and browser storage workarounds — tends to produce something fragile that breaks the moment a user switches devices, since browser-only storage never leaves that one browser.</p>
+
+    <h2>A useful filter question</h2>
+    <p>Before starting any new project, one question cuts through most of the confusion: <strong>"Does this need to remember anything about a specific user, across visits, in a way only a server can guarantee?"</strong> If yes, that's Flask (or a similar backend) territory. If no — if every visitor genuinely sees the same thing — a static site will be faster to build, faster to load, and easier to host, with nothing lost in the process.</p>
+
+    <div class="article-cta">
+      <h3>See both approaches in action</h3>
+      <p>Compare a static educational site with a full-stack Flask application, both built and deployed by the same process.</p>
+      <a href="https://cbcbest.netlify.app" target="_blank" rel="noopener" class="btn btn-primary">View CBC Best (Static) →</a>
+      <a href="https://ronnybank.onrender.com" target="_blank" rel="noopener" class="btn btn-outline">View RonnyBank (Flask)</a>
+    </div>
+
+    <div class="related-posts">
+      <div class="related-title">// Read Next</div>
+      <a href="building-ronnybank.html" class="related-link">Building RonnyBank: From Python Script to Live Flask App →</a>
+      <a href="web-dev-tips-kenya.html" class="related-link">Practical Web Development Tips for Beginners in Kenya →</a>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-copy">© 2026 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="../index.html">Home</a></div>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="../terms.html">Terms &amp; Conditions</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.querySelector('.hamburger');
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  // Reading progress bar
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.getElementById('progressBar').style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress);
+  updateProgress();
+
+  // Copy link button
+  function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = document.getElementById('shareBtn');
+      const label = document.getElementById('shareLabel');
+      btn.classList.add('copied');
+      label.textContent = 'Copied!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        label.textContent = 'Copy Link';
+      }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

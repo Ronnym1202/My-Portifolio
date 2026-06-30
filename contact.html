@@ -21,12 +21,13 @@
       --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
       --accent: #22d3a5; --accent-dim: rgba(34,211,165,0.12);
       --accent2: #4f8ef7; --accent2-dim: rgba(79,142,247,0.1);
-      --text: #e8edf2; --muted: #7a8899; --faint: #2e3d4f;
+      --text: #e8edf2; --muted: #93a5b8; --faint: #2e3d4f;
       --font-display: 'Fraunces', serif; --font-body: 'DM Sans', sans-serif; --font-mono: 'JetBrains Mono', monospace;
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
     ::selection { background: var(--accent); color: #000; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
     body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(34,211,165,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,165,0.025) 1px,transparent 1px); background-size: 64px 64px; pointer-events: none; z-index: 0; }
     .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; }
     .orb-1 { width: 500px; height: 500px; background: rgba(34,211,165,0.06); top: -100px; right: -100px; }
@@ -41,6 +42,9 @@
     .nav-hire { background: var(--accent) !important; color: #000 !important; font-weight: 700 !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .mobile-nav { display: none; position: fixed; inset: 0; z-index: 199; background: var(--bg2); padding: 88px 32px 40px; flex-direction: column; gap: 8px; }
     .mobile-nav.open { display: flex; }
     .mobile-nav a { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 600; padding: 14px 16px; border-radius: 8px; transition: background 0.2s, color 0.2s; }
@@ -59,7 +63,6 @@
 
     #contact-main { padding: 90px 0 110px; }
 
-    /* CONTACT METHODS */
     .contact-methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 64px; }
     .method-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -74,54 +77,35 @@
     .method-name { font-weight: 700; font-size: 14px; }
     .method-handle { font-size: 12px; color: var(--muted); word-break: break-all; }
 
-    /* EMAIL */
     .m-email .method-icon-wrap { background: rgba(234,88,12,0.15); color: #ea580c; }
     .m-email { --accent-color: rgba(234,88,12,0.4); }
-    /* WHATSAPP */
     .m-wa .method-icon-wrap { background: rgba(37,211,102,0.15); color: #25d366; }
     .m-wa { --accent-color: rgba(37,211,102,0.4); }
-    /* INSTAGRAM */
     .m-ig .method-icon-wrap { background: rgba(225,48,108,0.15); color: #e1306c; }
     .m-ig { --accent-color: rgba(225,48,108,0.4); }
-    /* TWITTER/X */
     .m-tw .method-icon-wrap { background: rgba(29,155,240,0.15); color: #1d9bf0; }
     .m-tw { --accent-color: rgba(29,155,240,0.4); }
-    /* FACEBOOK */
     .m-fb .method-icon-wrap { background: rgba(24,119,242,0.15); color: #1877f2; }
     .m-fb { --accent-color: rgba(24,119,242,0.4); }
-    /* GITHUB */
     .m-gh .method-icon-wrap { background: rgba(255,255,255,0.08); color: #f0f0f0; }
     .m-gh { --accent-color: rgba(240,240,240,0.3); }
-    /* YOUTUBE */
     .m-yt .method-icon-wrap { background: rgba(255,0,0,0.12); color: #ff0000; }
     .m-yt { --accent-color: rgba(255,0,0,0.4); }
 
-    /* CONTACT GRID */
     .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: start; }
 
-    /* LEFT INFO */
     .contact-info-box h2 { font-family: var(--font-display); font-size: 28px; font-weight: 700; margin-bottom: 14px; }
     .contact-info-box p { color: var(--muted); font-size: 15px; line-height: 1.85; margin-bottom: 30px; }
 
     .service-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
-    .svc-opt {
-      display: flex; align-items: center; gap: 12px;
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; padding: 14px 16px;
-    }
+    .svc-opt { display: flex; align-items: center; gap: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
     .svc-opt-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--accent-dim); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
     .svc-opt-title { font-weight: 700; font-size: 14px; }
     .svc-opt-desc { font-size: 12px; color: var(--muted); }
 
-    .info-note {
-      background: var(--accent-dim); border: 1px solid rgba(34,211,165,0.2);
-      border-radius: 10px; padding: 16px 18px;
-      display: flex; align-items: flex-start; gap: 12px;
-      font-size: 13px; color: var(--muted); line-height: 1.7;
-    }
+    .info-note { background: var(--accent-dim); border: 1px solid rgba(34,211,165,0.2); border-radius: 10px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; font-size: 13px; color: var(--muted); line-height: 1.7; }
     .info-note iconify-icon { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
 
-    /* FORM */
     .contact-form-box { background: var(--surface); border: 1px solid var(--border2); border-radius: 18px; padding: 36px; }
     .form-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; margin-bottom: 6px; }
     .form-subtitle { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
@@ -148,7 +132,12 @@
       display: flex; align-items: center; justify-content: center; gap: 8px;
     }
     .form-submit:hover { background: #1bbf93; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(34,211,165,0.35); }
-    #formSuccess { display: none; background: rgba(34,211,165,0.1); border: 1px solid rgba(34,211,165,0.3); border-radius: 10px; padding: 18px; text-align: center; color: var(--accent); font-weight: 600; margin-top: 14px; }
+    .form-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; box-shadow: none; }
+    #formStatus { display: none; border-radius: 10px; padding: 18px; text-align: center; font-weight: 600; margin-top: 14px; font-size: 14px; }
+    #formStatus.show { display: block; }
+    #formStatus.ok { background: rgba(34,211,165,0.1); border: 1px solid rgba(34,211,165,0.3); color: var(--accent); }
+    #formStatus.err { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.3); color: #f87171; }
+    .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 
     footer { background: var(--bg); border-top: 1px solid var(--border); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; position: relative; z-index: 1; }
     .footer-copy { font-size: 13px; color: var(--muted); }
@@ -163,6 +152,7 @@
     @media(max-width:800px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
     @media(max-width:700px) { nav { padding: 0 24px; } .nav-links { display: none; } .hamburger { display: flex; } .container { padding: 0 24px; } footer { padding: 32px 24px; flex-direction: column; text-align: center; } }
   </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3509173858076202" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="orb orb-1"></div>
@@ -175,14 +165,14 @@
     <li><a href="about.html">Profile</a></li>
     <li><a href="contact.html" class="nav-hire">Hire Me</a></li>
   </ul>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
 </nav>
-<div class="mobile-nav" id="mobileNav">
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
   <a href="index.html" onclick="toggleMenu()">Home</a>
   <a href="about.html" onclick="toggleMenu()">About</a>
   <a href="index.html#projects" onclick="toggleMenu()">Projects</a>
   <a href="contact.html" onclick="toggleMenu()" style="color:var(--accent)">Hire Me →</a>
-</div>
+</nav>
 
 <section class="page-hero">
   <div class="container">
@@ -192,10 +182,10 @@
   </div>
 </section>
 
+<main>
 <section id="contact-main">
   <div class="container">
 
-    <!-- CONTACT METHOD CARDS -->
     <div class="contact-methods reveal">
       <a href="mailto:ronnymwenda89@gmail.com" class="method-card m-email">
         <div class="method-icon-wrap"><iconify-icon icon="mdi:email" width="26"></iconify-icon></div>
@@ -234,7 +224,6 @@
       </a>
     </div>
 
-    <!-- CONTACT FORM + INFO -->
     <div class="contact-grid">
       <div class="contact-info-box reveal">
         <h2>What Can I Help With?</h2>
@@ -277,33 +266,32 @@
         </div>
       </div>
 
-      <!-- FORM -->
       <div class="contact-form-box reveal">
         <div class="form-title">Send a Message</div>
         <div class="form-subtitle">Fill in the form and I'll get back to you as soon as possible.</div>
 
-        <div style="display:flex;flex-direction:column;gap:14px" id="contactForm">
+        <form id="contactForm" style="display:flex;flex-direction:column;gap:14px">
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label">First Name *</label>
-              <input type="text" class="form-input" id="fName" placeholder="John" />
+              <label class="form-label" for="fName">First Name *</label>
+              <input type="text" class="form-input" id="fName" name="first_name" placeholder="John" required autocomplete="given-name" />
             </div>
             <div class="form-group">
-              <label class="form-label">Last Name</label>
-              <input type="text" class="form-input" id="fLname" placeholder="Kamau" />
+              <label class="form-label" for="fLname">Last Name</label>
+              <input type="text" class="form-input" id="fLname" name="last_name" placeholder="Kamau" autocomplete="family-name" />
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Email Address *</label>
-            <input type="email" class="form-input" id="fEmail" placeholder="john@example.com" />
+            <label class="form-label" for="fEmail">Email Address *</label>
+            <input type="email" class="form-input" id="fEmail" name="email" placeholder="john@example.com" required autocomplete="email" />
           </div>
           <div class="form-group">
-            <label class="form-label">Phone / WhatsApp (optional)</label>
-            <input type="tel" class="form-input" id="fPhone" placeholder="+254 700 000 000" />
+            <label class="form-label" for="fPhone">Phone / WhatsApp (optional)</label>
+            <input type="tel" class="form-input" id="fPhone" name="phone" placeholder="+254 700 000 000" autocomplete="tel" />
           </div>
           <div class="form-group">
-            <label class="form-label">Service Needed *</label>
-            <select class="form-select" id="fService">
+            <label class="form-label" for="fService">Service Needed *</label>
+            <select class="form-select" id="fService" name="service" required>
               <option value="">-- Select a service --</option>
               <option value="Website Development">Website Development</option>
               <option value="Math Tutoring">Mathematics Tutoring</option>
@@ -313,52 +301,86 @@
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Your Message *</label>
-            <textarea class="form-textarea" id="fMessage" placeholder="Tell me about your project, what help you need, your timeline, and any other details..."></textarea>
+            <label class="form-label" for="fMessage">Your Message *</label>
+            <textarea class="form-textarea" id="fMessage" name="message" placeholder="Tell me about your project, what help you need, your timeline, and any other details..." required></textarea>
           </div>
-          <button class="form-submit" onclick="submitForm()">
+          <!-- honeypot anti-spam field -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="fCompany">Company</label>
+            <input type="text" id="fCompany" name="_gotcha" tabindex="-1" autocomplete="off" />
+          </div>
+          <button type="submit" class="form-submit" id="fSubmitBtn">
             <iconify-icon icon="solar:letter-bold" width="16"></iconify-icon>
-            Send Message
+            <span>Send Message</span>
           </button>
-        </div>
-        <div id="formSuccess">
-          ✅ Message sent! I'll be in touch within 24 hours.
-        </div>
+          <div id="formStatus" role="status" aria-live="polite"></div>
+        </form>
       </div>
     </div>
 
   </div>
 </section>
+</main>
 
 <footer>
-  <div class="footer-copy">© 2025 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="index.html">Home</a></div>
+  <div class="footer-copy">© 2026 <strong>Ronny Mwenda</strong> ("Ronny Best") · Embu County, Kenya · <a href="index.html">Home</a></div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms &amp; Conditions</a>
   </div>
 </footer>
 
 <script>
-  function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.querySelector('.hamburger');
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
   const observer = new IntersectionObserver(entries => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  function submitForm() {
-    const name = document.getElementById('fName').value.trim();
-    const email = document.getElementById('fEmail').value.trim();
-    const service = document.getElementById('fService').value;
-    const msg = document.getElementById('fMessage').value.trim();
-    if(!name || !email || !msg) { alert('Please fill in your name, email and message.'); return; }
-    const lname = document.getElementById('fLname').value.trim();
-    const fullName = name + (lname ? ' ' + lname : '');
-    const subject = service ? 'Enquiry: ' + service : 'Website Enquiry';
-    const phone = document.getElementById('fPhone').value.trim();
-    const body = `Name: ${fullName}\nEmail: ${email}${phone ? '\nPhone: ' + phone : ''}\nService: ${service || 'Not specified'}\n\nMessage:\n${msg}`;
-    window.location.href = `mailto:ronnymwenda89@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    document.getElementById('formSuccess').style.display = 'block';
-  }
+  // ══ Real submission via Formspree (same form ID as homepage) ══
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mjgqkydn';
+
+  const contactForm = document.getElementById('contactForm');
+  const statusBox    = document.getElementById('formStatus');
+  const submitBtn    = document.getElementById('fSubmitBtn');
+  const submitLabel  = submitBtn.querySelector('span');
+
+  contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    statusBox.classList.remove('show', 'ok', 'err');
+    submitBtn.disabled = true;
+    submitLabel.textContent = 'Sending...';
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        statusBox.textContent = "✅ Message sent! I'll be in touch within 24 hours.";
+        statusBox.classList.add('show', 'ok');
+        contactForm.reset();
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (err) {
+      statusBox.textContent = "⚠️ Something went wrong. Please email me directly at ronnymwenda89@gmail.com";
+      statusBox.classList.add('show', 'err');
+    } finally {
+      submitBtn.disabled = false;
+      submitLabel.textContent = 'Send Message';
+    }
+  });
 </script>
 </body>
 </html>

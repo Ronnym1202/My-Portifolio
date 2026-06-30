@@ -4,41 +4,100 @@
   <!-- MAIN PAGES -->
   <url>
     <loc>https://ronnymwenda.netlify.app/</loc>
-    <lastmod>2025-05-29</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ronnymwenda.netlify.app/about.html</loc>
-    <lastmod>2025-05-29</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ronnymwenda.netlify.app/contact.html</loc>
-    <lastmod>2025-05-29</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- BLOG -->
+  <url>
+    <loc>https://ronnymwenda.netlify.app/blog.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ronnymwenda.netlify.app/blog/building-ronnybank.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ronnymwenda.netlify.app/blog/cbc-maths-struggles.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ronnymwenda.netlify.app/blog/student-to-developer-teacher.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ronnymwenda.netlify.app/blog/ronny-best-math-story.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ronnymwenda.netlify.app/blog/web-dev-tips-kenya.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ronnymwenda.netlify.app/blog/cbc-assessment-pathways.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ronnymwenda.netlify.app/blog/static-vs-flask.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ronnymwenda.netlify.app/blog/choosing-hosting.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- LEGAL PAGES -->
   <url>
     <loc>https://ronnymwenda.netlify.app/privacy.html</loc>
-    <lastmod>2025-05-29</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://ronnymwenda.netlify.app/terms.html</loc>
-    <lastmod>2025-05-29</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
-  <!-- EXTERNAL PROJECTS (listed for context; hosted on separate domains) -->
-  <!-- bestronny.netlify.app — Ronny Best Math -->
-  <!-- ronnygame.netlify.app    — Ronny Games Hub  -->
-  <!-- themwends.netlify.app — sanguine.co       -->
-  <!-- ronnymwenda.netlify.app — Ronny Portfolio  -->
+  <!-- EXTERNAL PROJECTS (listed for context only; hosted on separate domains —
+       not included as <url> entries since a sitemap should only declare
+       pages belonging to this domain, ronnymwenda.netlify.app) -->
+  <!-- bestronny.netlify.app   — Ronny Best Math   -->
+  <!-- cbcbest.netlify.app     — CBC Best          -->
+  <!-- ronnygame.netlify.app   — Ronny Games Hub   -->
+  <!-- ronnybank.onrender.com  — RonnyBank         -->
+  <!-- themwends.netlify.app   — Sanguine          -->
 
 </urlset>
